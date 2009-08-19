@@ -1,4 +1,5 @@
 # Settings file for CycleWorks.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
