@@ -72,4 +72,5 @@ INSTALLED_APPS = (
     'myproject.pages',
     'myproject.highlights',
     'myproject.news',
+    'myproject.subhighlights',
 )
