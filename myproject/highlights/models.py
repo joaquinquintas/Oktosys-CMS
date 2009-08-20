@@ -16,7 +16,7 @@ class Highlight(models.Model):
     slot = models.PositiveSmallIntegerField(choices=slot_choices)
     headline = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to=generate_icon_filename)
+    image = models.ImageField(upload_to=generate_image_filename)
     icon_text = models.CharField(max_length=255)
     
     def is_active(self):
