@@ -21,5 +21,5 @@ class Highlight(models.Model):
     
     def is_active(self):
         objs = Highlight.objects.filter(slot=self.slot).order_by('-created_on')
-        return (objs.count() > 0 and objs.all()[0] == self)
+        return (objs.count() > 0 and objs.all()[0].id == self.id)
     
