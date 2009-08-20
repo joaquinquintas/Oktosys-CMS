@@ -69,4 +69,5 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'myproject.pages',
+    'myproject.highlights',
 )
