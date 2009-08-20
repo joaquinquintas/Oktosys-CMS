@@ -71,4 +71,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'myproject.pages',
     'myproject.highlights',
+    'myproject.news',
 )
