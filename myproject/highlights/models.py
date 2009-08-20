@@ -18,3 +18,8 @@ class Highlight(models.Model):
     description = models.TextField()
     icon = models.ImageField(upload_to=generate_icon_filename)
     icon_text = models.CharField(max_length=255)
+    
+    def is_active(self):
+        objs = Highlight.objects.filter(slot=self.slot).order_by('-created_on')
+        return (objs.count() > 0 and objs.all()[0] == self)
+    
