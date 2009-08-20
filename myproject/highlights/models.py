@@ -12,6 +12,7 @@ def generate_icon_filename(instance, old_filename):
     return 'icons/' + filename
 
 class Highlight(models.Model):
+    created_on = models.DateTimeField(auto_now_add=True)
     slot = models.PositiveSmallIntegerField(choices=slot_choices)
     headline = models.CharField(max_length=255)
     description = models.TextField()
