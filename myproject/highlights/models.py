@@ -8,7 +8,7 @@ slot_choices = ((x + 1, str(x + 1)) for x in xrange(3))
 
 def generate_image_filename(instance, old_filename):
     extension = os.path.splitext(old_filename)[1]
-    filename = slugify(instance.headline) + '.' + extension
+    filename = slugify(instance.headline) + extension
     return 'highlights/' + filename
 
 class Highlight(models.Model):
