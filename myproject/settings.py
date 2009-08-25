@@ -77,6 +77,7 @@ INSTALLED_APPS = (
     'myproject.news',
     'myproject.subhighlights',
     'myproject.ads',
+    'myproject.sponsors_panel',
 )
 
 TINYMCE_COMPRESSOR = True
