@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce import models as tinymce_models
 
 class Entry(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
@@ -6,5 +7,5 @@ class Entry(models.Model):
     headline = models.CharField(max_length=255)
     slug = models.SlugField()
     excerpt = models.CharField(max_length=255)
-    article = models.TextField()
+    article = tinymce_models.HTMLField()
     is_published = models.BooleanField()

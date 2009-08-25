@@ -11,12 +11,12 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'mysql'         
-DATABASE_NAME = 'spectrum_ocbc'    
-DATABASE_USER = 'spectrum_ocbc'    
-DATABASE_PASSWORD = 'ocbc1233'     
-DATABASE_HOST = '' 
-DATABASE_PORT = '' 
+DATABASE_ENGINE = 'mysql'
+DATABASE_NAME = 'spectrum_ocbc'
+DATABASE_USER = 'spectrum_ocbc'
+DATABASE_PASSWORD = 'ocbc1233'
+DATABASE_HOST = ''
+DATABASE_PORT = ''
 
 TIME_ZONE = 'Asia/Singapore'
 LANGUAGE_CODE = 'en-us'
@@ -69,9 +69,19 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
+    'sorl.thumbnail',
+    'filebrowser',
+    'tinymce',
     'myproject.pages',
     'myproject.highlights',
     'myproject.news',
     'myproject.subhighlights',
     'myproject.ads',
 )
+
+TINYMCE_COMPRESSOR = True
+TINYMCE_DEFAULT_CONFIG = {'theme': 'advanced'}
+
+FILEBROWSER_URL_FILEBROWSER_MEDIA = MEDIA_URL + 'filebrowser/'
+FILEBROWSER_PATH_TINYMCE = MEDIA_ROOT + 'js/tiny_mce/'
+FILEBROWSER_URL_TINYMCE = MEDIA_URL + 'js/tiny_mce/'

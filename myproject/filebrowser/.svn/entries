@@ -1,0 +1,152 @@
+8
+
+dir
+437
+http://django-filebrowser.googlecode.com/svn/trunk/filebrowser
+http://django-filebrowser.googlecode.com/svn
+
+
+
+2009-07-31T09:39:52.432167Z
+418
+sehmaschine
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b1eb0509-c838-0410-b15c-e5ce2c1b85ca
+
+locale
+dir
+
+media
+dir
+
+functions.py
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+d813aa8501b53fc696e149a0f05c8372
+2009-06-20T14:39:27.908448Z
+356
+sehmaschine
+has-props
+
+LICENSE
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+09e005ca112e61a6dbd30eb7fb6e2d9e
+2009-02-23T16:39:42.915334Z
+280
+sehmaschine
+has-props
+
+views.py
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+d6b470226ed070485b4e7d47fb8c1be7
+2009-06-20T14:39:27.908448Z
+356
+sehmaschine
+
+__init__.py
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2009-02-23T16:39:42.915334Z
+280
+sehmaschine
+
+templatetags
+dir
+
+models.py
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2009-02-23T16:39:42.915334Z
+280
+sehmaschine
+has-props
+
+urls.py
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+03822582eb61d119a0ca13eda5abb065
+2009-06-19T12:51:49.898085Z
+346
+sehmaschine
+
+forms.py
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+e5186c5913e5d1b2d86d5a560a00e800
+2009-06-04T14:07:33.964341Z
+331
+sehmaschine
+
+fields.py
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+b650c69be4fe24392890095433a0af37
+2009-06-19T12:51:49.898085Z
+346
+sehmaschine
+
+templates
+dir
+
+fb_settings.py
+file
+
+
+
+
+2009-08-25T20:16:15.000000Z
+13ab552575ba78ea9b80cbf2b9fd5022
+2009-06-19T12:51:49.898085Z
+346
+sehmaschine
+has-props
+

@@ -1,0 +1,53 @@
+8
+
+dir
+437
+http://django-filebrowser.googlecode.com/svn/trunk/filebrowser/locale/de/LC_MESSAGES
+http://django-filebrowser.googlecode.com/svn
+
+
+
+2009-06-15T09:00:00.051176Z
+339
+sehmaschine
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b1eb0509-c838-0410-b15c-e5ce2c1b85ca
+
+django.po
+file
+
+
+
+
+2009-08-25T20:16:12.000000Z
+4ac3dc9b404500b2425aa01d663bf63c
+2009-06-15T09:00:00.051176Z
+339
+sehmaschine
+
+django.mo
+file
+
+
+
+
+2009-08-25T20:16:12.000000Z
+8712cac8b64509ad98a1ff9078bb8ccd
+2009-02-23T16:39:42.915334Z
+280
+sehmaschine
+has-props
+

@@ -12,6 +12,8 @@
 {% block content %}
 <div id="content-main">
 
+{% include "filebrowser/append.html" %}
+
 {% if app_list %}
     {% for app in app_list %}
         <div class="module">
