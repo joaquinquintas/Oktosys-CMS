@@ -15,11 +15,11 @@
   <div id="ads">
     <table cellpadding="0" cellspacing="0" style="width: 100%;">
       <tr>
-        <td class="ad" width="33%" align="center">
-          {% for ad in ads %}
+        {% for ad in ads %}
+          <td class="ad" width="33%" align="center">
             <a href="{{ ad.link }}"><img src="{{ MEDIA_URL }}{{ ad.image.url }}" width="150" /></a>
-          {% endfor %}
-        </td>
+          </td>
+        {% endfor %}
       </tr>
     </table>
   </div>
