@@ -9,3 +9,7 @@ class Entry(models.Model):
     excerpt = models.CharField(max_length=255)
     article = tinymce_models.HTMLField()
     is_published = models.BooleanField()
+    
+    def __unicode__(self):
+        return self.headline
+    
