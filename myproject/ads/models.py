@@ -17,3 +17,7 @@ class Ad(models.Model):
     priority = models.PositiveSmallIntegerField(choices=priority_choices,
                                                 default=1)
     is_active = models.BooleanField(default=True)
+    
+    def __unicode__(self):
+        return "Ad (%s)" % self.link
+    
