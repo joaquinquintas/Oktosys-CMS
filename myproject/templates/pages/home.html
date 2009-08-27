@@ -17,7 +17,7 @@
       <tr>
         {% for ad in ads %}
           <td class="ad" width="33%" align="center">
-            <a href="{{ ad.link }}"><img src="{{ MEDIA_URL }}{{ ad.image.url }}" width="150" /></a>
+            <a href="{{ ad.link }}"><img src="{{ ad.image.url }}" width="150" /></a>
           </td>
         {% endfor %}
       </tr>
