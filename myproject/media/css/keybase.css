@@ -10,10 +10,15 @@ p {
       font-size: 12px;
       color: #666;
 }
-#container-C {
+#container-B {
       position: relative;
       margin-left: auto;
       margin-right: auto;
+}
+#container-C {
+      position: absolute;
+      top:97px;
+      left:0px;
 }
 #ocbcTop {
       background-image:url(http://spectrum.webfactional.com/media/img/ocbc_cycle_top.gif);
@@ -24,22 +29,20 @@ p {
       background-image:url(http://spectrum.webfactional.com/media/img/bg-round-top.png);
       background-repeat: no-repeat;
       height: 19px;
-      position: absolute;
-      top: 97px;
-      left: 0px;
       z-index: 150;
+}
+#roundBottom {
+      background-image:url(http://spectrum.webfactional.com/media/img/bg-round-bottom.png);
+      background-repeat: no-repeat;
+      height: 19px;
+      z-index: 160;
 }
 #leftCol {
       background-image:url(http://spectrum.webfactional.com/media/img/bg-central.png);
       background-repeat: repeat-y;
-      position: absolute;
-      top: 116px;
-      left: 0px;
 }
 #rightCol {
-      position: absolute;
-      top:116px;
-      right:0px;
+     
 }
 #nav-bar {
       float: left;
@@ -70,6 +73,7 @@ p {
 
 #central {
       float: left;
+      width: 580px;
 }
 #footer {
       position: fixed;
@@ -78,4 +82,18 @@ p {
       background-color: #f52400;
       height: 80px;
       width: 100%;
+}
+#disclaimer {
+      font-size:0.8em;
+      color:#666;
+}
+#copyright {
+      font-size:0.85em;
+      color:#666;
+      margin-left: 15px;
+}
+#link-bar2 {
+      font-size:0.85em;
+      color:#666;
+      margin-left: 30px;
 }
