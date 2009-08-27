@@ -6,7 +6,7 @@ class Entry(models.Model):
     edited_on = models.DateTimeField(auto_now=True)
     headline = models.CharField(max_length=255)
     slug = models.SlugField()
-    excerpt = models.CharField(max_length=255)
+    excerpt = models.TextField()
     article = tinymce_models.HTMLField()
     is_published = models.BooleanField()
     

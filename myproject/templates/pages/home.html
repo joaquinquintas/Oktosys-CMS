@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div id="news">
+    {% for entry in news_entries %}
+      <div class="entry">
+        <h1>{{ entry.headline }}</h1>
+        <p>{{ entry.excerpt }}</p>
+        <div class="date">{{ entry.created_on|date:"j M y" }}</div>
+        <div class="link"><a href="/news/view/{{ entry.slug }}">Read full article</a> &raquo;</div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
