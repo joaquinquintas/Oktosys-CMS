@@ -49,6 +49,22 @@
 		</div>
 	</div>
 	<div class="span-24 last" id="footer">
+	  <div id="sponsors">
+      <table cellpadding="0" cellspacing="0">
+        <tr class="titles">
+          {% for sponsor in sponsors %}
+            <td>{{ sponsor.title }}</td>
+          {% endfor %}
+        </tr>
+        <tr class="images">
+          {% for sponsor in sponsors %}
+            <td class="sponsor">
+              <a href="{{ sponsor.link }}"><img src="{{ sponsor.image.url }}" height="56" /></a>
+            </td>
+          {% endfor %}
+        </tr>
+      </table>
+    </div>
 	</div>
 </body>
 </html>
