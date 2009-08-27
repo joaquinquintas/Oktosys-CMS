@@ -12,7 +12,7 @@ def generate_filename(instance, old_filename):
 
 class Ad(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
-    file = models.ImageField(upload_to=generate_filename)
+    image = models.ImageField(upload_to=generate_filename)
     link = models.URLField()
     priority = models.PositiveSmallIntegerField(choices=priority_choices,
                                                 default=1)
