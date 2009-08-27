@@ -1,37 +1,0 @@
-8
-
-dir
-437
-http://django-filebrowser.googlecode.com/svn/trunk/filebrowser/media/filebrowser
-http://django-filebrowser.googlecode.com/svn
-
-
-
-2009-07-31T09:39:52.432167Z
-418
-sehmaschine
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-b1eb0509-c838-0410-b15c-e5ce2c1b85ca
-
-css
-dir
-
-img
-dir
-
-js
-dir
-
