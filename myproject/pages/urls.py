@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('pages.views',
+urlpatterns = patterns('myproject.pages.views',
     url(r'^$', 'home'),
 )
