@@ -14,4 +14,5 @@ urlpatterns = patterns('',
     (r'^tinymce/', include('tinymce.urls')),
     (r'^search/', search_site),
     (r'^news/', include('myproject.news.urls')),
+    (r'^entourage/', include('myproject.entourage.urls')),
 )
