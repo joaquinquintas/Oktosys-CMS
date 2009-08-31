@@ -1,26 +1,41 @@
 from models import Rider, Race, Team
 from models import RegistrationForm, ENewsletterForm
 
-from myproject.shortcuts import render
+from myproject.shortcuts import render, auth
 from django.http import HttpResponseRedirect
 
 import hashlib
 
-def riders_new(request):
+def home(request):
+    rider = auth(request)
+    if not rider:
+        HttpResponseRedirect('/entourage/login')
+    return riders_profile(request, rider.id)
+
+def signup(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-        
+
         return HttpResponseRedirect('/entourage/login')
     else:
         form = RegistrationForm()
-    
-    return render(request, 'entourage/riders_new.html', {'form': form})
 
-def riders_home(request):
-    # rider = 
-    return riders_profile(request, rider_id)
+    return render(request, 'entourage/signup.html', {'form': form})
+
+def profile(request, rider_id):
+    try:
+        rider = Rider.objects.get(id=rider_id)
+    except Rider.DoesNotExist:
+        return HttpResponseRedirect('/')
+    
+    if (rider.settings_profile_private
+    and request.session['rider_id'] != rider.id):
+        return render(request, 'entourage/profile.html', {
+            'error': 'profile_private'})
+    
+    return render(request, 'entourage/profile.html', {'rider': rider})
 
 def login(request):
     if request.method == 'POST':
