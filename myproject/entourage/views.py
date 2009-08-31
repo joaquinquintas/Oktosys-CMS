@@ -9,8 +9,8 @@ import hashlib
 def home(request):
     rider = auth(request)
     if not rider:
-        HttpResponseRedirect('/entourage/login')
-    return riders_profile(request, rider.id)
+        return HttpResponseRedirect('/entourage/login')
+    return profile(request, rider.id)
 
 def signup(request):
     if request.method == 'POST':
