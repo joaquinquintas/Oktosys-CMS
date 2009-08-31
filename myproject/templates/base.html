@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/print.css" type="text/css" media="print">	
 	<!--[if lt IE 8]><link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/keybase.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/entourage.css" type="text/css" media="screen, projection">
 	<script type="text/javascript" src="/media/js/flexcroll.js"></script>
 	<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
 	<script type="text/javascript" src="http://spectrum.webfactional.com/media/js/canvasSwap/jquery.canvasSwap.js"></script>
@@ -87,7 +88,17 @@
 			</div>
 			<div class="span-5 last" id="rightCol">
 			<!-- My Entourage/Social -->
-			  <img src="/media/img/temp_myprofile.png" /><br />
+			    <div id="entourage">
+				<div id="entourage-header">
+				  <!-- display changes according to login status -->
+				</div>
+				<div id="entourage-content">
+				  {% include "usermgr/login.html" %}
+				</div>
+				<div id="entourage-share">
+				  <span>Share this site <img src="/media/img/social/share-fb.png" border="0" /><img src="/media/img/social/share-blogger.png" border="0" /><img src="/media/img/social/share-twitter.png" border="0" /><img src="/media/img/social/share-g.png" border="0" /></span> 
+				</div>
+			    </div>
 			  <img src="/media/img/temp_socialfeed.png" /><br />
         <div id="ads">
           <table cellpadding="0" cellspacing="0" style="width: 100%;">
