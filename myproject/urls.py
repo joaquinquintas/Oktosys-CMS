@@ -4,6 +4,8 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 admin.autodiscover()
 
+from news.models import Entry
+
 # For use with django generic views
 entry_info_dict = {
         'queryset': Entry.objects.all(),
