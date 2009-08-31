@@ -52,6 +52,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'myproject.context_processors.load_sponsors',
+    'myproject.context_processors.load_ads',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -88,7 +88,17 @@
 			<!-- My Entourage/Social -->
 			  <img src="/media/img/temp_myprofile.png" /><br />
 			  <img src="/media/img/temp_socialfeed.png" /><br />
-			  {% block social %}{% endblock %}
+        <div id="ads">
+          <table cellpadding="0" cellspacing="0" style="width: 100%;">
+            <tr>
+              {% for ad in ads %}
+                <td class="ad" width="100%" align="center">
+                  <a href="{{ ad.link }}"><img src="{{ ad.image.url }}" width="190" /></a>
+                </td>
+              {% endfor %}
+            </tr>
+          </table>
+        </div>
 			</div>
 			<div class="span-24 last" id="roundBottom">
 			</div>
