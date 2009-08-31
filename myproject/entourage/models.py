@@ -11,6 +11,10 @@ def generate_filename(instance, old_filename):
 class Rider(models.Model):
 	name_first = models.CharField(max_length=150)
 	name_last = models.CharField(max_length=150)
+	
+	def name(self):
+	    return "%s %s" % (self.name_first, self.name_last)
+	
 	email = models.EmailField(unique=True)
 	phone_main = models.CharField(max_length=100)
 	phone_mobile = models.CharField(max_length=100)
