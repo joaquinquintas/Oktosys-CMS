@@ -8,7 +8,8 @@ admin.autodiscover()
 from myproject.search.views import search_site
 
 urlpatterns = patterns('',
-    (r'^$', include('myproject.pages.urls')),
+    (r'^$', 'myproject.pages.views.home'),
+    (r'^pages/', include('myproject.pages.urls')),
     (r'^admin/filebrowser/', include('filebrowser.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^tinymce/', include('tinymce.urls')),
