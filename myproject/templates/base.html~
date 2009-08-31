@@ -1,0 +1,129 @@
+<!-- Master Template -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/print.css" type="text/css" media="print">	
+	<!--[if lt IE 8]><link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/keybase.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/entourage.css" type="text/css" media="screen, projection">
+	<script type="text/javascript" src="/media/js/flexcroll.js"></script>
+	<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="http://spectrum.webfactional.com/media/js/canvasSwap/jquery.canvasSwap.js"></script>
+	<script type="text/javascript" src="http://spectrum.webfactional.com/media/js/canvasSwap/jquery.cacheimage.js"></script>
+	<script type="text/javascript">
+	  $(document).ready(function(){
+	    $.fn.canvasSwap.defaults.suffix = '_hover';
+	    $.fn.canvasSwap.defaults.ie6_support = true;
+	    $('img.about_swap').canvasSwap();
+	    $('img.event_swap').canvasSwap();
+	    $('img.preride_swap').canvasSwap();
+	    $('img.cycling_swap').canvasSwap();
+	    $('img.involved_swap').canvasSwap();
+	    $('img.contests_swap').canvasSwap();
+	    $('img.promos_swap').canvasSwap();
+	    $('img.multimedia_swap').canvasSwap();
+	    $('img.faqs_swap').canvasSwap();
+	  });
+	</script>
+	<!-- lazy image cache -->
+	<script type="text/javascript">
+	  $(document).ready(function(){
+	    $.cacheImage([
+	      'http://spectrum.webfactional.com/media/img/nav_about_experience_hover.png',
+	      'http://spectrum.webfactional.com/media/img/nav_event_details_hover.png',
+	      'http://spectrum.webfactional.com/media/img/nav_pre_ride_hover.png',
+	      'http://spectrum.webfactional.com/media/img/nav_cycling_lifestyle_hover.png',
+	      'http://spectrum.webfactional.com/media/img/nav_whos_involved_hover.png',
+	      'http://spectrum.webfactional.com/media/img/nav_contests_hover.png',
+	      'http://spectrum.webfactional.com/media/img/nav_merch_promos_hover.png',
+	      'http://spectrum.webfactional.com/media/img/nav_multimedia_hover.png',
+	      'http://spectrum.webfactional.com/media/img/nav_faqs_hover.png'
+	    ])
+	});
+	</script>
+</head>
+
+<body>
+	<div class="container" id="container-B">
+		<div class="span-24 last" id="ocbcTop">
+		<!-- links -->
+		    <div id="link-bar">
+		    + <a href="/e-newsletter/">eNewsletter</a> | <a href="/news-archive/">News archive</a> | <a href="/volunteers/">Volunteers</a> | <a href="/2009-results/">2009 results</a>
+		    </div>
+		</div>
+		<div id="searchBox">
+		    <form id="search-form" method="get" action=".">
+		      <input type="text" value="type search" />
+		      <div id="searchBtn">
+			  <input type="image" src="/media/img/search-btn.png" alt="Submit button">
+		      </div>
+		    </form>
+		</div>
+		<div class="container" id="container-C">
+			<div class="span-19 last" id="roundTop">
+			</div>
+			<div class="span-19" id="leftCol">
+			    <div id="nav-bar">
+			      <!-- Flash counter from Alex -->
+			      <p><img src="http://spectrum.webfactional.com/media/img/clock.png" /><br />
+			      <!-- navigation buttons -->
+				<a href="/about-the-experience/"><img src="http://spectrum.webfactional.com/media/img/nav_about_experience.png" border="0" class="about_swap" /></a><br/>
+				<a href="/event-details/"><img src="http://spectrum.webfactional.com/media/img/nav_event_details.png" border="0" class="event_swap" /></a><br/>
+				<a href="/pre-ride/"><img src="http://spectrum.webfactional.com/media/img/nav_pre_ride.png" border="0" class="preride_swap" /></a><br/>
+				<a href="/cycling-and-lifestyle-village/"><img src="http://spectrum.webfactional.com/media/img/nav_cycling_lifestyle.png" border="0" class="cycling_swap" /></a><br/>
+				<a href="/who-is-involved/"><img src="http://spectrum.webfactional.com/media/img/nav_whos_involved.png" border="0" class="involved_swap" /></a><br/>
+				<a href="/contests/"><img src="http://spectrum.webfactional.com/media/img/nav_contests.png" border="0" class="contests_swap" /></a><br/>
+				<a href="/merchandise-and-promos/"><img src="http://spectrum.webfactional.com/media/img/nav_merch_promos.png" border="0" class="promos_swap" /></a><br/>
+				<a href="/multimedia/"><img src="http://spectrum.webfactional.com/media/img/nav_multimedia.png" border="0" class="multimedia_swap" /></a><br/>
+				<a href="/faqs/"><img src="http://spectrum.webfactional.com/media/img/nav_faqs.png" border="0" class="faqs_swap" /></a><br/>
+			      </p>
+			    </div>
+			    <div id="central">
+			    <!-- Slango-generated content -->
+			      {% block content %}{% endblock %}
+			    <p><span id="disclaimer">Spectrum Worldwide reserves all right to remove any content in this box that is deemed inappropriate or irrelevant to OCBC Cycle Singapore.</span></p>
+			    </div>
+			</div>
+			<div class="span-5 last" id="rightCol">
+			<!-- My Entourage/Social -->
+			    <div id="entourage">
+				<div id="entourage-header">
+				  
+				</div>
+				<div id="entourage-content">
+				  {% include "usermgr/login.html" %}
+				</div>
+				<div id="entourage-share">
+				  <span>Share this site <img src="/media/img/social/share-fb.png" border="0" /><img src="/media/img/social/share-blogger.png" border="0" /><img src="/media/img/social/share-twitter.png" border="0" /><img src="/media/img/social/share-g.png" border="0" /></span> 
+				</div>
+			    </div>
+			  <img src="/media/img/temp_socialfeed.png" /><br />
+        <div id="ads">
+          <table cellpadding="0" cellspacing="0" style="width: 100%;">
+            <tr>
+              {% for ad in ads %}
+                <td class="ad" width="100%" align="center">
+                  <a href="{{ ad.link }}"><img src="{{ ad.image.url }}" width="190" /></a>
+                </td>
+              {% endfor %}
+            </tr>
+          </table>
+        </div>
+			</div>
+			<div class="span-24 last" id="roundBottom">
+			</div>
+			<div class="span-19">
+			  <p><span id="copyright">&copy; 2009 Spectrum Worldwide. All rights reserved.</span></p>
+			</div>
+			<div class="span-5 last">
+			  <p><span id="link-bar2">Privacy policy | Contact us</span></p>
+			</div>
+		</div>
+	</div>
+	<div class="span-24 last" id="footer">
+	</div>
+</body>
+</html>
+

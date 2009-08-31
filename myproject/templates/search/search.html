@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="search-results">
+  {% if show_results %}
+    {% include "search_list.html" %}
+  {% endif %}
+</div>
+{% endblock %}
+
+
