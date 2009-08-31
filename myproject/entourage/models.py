@@ -13,7 +13,7 @@ class Rider(models.Model):
 	username = models.CharField(max_length=50)
 	password = models.CharField(max_length=50)
 	
-	team = models.ForeignKey('Team')
+	team = models.ForeignKey('Team', null=True)
 	
 	bike_make = models.CharField(max_length=255)
 	bike_model = models.CharField(max_length=255)
@@ -117,14 +117,17 @@ class RegistrationForm(forms.ModelForm):
     name_first = forms.CharField(label=u'First name', max_length=150)
     name_last = forms.CharField(label=u'Last name', max_length=150)
     email = forms.EmailField(label=u'Email address')
-    phone_main = forms.CharField(label=u'Telephone number', max_length=100)
-    phone_mobile = forms.CharField(label=u'Mobile number', max_length=100)
+    phone_main = forms.CharField(label=u'Telephone number', max_length=100, required=False)
+    phone_mobile = forms.CharField(label=u'Mobile number', max_length=100, required=False)
+    bike_make = forms.CharField(label=u'Bike make', max_length=100, required=False)
+    bike_model = forms.CharField(label=u'Bike model', max_length=100, required=False)
+    bike_link = forms.CharField(label=u'Bike link', max_length=100, required=False)
     settings_updates_fb = forms.BooleanField(label=u'Receive updates via Facebook', widget=forms.CheckboxInput, initial=True, required=False)
     settings_updates_email = forms.BooleanField(label=u'Receive updates via email', widget=forms.CheckboxInput, initial=True, required=False)
     settings_updates_sms = forms.BooleanField(label=u'Receive updates via SMS', widget=forms.CheckboxInput, initial=True, required=False)
     settings_fb_post = forms.BooleanField(label=u'Post your activities to Facebook', widget=forms.CheckboxInput, initial=True, required=False)
     settings_profile_private = forms.BooleanField(label=u'Make your profile page private', widget=forms.CheckboxInput, initial=False, required=False)
-
+    
 class ENewsletterForm(forms.Form):
     name = forms.CharField(label=u'Name', max_length=100)
     email = forms.EmailField(label=u'Email address')
