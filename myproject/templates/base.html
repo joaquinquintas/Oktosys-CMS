@@ -51,9 +51,16 @@
 		    + <a href="/e-newsletter/">eNewsletter</a> | <a href="/news-archive/">News archive</a> | <a href="/volunteers/">Volunteers</a> | <a href="/2009-results/">2009 results</a>
 		    </div>
 		</div>
-	
+		<div id="searchBox">
+		    <form id="search-form" method="get" action=".">
+		      <input type="text" value="type search" />
+		      <div id="searchBtn">
+			  <input type="image" src="/media/img/search-btn.png" alt="Submit button">
+		      </div>
+		    </form>
+		</div>
 		<div class="container" id="container-C">
-			<div class="span-24 last" id="roundTop">
+			<div class="span-19 last" id="roundTop">
 			</div>
 			<div class="span-19" id="leftCol">
 			    <div id="nav-bar">
@@ -79,6 +86,8 @@
 			</div>
 			<div class="span-5 last" id="rightCol">
 			<!-- My Entourage/Social -->
+			  <img src="/media/img/temp_myprofile.png" /><br />
+			  <img src="/media/img/temp_socialfeed.png" /><br />
 			  {% block social %}{% endblock %}
 			</div>
 			<div class="span-24 last" id="roundBottom">
