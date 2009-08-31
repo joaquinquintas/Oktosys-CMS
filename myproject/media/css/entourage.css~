@@ -1,0 +1,20 @@
+#entourage {
+
+}
+
+#entourage-header {
+  background-image: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-header.png);
+  background-repeat: no-repeat;
+}
+
+#entourage-content {
+  background-image: url(http://spectrum.webfactional.com/media/img/social/b4login/bg.png);
+  background-repeat: no-repeat;
+  height: 211px;
+}
+
+#entourage-share {
+  background-image: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-share.png);
+  background-repeat: no-repeat;
+}
+

@@ -1,0 +1,139 @@
+body {
+      background-image:url(http://spectrum.webfactional.com/media/img/key_bg.png);
+      background-repeat:repeat-x;
+}
+h1 {
+      font-size: 1.2em;
+      color: #444;
+}
+p {
+      font-size: 12px;
+      color: #666;
+}
+
+#container-B {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+}
+#container-C {
+      position: absolute;
+      top:97px;
+      left:0px;
+}
+
+#ocbcTop {
+      background-image:url(http://spectrum.webfactional.com/media/img/ocbc_cycle_top.gif);
+      background-repeat: no-repeat;
+      height: 166px;
+}
+#roundTop {
+      background-image:url(http://spectrum.webfactional.com/media/img/bg-round-top.png);
+      background-repeat: no-repeat;
+      height: 19px;
+      z-index: 150;
+}
+#roundBottom {
+      background-image:url(http://spectrum.webfactional.com/media/img/bg-round-bottom.png);
+      background-repeat: no-repeat;
+      height: 19px;
+      z-index: 160;
+}
+#leftCol {
+      background-image:url(http://spectrum.webfactional.com/media/img/bg-central.png);
+      background-repeat: repeat-y;
+}
+#rightCol {
+     position: absolute;
+     top: -4px;
+     right: 0px;
+     z-index: 170;
+     padding-bottom: 100px;
+}
+#nav-bar {
+      float: left;
+      width: 150px;
+}
+#link-bar {
+      position: absolute;
+      right: 20px;
+      top: 40px;
+      color: #fff;
+}
+#link-bar a:link {
+      color: #fff;
+      text-decoration: none;
+}
+#link-bar a:visited {
+      color: #fff;
+      text-decoration: none;
+}
+#link-bar a:hover {
+      color: #fff;
+      text-decoration: underline;
+}
+#link-bar a:active {
+      color: #fff;
+      text-decoration: none;
+}
+
+#central {
+      float: left;
+      width: 580px;
+}
+#footer {
+      position: fixed;
+      bottom: 0px;
+      left:0px;
+      background-color: #f52400;
+      height: 80px;
+      width: 100%;
+      z-index: 200;
+}
+#disclaimer {
+      font-size:0.8em;
+      color:#666;
+}
+#copyright {
+      font-size:0.85em;
+      color:#666;
+      margin-left: 15px;
+}
+#link-bar2 {
+      font-size:0.85em;
+      color:#666;
+      margin-left: 30px;
+}
+#subhighlights table {
+      width:500px;
+      table-layout:fixed;
+      border-spacing: 0px;
+}
+#searchBox {
+      background-image: url(http://spectrum.webfactional.com/media/img/bg-searchbox.png);
+      background-repeat: no-repeat;
+      height: 113px;
+      width: 330px;
+      position: absolute;
+      top:65px;
+      right:0px;
+      padding-left:65px;
+      padding-top:6px;
+}
+#searchBtn {
+      position: absolute;
+      top:3px;
+      right:60px;
+}
+#news .date {
+      font-size:0.8em;
+      color:#666;
+      float:left;
+}
+#news .link {
+      color:#F00;
+      float:right;
+}
+
+
+

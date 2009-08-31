@@ -90,7 +90,7 @@
 			<!-- My Entourage/Social -->
 			    <div id="entourage">
 				<div id="entourage-header">
-				  <!-- display changes according to login status -->
+				  
 				</div>
 				<div id="entourage-content">
 				  {% include "usermgr/login.html" %}
