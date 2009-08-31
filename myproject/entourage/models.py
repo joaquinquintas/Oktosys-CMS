@@ -11,6 +11,8 @@ class Rider(models.Model):
 	username = models.CharField(max_length=50)
 	password = models.CharField(max_length=50)
 	
+	team = models.ForeignKey('Team')
+	
 	bike_make = models.CharField(max_length=255)
 	bike_model = models.CharField(max_length=255)
 	bike_link = models.URLField(verify_exists=True)
@@ -83,17 +85,14 @@ TEAM_TYPES = (
 
 class Team(models.Model):
 	race_type = models.CharField(max_length=4, choices=TEAM_TYPES)
-	user1 = models.ForeignKey('Rider')
-	user2 = models.ForeignKey('Rider')
-	user3 = models.ForeignKey('Rider')
-	user4 = models.ForeignKey('Rider')
 	status = models.BooleanField()
 	counter = models.IntegerField()
 
 class RegistrationForm(forms.ModelForm):
     class Meta:
         model = Rider
-        fields = ('name_first', 'name_last',
+        fields = (
+            'name_first', 'name_last',
             'email',
             'username', 'password',
             'phone_main', 'phone_mobile',
@@ -102,7 +101,8 @@ class RegistrationForm(forms.ModelForm):
             'settings_updates_email',
             'settings_updates_sms',
             'settings_fb_post',
-            'settings_profile_private',)
+            'settings_profile_private',
+        )
     
     username = forms.CharField(label=u'Username', max_length=50)
     password = forms.CharField(label=u'Password', widget=forms.PasswordInput)
