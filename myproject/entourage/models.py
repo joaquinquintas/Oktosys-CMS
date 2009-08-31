@@ -1,6 +1,8 @@
 from django.db import models
 from django import forms
 
+import hashlib
+
 class Rider(models.Model):
 	name_first = models.CharField(max_length=150)
 	name_last = models.CharField(max_length=150)
@@ -22,6 +24,12 @@ class Rider(models.Model):
 	settings_updates_sms = models.BooleanField(default=True)
 	settings_fb_post = models.BooleanField(default=True)
 	settings_profile_private = models.BooleanField(default=False)
+	
+	def save(self):
+	    if not self.id:
+	        self.password = hashlib.sha1(self.password).hexdigest()
+	    
+	    super(Rider, self).save()
 
 RACE_TYPES = (
 	('I50', '50KM, INDIVIDUAL'),
