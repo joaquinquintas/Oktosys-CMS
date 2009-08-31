@@ -7,7 +7,7 @@
       <div class="entry">
         <h1>{{ entry.headline }}</h1>
         <p>{{ entry.excerpt }}</p>
-        <div class="date">Posted on {{ entry.created_on|date:"j M y" }}</div>
+        <div class="date">posted on <span id="red">{{ entry.created_on|date:"j M y" }}</span></div>
         <div class="link"><a href="/news/view/{{ entry.slug }}">Read full article</a> &raquo;</div>
       </div><br /><br /><!-- need to add clearing -->
     {% endfor %}

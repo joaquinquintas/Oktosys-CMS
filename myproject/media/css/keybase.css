@@ -125,4 +125,33 @@ p {
       top:3px;
       right:60px;
 }
+#news .date {
+      font-size:0.8em;
+      color:#666;
+      float:left;
+}
+#news .date #red {
+      color:#F00;
+}
+#news .link {
+      color:#F00;
+      float:right;
+}
+#news .link a:link {
+      color:#F00;
+      text-decoration: none;
+}
+#news .link a:visited {
+      color:#F00;
+      text-decoration: none;
+}
+#news .link a:hover {
+      color:#F00;
+      text-decoration: underline;
+}
+#news .link a:active {
+      color:#F00;
+      text-decoration: none;
+}
+
 
