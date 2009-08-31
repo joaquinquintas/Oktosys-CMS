@@ -14,10 +14,11 @@ def home(request):
 
 def signup(request):
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+        form = RegistrationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-
+        else:
+            render(request, 'entourage/signup.html', {'form': form})
         return HttpResponseRedirect('/entourage/login')
     else:
         form = RegistrationForm()
