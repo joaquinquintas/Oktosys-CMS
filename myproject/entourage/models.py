@@ -2,6 +2,7 @@ from django.db import models
 from django import forms
 
 import os
+import time
 import hashlib
 
 def generate_filename(instance, old_filename):
