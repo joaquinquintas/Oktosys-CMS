@@ -3,6 +3,11 @@ from django import forms
 
 import hashlib
 
+def generate_filename(instance, old_filename):
+    extension = os.path.splitext(old_filename)[1]
+    filename = str(time.time()) + extension
+    return 'riders/' + filename
+
 class Rider(models.Model):
 	name_first = models.CharField(max_length=150)
 	name_last = models.CharField(max_length=150)
@@ -12,6 +17,8 @@ class Rider(models.Model):
 	
 	username = models.CharField(max_length=50)
 	password = models.CharField(max_length=50)
+	
+	avatar = models.ImageField(upload_to=generate_filename)
 	
 	team = models.ForeignKey('Team', null=True)
 	
