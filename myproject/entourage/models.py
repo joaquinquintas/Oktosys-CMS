@@ -1,6 +1,7 @@
 from django.db import models
 from django import forms
 
+import os
 import hashlib
 
 def generate_filename(instance, old_filename):
@@ -114,6 +115,7 @@ class RegistrationForm(forms.ModelForm):
             'name_first', 'name_last',
             'email',
             'username', 'password',
+            'avatar',
             'phone_main', 'phone_mobile',
             'bike_make', 'bike_model', 'bike_link',
             'settings_updates_fb',
