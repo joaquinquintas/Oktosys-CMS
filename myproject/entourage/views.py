@@ -1,5 +1,6 @@
 from models import Rider, Race, Team
 from models import RegistrationForm, ENewsletterForm
+from models import generate_filename
 
 from myproject.shortcuts import render, auth
 from django.http import HttpResponseRedirect
@@ -16,7 +17,16 @@ def signup(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            rider = form.save(commit=False)
+            
+            if not rider.avatar:
+                fname = generate_filename(rider, 'default.jpg')
+                rider.avatar = fname
+                with open('riders/default.jpg') as default:
+                    with open(fname, 'w') as f:
+                        f.write(default.read())
+            
+            rider.save()
         else:
             render(request, 'entourage/signup.html', {'form': form})
         return HttpResponseRedirect('/entourage/login')
