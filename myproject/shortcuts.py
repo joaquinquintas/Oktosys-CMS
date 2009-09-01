@@ -7,7 +7,7 @@ def render(request, template, data={}):
         context_instance=RequestContext(request))
 
 def auth(request):
-    rider_id = request.session['rider_id']
+    rider_id = request.session.get('rider_id')
     if not rider_id:
         return False
     else:
