@@ -126,6 +126,7 @@ class RegistrationForm(forms.ModelForm):
     name_first = forms.CharField(label=u'First name', max_length=150)
     name_last = forms.CharField(label=u'Last name', max_length=150)
     email = forms.EmailField(label=u'Email address')
+    avatar = forms.ImageField(label=u'Avatar', required=False)
     phone_main = forms.CharField(label=u'Telephone number', max_length=100, required=False)
     phone_mobile = forms.CharField(label=u'Mobile number', max_length=100, required=False)
     settings_updates_fb = forms.BooleanField(label=u'Receive updates via Facebook', widget=forms.CheckboxInput, initial=True, required=False)
