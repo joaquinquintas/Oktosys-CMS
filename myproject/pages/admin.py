@@ -8,5 +8,7 @@ class PageAdmin(admin.ModelAdmin):
     ]
     
     prepopulated_fields = {'slug': ('title',)}
+    
+    ordering = ('sort',)
 
 admin.site.register(Page, PageAdmin)
