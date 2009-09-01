@@ -89,6 +89,7 @@ INSTALLED_APPS = (
     'myproject.sponsors_panel',
     'myproject.search',
     'myproject.entourage',
+    'myproject.multimedia',
 )
 
 TINYMCE_COMPRESSOR = True
