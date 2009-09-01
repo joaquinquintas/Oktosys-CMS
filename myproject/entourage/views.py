@@ -32,7 +32,7 @@ def profile(request, rider_id):
         return HttpResponseRedirect('/')
     
     if (rider.settings_profile_private
-    and request.session['rider_id'] != rider.id):
+    and request.session.get('rider_id') != rider.id):
         return render(request, 'entourage/profile.html', {
             'error': 'profile_private'})
     
