@@ -28,10 +28,6 @@ class Rider(models.Model):
 	
 	team = models.ForeignKey('Team', null=True)
 	
-	bike_make = models.CharField(max_length=255)
-	bike_model = models.CharField(max_length=255)
-	bike_link = models.URLField(verify_exists=True)
-    
 	settings_updates_fb = models.BooleanField(default=True)
 	settings_updates_email = models.BooleanField(default=True)
 	settings_updates_sms = models.BooleanField(default=True)
@@ -118,7 +114,6 @@ class RegistrationForm(forms.ModelForm):
             'username', 'password',
             'avatar',
             'phone_main', 'phone_mobile',
-            'bike_make', 'bike_model', 'bike_link',
             'settings_updates_fb',
             'settings_updates_email',
             'settings_updates_sms',
@@ -133,9 +128,6 @@ class RegistrationForm(forms.ModelForm):
     email = forms.EmailField(label=u'Email address')
     phone_main = forms.CharField(label=u'Telephone number', max_length=100, required=False)
     phone_mobile = forms.CharField(label=u'Mobile number', max_length=100, required=False)
-    bike_make = forms.CharField(label=u'Bike make', max_length=100, required=False)
-    bike_model = forms.CharField(label=u'Bike model', max_length=100, required=False)
-    bike_link = forms.CharField(label=u'Bike link', max_length=100, required=False)
     settings_updates_fb = forms.BooleanField(label=u'Receive updates via Facebook', widget=forms.CheckboxInput, initial=True, required=False)
     settings_updates_email = forms.BooleanField(label=u'Receive updates via email', widget=forms.CheckboxInput, initial=True, required=False)
     settings_updates_sms = forms.BooleanField(label=u'Receive updates via SMS', widget=forms.CheckboxInput, initial=True, required=False)
