@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     (r'^search/', search_site),
     (r'^news/', include('myproject.news.urls')),
     (r'^entourage/', include('myproject.entourage.urls')),
+    (r'^multimedia/', include('myproject.multimedia.urls')),
 )

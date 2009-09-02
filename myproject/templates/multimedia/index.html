@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load chunker %}
+{% block content %}
+  <table cellpadding="0" cellspacing="0">
+    {% for row in photos.object_list|chunk:9 %}
+      <tr>
+        {% for photo in row %}
+          {% if photo %}
+            <td><a href="/gallery/photos/{{ photo.id }}"><img src="{{ photo.image.url }}" alt="{{ photo.title }}" /></a></td>
+          {% else %}
+            <td></td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+  
+  <div class="pagination">
+    {% if photos.has_previous %}
+        <a href="?page={{ pages.previous_page_number }}">previous</a>
+    {% endif %}
+
+    <span class="current">
+        Page {{ photos.number }} of {{ photos.paginator.num_pages }}.
+    </span>
+
+    {% if photos.has_next %}
+        <a href="?page={{ pages.next_page_number }}">next</a>
+    {% endif %}
+  </div>
+{% endblock %}
