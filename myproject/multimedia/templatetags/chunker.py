@@ -1,7 +1,5 @@
 from django import template
 
-from itertools import izip_longest
-
 register = template.Library()
 
 @register.filter(name='chunk')
