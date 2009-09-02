@@ -5,7 +5,7 @@ from models import generate_filename
 
 from myproject.shortcuts import render, auth
 from django.http import HttpResponseRedirect
-
+from django.conf import settings
 import hashlib
 
 def home(request):
@@ -23,7 +23,8 @@ def signup(request):
             if not rider.avatar:
                 fname = generate_filename(rider, 'default.jpg')
                 rider.avatar = fname
-                with open('riders/default.jpg') as default:
+                default = settings.MEDIA_ROOT + 'riders/default.jpg'
+                with open(default) as default:
                     with open(fname, 'w') as f:
                         f.write(default.read())
             
