@@ -1,21 +1,19 @@
 from django.db import models
+from django import forms
 
-import datetime
+import os
+import time
+
+def generate_filename(instance, old_filename):
+    extension = os.path.splitext(old_filename)[1]
+    filename = str(time.time()) + extension
+    return 'multimedia/' + filename
 
 class Photo(models.Model):
     title = models.CharField(max_length=255)
     added_on = models.DateTimeField(auto_now_add=True)
-    added_by = models.ForeignKey('entourage.Rider')
-    
-    tag = models.ManyToManyField('Tag')
+    image = models.ImageField(upload_to=generate_filename)
     
     def __unicode__(self):
         return self.title
-    
-
-class Tag(models.Model):
-    name = models.CharField(max_length=255)
-    
-    def __unicode__(self):
-        return self.name
     

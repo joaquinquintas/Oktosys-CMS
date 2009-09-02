@@ -1,7 +1,7 @@
-from myproject.multimedia.models import Tag
+from models import Photo
 from django.contrib import admin
 
-class TagAdmin(admin.ModelAdmin):
+class PhotoAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(Tag, TagAdmin)
+admin.site.register(Photo, PhotoAdmin)
