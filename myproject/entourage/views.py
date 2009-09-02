@@ -1,3 +1,4 @@
+from __future__ import with_statement # For with to work
 from models import Rider, Race, Team
 from models import RegistrationForm, ENewsletterForm
 from models import generate_filename
