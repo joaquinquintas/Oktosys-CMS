@@ -1,12 +1,15 @@
 {% extends "base.html" %}
+
 {% load chunker %}
+{% load thumbnail %}
+
 {% block content %}
   <table cellpadding="0" cellspacing="0">
     {% for row in photos.object_list|chunk:9 %}
       <tr>
         {% for photo in row %}
           {% if photo %}
-            <td><a href="/gallery/photos/{{ photo.id }}"><img src="{{ photo.image.url }}" alt="{{ photo.title }}" /></a></td>
+            <td><a href="/gallery/photos/{{ photo.id }}"><img src="{% thumbnail photo.image 60x60 %}" alt="{{ photo.title }}" /></a></td>
           {% else %}
             <td></td>
           {% endif %}
