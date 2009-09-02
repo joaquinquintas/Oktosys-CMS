@@ -1,5 +1,6 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect as redirect
 from myproject.entourage.models import Rider
 
 def render(request, template, data={}):
