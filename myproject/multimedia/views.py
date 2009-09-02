@@ -22,4 +22,4 @@ def index(request):
 
 def photo_view(request, id):
     photo = get_object_or_404(Photo, id=id)
-    return render(request, 'multimedia/view.html', {'photo': photo})
+    return render(request, 'multimedia/photo_view.html', {'photo': photo})
