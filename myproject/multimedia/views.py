@@ -20,6 +20,12 @@ def index(request):
     
     return render(request, 'multimedia/index.html', {'photos': photos})
 
-def photo_view(request, id):
+def photo_view(request, page, id):
+    try:
+        page = int(page)
+    except ValueError:
+        redirect('/multimedia')
+    
     photo = get_object_or_404(Photo, id=id)
-    return render(request, 'multimedia/photo_view.html', {'photo': photo})
+    return render(request, 'multimedia/photo_view.html',
+        {'page': page, 'photo': photo})

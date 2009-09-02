@@ -9,7 +9,7 @@
       <tr>
         {% for photo in row %}
           {% if photo %}
-            <td><a href="/multimedia/photos/{{ photo.id }}"><img src="{% thumbnail photo.image 60x60 %}" alt="{{ photo.title }}" /></a></td>
+            <td><a href="/multimedia/photos/{{ photos.number }}/{{ photo.id }}"><img src="{% thumbnail photo.image 60x60 %}" alt="{{ photo.title }}" /></a></td>
           {% else %}
             <td></td>
           {% endif %}

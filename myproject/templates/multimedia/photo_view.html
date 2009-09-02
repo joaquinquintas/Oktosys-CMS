@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div><a href="/multimedia/?page={{ page }}">Back to gallery</a></div>
+
   <div class="photo">
     <img src="{{ photo.image.url }}" alt="{{ photo.title }}" />
+    
+    <div class="title">{{ photo.title }}</div>
+    <!-- <div class="tags">{{ photo.tags }}</div> -->
   </div>
+  
 {% endblock %}
