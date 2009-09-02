@@ -6,5 +6,4 @@ register = template.Library()
 
 @register.filter(name='chunk')
 def chunk(iterable, n):
-    args = [iter(iterable)] * n
-    return izip_longest(*args, fillvalue=None)
+    return izip(*[chain(iterable, repeat(None, n - 1))] * n)
