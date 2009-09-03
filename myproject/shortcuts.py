@@ -40,5 +40,5 @@ def get_rider(request):
                 rider.avatar = generate_filename(rider, 'avatar.jpg')
                 open(settings.MEDIA_URL + rider.avatar, 'w').write(avatar_contents)
                 rider.save()
-            else:
+            finally:
                 return rider
