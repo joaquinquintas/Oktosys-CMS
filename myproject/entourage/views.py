@@ -15,6 +15,11 @@ def home(request):
     return profile(request, rider.id)
 
 def signup(request):
+    rider = auth(request)
+    
+    if rider:
+        return HttpResponseRedirect('/entourage/')
+    
     if request.method == 'POST':
         form = RegistrationForm(request.POST, request.FILES)
         if form.is_valid():
@@ -51,6 +56,11 @@ def profile(request, rider_id):
     return render(request, 'entourage/profile.html', {'rider': rider})
 
 def login(request):
+    rider = auth(request)
+    
+    if rider:
+        return HttpResponseRedirect('/entourage/')
+    
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
