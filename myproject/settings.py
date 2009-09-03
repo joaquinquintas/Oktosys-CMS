@@ -63,13 +63,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'myproject.urls'
 
-template_dir = here + '/templates'
-
 TEMPLATE_DIRS = (
-    template_dir,
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    here + '/templates',
 )
 
 INSTALLED_APPS = (
@@ -100,3 +95,6 @@ FILEBROWSER_PATH_TINYMCE = MEDIA_ROOT + 'js/tiny_mce/'
 FILEBROWSER_URL_TINYMCE = MEDIA_URL + 'js/tiny_mce/'
 
 YOUTUBE_KEY = 'AI39si4W-F4EcvN7xZFuexl6dQBTnUvVb1rLuNkKkYtlsPMlvT9zH9HTCgdqx3WpGX-sXU02bcZ6ZqWfXw_G39ITnrG2kKMO_w'
+
+FACEBOOK_API_KEY = 'b1cb2c1a8482b66317dbb77f129229fe'
+FACEBOOK_SECRET_KEY = 'a8e5fdd8c395fb04a43025dbb5c1de0f'
