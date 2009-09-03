@@ -19,7 +19,6 @@ def get_rider(request):
             pass
     
     # try facebook connect
-    open('/home/spectrum/test', 'a').write(request.session.items())
     
     try:
         fb.auth.getSession()
