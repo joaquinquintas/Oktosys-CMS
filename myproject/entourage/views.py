@@ -3,19 +3,19 @@ from models import Rider, Race, Team
 from models import RegistrationForm, ENewsletterForm
 from models import generate_filename
 
-from myproject.shortcuts import render, auth
+from myproject.shortcuts import render, get_rider
 from django.http import HttpResponseRedirect
 from django.conf import settings
 import hashlib
 
 def home(request):
-    rider = auth(request)
+    rider = get_rider(request)
     if not rider:
         return HttpResponseRedirect('/entourage/login')
     return profile(request, rider.id)
 
 def signup(request):
-    rider = auth(request)
+    rider = get_rider(request)
     
     if rider:
         return HttpResponseRedirect('/entourage/')
@@ -56,7 +56,7 @@ def profile(request, rider_id):
     return render(request, 'entourage/profile.html', {'rider': rider})
 
 def login(request):
-    rider = auth(request)
+    rider = get_rider(request)
     
     if rider:
         return HttpResponseRedirect('/entourage/')
