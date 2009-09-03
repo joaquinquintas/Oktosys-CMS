@@ -77,7 +77,6 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'filebrowser',
     'tinymce',
-    'myproject.pyfacebook',
     'myproject.pages',
     'myproject.highlights',
     'myproject.news',
