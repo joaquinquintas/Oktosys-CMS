@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:fb="http://www.facebook.com/2008/fbml"
+  xml:lang="en" lang="en">
 <head>
 	<title>OCBC Cycleworks - Development</title>
 	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/screen.css" type="text/css" media="screen, projection" />
@@ -123,6 +126,14 @@
 	</div>
 	<div class="span-24 last" id="footer">
 	</div>
+	
+	<fb:login-button></fb:login-button>
+
+  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+  <script type="text/javascript">
+      FB.init("b1cb2c1a8482b66317dbb77f129229fe", "/media/fbconnect/xd_receiver.htm",
+        {"reloadIfSessionStateChanged": true});
+  </script>  
 </body>
 </html>
 
