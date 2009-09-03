@@ -34,6 +34,9 @@ class Rider(models.Model):
 	settings_fb_post = models.BooleanField(default=True)
 	settings_profile_private = models.BooleanField(default=False)
 	
+	# if the user logs in through Facebook, this is his uid
+	facebook = models.CharField(max_length=255, default=None)
+	
 	def save(self):
 	    if not self.id:
 	        self.password = hashlib.sha1(self.password).hexdigest()
