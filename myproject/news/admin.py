@@ -3,7 +3,7 @@ from django.contrib import admin
 
 class EntryAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['headline', 'excerpt', 'article', 'is_published']}),
+        (None, {'fields': ['headline', 'article', 'is_published']}),
         ('Advanced', {'fields': ['slug'], 'classes': ['collapse']}),
     ]
 

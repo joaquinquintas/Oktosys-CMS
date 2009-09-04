@@ -6,7 +6,7 @@
     {% for entry in news_entries %}
       <div class="entry">
         <h1>{{ entry.headline }}</h1>
-        <p>{{ entry.excerpt }}</p>
+        {{ entry.excerpt|safe }}
         <div class="date">posted on <span class="red">{{ entry.created_on|date:"j M y" }}</span></div>
         <div class="link"><a href="/news/{{ entry.slug }}">Read full article</a> &raquo;</div>
       </div><br /><br /><!-- need to add clearing -->
