@@ -28,7 +28,7 @@
     <h2>{{ rider.name }}</h2>
     
     {% if rider.avatar %}
-      <div class="avatar"><img src="{{ rider.avatar.url }}" alt="{{ rider.name }}" /></div>
+      <div class="avatar"><img src="{% thumbnail rider.avatar 100x100 %}" alt="{{ rider.name }}" /></div>
     {% endif %}
 
     {% if rider.phone %}
