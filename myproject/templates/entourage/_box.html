@@ -25,6 +25,8 @@
   <p><a href="/entourage/signup">Not registered?  Sign up here.</a></p>
 {% else %}
   {% with current_user as rider %}
+    <h2>{{ rider.name }}</h2>
+    
     {% if rider.avatar %}
       <div class="avatar"><img src="{{ rider.avatar.url }}" alt="{{ rider.name }}" /></div>
     {% endif %}
