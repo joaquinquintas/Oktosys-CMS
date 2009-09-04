@@ -35,7 +35,7 @@ class Rider(models.Model):
 	settings_profile_private = models.BooleanField(default=False)
 	
 	# if the user logs in through Facebook, this is his uid
-	facebook = models.CharField(max_length=255, default=None)
+	facebook = models.CharField(max_length=255, blank=True)
 	
 	def save(self):
 	    if not self.id:
