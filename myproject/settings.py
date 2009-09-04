@@ -89,7 +89,9 @@ INSTALLED_APPS = (
 )
 
 TINYMCE_COMPRESSOR = True
-TINYMCE_DEFAULT_CONFIG = {'theme': 'advanced'}
+TINYMCE_DEFAULT_CONFIG = {'theme': 'advanced',
+    'plugins': "table,paste,searchreplace",
+    'theme_advanced_buttons3_add': 'tablecontrols'}
 
 FILEBROWSER_URL_FILEBROWSER_MEDIA = MEDIA_URL + 'filebrowser/'
 FILEBROWSER_PATH_TINYMCE = MEDIA_ROOT + 'js/tiny_mce/'
