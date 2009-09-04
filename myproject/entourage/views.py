@@ -80,3 +80,12 @@ def login(request):
             return HttpResponseRedirect('/entourage/login')
     else:
         return render(request, 'entourage/login.html')
+
+def logout(request):
+    rider = get_rider(request)
+    
+    if rider:
+        request.session['rider_id'] = False
+        del request.session['rider_id']
+    
+    return HttpResponseRedirect('/')
