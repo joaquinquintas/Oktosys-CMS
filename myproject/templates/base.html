@@ -126,13 +126,13 @@
 	</div>
 	<div class="span-24 last" id="footer">
 	</div>
-	
-	<fb:login-button></fb:login-button>
 
   <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
   <script type="text/javascript">
+    FB_RequireFeatures(["Connect"], function() {
       FB.init("b1cb2c1a8482b66317dbb77f129229fe", "/media/fbconnect/xd_receiver.htm",
         {"reloadIfSessionStateChanged": true});
+    });
   </script>  
 </body>
 </html>
