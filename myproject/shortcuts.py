@@ -25,25 +25,18 @@ def get_rider(request):
         except Rider.DoesNotExist:
             pass
 
-    open('/home/spectrum/test', 'a').write('Standard login: failed.\n')
-
     # try facebook connect
-    
-    open('/home/spectrum/test', 'a').write(str(request.COOKIES) + '\n')
     
     try:
         session_key = request.COOKIES.get('%s_session_key' % settings.FACEBOOK_API_KEY)
         uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
     except:
-        open('/home/spectrum/test', 'a').write('FB login: could not load session.\n')
         pass
     else:
         if uid:
             try:
                 rider = Rider.objects.get(facebook=uid)
             except Rider.DoesNotExist:
-                open('/home/spectrum/test', 'a').write('FB login: first time logging in with FB.\n')
-                
                 fb = facebook.Facebook(settings.FACEBOOK_API_KEY,
                                        settings.FACEBOOK_SECRET_KEY)
                 info = fb.users.getInfo([uid],
@@ -57,10 +50,6 @@ def get_rider(request):
                 rider.avatar = generate_filename(rider, 'avatar.jpg')
                 open(settings.MEDIA_URL + rider.avatar, 'w').write(avatar_contents)
                 rider.save()
-                
-                open('/home/spectrum/test', 'a').write('FB login: saving FB rider (%s).\n' % rider.avatar)
             finally:
                 if rider:
                     return rider
-        else:
-            open('/home/spectrum/test', 'a').write('FB login: could not load uid.\n')
