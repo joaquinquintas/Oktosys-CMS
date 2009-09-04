@@ -47,8 +47,9 @@ def get_rider(request):
                 rider = Rider(facebook=uid,
                     name_first=info.get('first_name'),
                     name_last=info.get('last_name'))
-                rider.avatar = generate_filename(rider, 'avatar.jpg')
-                open(settings.MEDIA_URL + rider.avatar, 'w').write(avatar_contents)
+                avatar_fname = generate_filename(rider, 'avatar.jpg')
+                open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
+                rider.avatar = avatar_fname
                 rider.save()
             finally:
                 if rider:
