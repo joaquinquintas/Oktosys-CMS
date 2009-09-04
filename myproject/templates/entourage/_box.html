@@ -1,0 +1,42 @@
+{% if not current_user %}
+  <p>
+    <a href="#" onclick="FB.Connect.requireSession(); return false;">
+      <img src="http://static.ak.fbcdn.net/images/fbconnect/login-buttons/connect_light_medium_long.gif"
+    	     alt="Connect through Facebook" />
+    </a>
+  </p>
+
+  <p><a href="#" onclick="$('#login-form').toggle('fast');">Use standard login.</a></p>
+
+  <form id="login-form" action="" method="post" style="display:none">
+    <p>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" />
+    </p>
+    <p>
+      <label for="Password">Password:</label>
+      <input type="password" name="password" id="password" />
+    </p>
+    <p>
+      <input type="submit" value="Log in" />
+    </p>
+  </form>
+
+  <p><a href="/entourage/signup">Not registered?  Sign up here.</a></p>
+{% else %}
+  {% with current_user as rider %}
+    {% if rider.avatar %}
+      <div class="avatar"><img src="{{ rider.avatar.url }}" alt="{{ rider.name }}" /></div>
+    {% endif %}
+
+    {% if rider.phone %}
+      <p>Telephone: {{ rider.phone }}</p>
+    {% endif %}
+    {% if rider.phone_mobile %}
+      <p>Mobile: {{ rider.phone_mobile }}</p>
+    {% endif %}
+    {% if rider.email %}
+      <p>Email: {{ rider.email }}</p>
+    {% endif %}
+  {% endwith %}
+{% endif %}
