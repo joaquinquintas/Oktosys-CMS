@@ -6,7 +6,7 @@ This project is mainly written in Python using the Django framework.
 Environment Setup
 -----------------
 
-Prerequisites: Python, Giti, Subversion and virtualenv.
+Prerequisites: Python, Git, Subversion and virtualenv.
 
 #. Setup virtual environment and activate it.
 
