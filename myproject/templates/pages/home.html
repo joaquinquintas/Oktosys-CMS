@@ -2,16 +2,24 @@
 
 {% block content %}
   <p>
-    <object id="highlights-flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="619" height="282">
-      <param name="movie" value="{{ MEDIA_URL }}swf/homeflash.swf" />
-      <!--[if !IE]>-->
-      <object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf" width="619" height="282">
-      <!--<![endif]-->
-        <p>Alternative content</p>
-      <!--[if !IE]>-->
-      </object>
-      <!--<![endif]-->
-    </object>
+    <!--[if IE]>
+      <object
+    		type="application/x-shockwave-flash"
+    		data="{{ MEDIA_URL }}swf/homeflash.swf"
+    		codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+    		height="619"
+    		width="282">
+    <![endif]-->
+    <!--[if !IE]>-->
+    	<object
+    		type="application/x-shockwave-flash"
+    		data="{{ MEDIA_URL }}swf/homeflash.swf"
+    		height="619"
+    		width="282">
+    <!--<![endif]-->
+    		<param name="movie" calue="{{ MEDIA_URL }}swf/homeflash.swf" />
+    		<param name="wmode" value="opaque" />
+    	</object>
   </p>
   <div class="span-15" id="article"> <!--article container to house all article entries-->
     {% for entry in news_entries %}
