@@ -203,3 +203,37 @@ h1 {
 
 #everyone-saying {
 }
+#footer {
+      position: fixed;
+      bottom: 0px;
+      left:0px;
+      background-color: #FFF;
+	  border-top: #F52400 solid 16px;
+	  border-bottom: #F52400 solid 6px;
+      height: 53px;
+	  width:100%;
+      z-index: 200;
+}
+
+#footer_sponsors {
+	background: url(../media/footer_bg.png) no-repeat;
+	width: 938px;
+	height: 75px;
+	margin-top: -16px;
+	color: #FFF;
+	position: relative;
+	}
+
+#footer_sponsors p {
+	margin: 0;
+	}
+	
+#footer_sponsors div {
+	float: left;
+	}
+
+#title_sponsor { margin-left: 5px; }
+#event_organiser { margin-left: 30px; }
+#sports_promotion { margin-left: 285px; }
+#in_support_of { margin-left: 25px; }
+#partner_in_sports { margin-left: 25px; }
