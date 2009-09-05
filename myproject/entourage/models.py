@@ -61,6 +61,7 @@ class Rider(models.Model):
         else:
             return []
     
+    friends = property(get_friends)
 
 RACE_TYPES = (
     ('I50', '50KM, INDIVIDUAL'),
