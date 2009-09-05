@@ -203,29 +203,3 @@ h1 {
 
 #everyone-saying {
 }
-
-#footer {
-      position: fixed;
-      bottom: 0px;
-      left:0px;
-      background-color: #F52400;
-      height: 50px;
-	  width:100%;
-      z-index: 200;
-	  padding: 0 170px;
-}
-
-#title_sponsor {
-	}
-	
-#event_organiser {
-	}
-	
-#sports_promotion {
-	}
-	
-#in_support_of {
-	}
-	
-#partner_in_sports {
-	}
