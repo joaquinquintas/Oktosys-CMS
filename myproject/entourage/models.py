@@ -58,6 +58,7 @@ class Rider(models.Model):
                 if friend:
                    friends.append(friend) 
             
+            open('/home/spectrum/test', 'w').write(str(friend))
             return friends
         else:
             return []
