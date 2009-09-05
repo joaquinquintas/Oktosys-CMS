@@ -69,7 +69,14 @@ def get_friends(request, rider):
         fb.session_key = request.COOKIES.get('%s_session_key' % settings.FACEBOOK_API_KEY)
         fb.uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
         fids = fb.friends.get()
-        friends = fb.users.getInfo(fids, ['name', 'pic_square'])
+        friends = []
+        count = 0
+        for f in fb.users.getInfo(fids, ['name', 'pic_square']):
+            if f.get('name') and f.get('pic_square'):
+                if count >= 15:
+                    break
+                friends.append(f)
+                count += 1
         return friends
     else:
         return []
