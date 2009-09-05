@@ -1,4 +1,3 @@
 {% load oembed_tags %}
-{% oembed %}
-        {% for link in links %}{{ link.href }}{% endfor %}
-{% endoembed %}
+
+        {% for link in links %}{% oembed %}{{ link.href }}{% endoembed %} by {{ link.author }} via {{ link.provider }} at {{ link.published }}{% endfor %}
