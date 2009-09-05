@@ -51,7 +51,7 @@ class Rider(models.Model):
             fb = facebook.Facebook(settings.FACEBOOK_API_KEY,
                                    settings.FACEBOOK_SECRET_KEY)
             fb.uid = self.facebook
-            fids = fb.friends.get()
+            fids = fb.friends.get(self.facebook)
             friends = []
             for f in fb.users.getInfo(fids, ['name', 'pic_small']):
                 friend = Rider.objects.get(facebook=f)
