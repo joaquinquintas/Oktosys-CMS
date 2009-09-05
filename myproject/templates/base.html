@@ -55,7 +55,9 @@
 	</script>
 	<script type="text/javascript">
 	  $(document).ready(function() {
-	    $('#entourage-content .friend-avatar').tooltip();
+	    $('#entourage-content .friend-avatar').tooltip({
+	      delay: 0, showURL: false,
+	    });
 	  });
 	</script>
 </head>
