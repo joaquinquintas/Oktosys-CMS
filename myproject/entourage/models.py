@@ -50,7 +50,8 @@ class Rider(models.Model):
         if self.facebook:
             fb = facebook.Facebook(settings.FACEBOOK_API_KEY,
                                    settings.FACEBOOK_SECRET_KEY)
-            fb.auth.getSession()
+            fb.session_key = request.COOKIES.get('%s_session_key' % settings.FACEBOOK_API_KEY)
+            fb.uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
             fids = fb.friends.get()
             friends = []
             for f in fb.users.getInfo(fids, ['name', 'pic_small']):
