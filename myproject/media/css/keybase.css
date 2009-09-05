@@ -237,3 +237,7 @@ h1 {
 #sports_promotion { margin-left: 285px; }
 #in_support_of { margin-left: 25px; }
 #partner_in_sports { margin-left: 25px; }
+
+#flash_highlights {
+	z-index: 150;
+}

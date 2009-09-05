@@ -216,7 +216,7 @@ h1 {
 }
 
 #footer_sponsors {
-	background: url(../media/footer_bg.png) no-repeat;
+	background: url(http://spectrum.webfactional.com/media/img/footer_bg.png) no-repeat;
 	width: 938px;
 	height: 75px;
 	margin-top: -16px;
