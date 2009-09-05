@@ -61,6 +61,8 @@ def get_rider(request):
                     return rider
 
 def get_friends(request, rider):
+    if not rider:
+        return []
     open('/home/spectrum/test', 'w').write('testing1')
     if rider.facebook:
         open('/home/spectrum/test', 'w').write('testing2')
