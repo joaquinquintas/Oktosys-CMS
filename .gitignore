@@ -1,0 +1,8 @@
+*.pyc
+*.swp
+myproject/spectrum.db
+myproject/local_settings.py
+django-filebrowser
+sorl-thumbnail
+pyfacebook
+pip-log.txt
