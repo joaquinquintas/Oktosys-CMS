@@ -1,6 +1,6 @@
 from myproject.pages.models import Page
 from myproject.news.models import Entry
-from myproject.subhighlights.models import Subhighlights as Shs
+from myproject.subhighlights.models import Subhighlight as Shs
 from myproject.shortcuts import render
 from django.shortcuts import get_object_or_404
 
