@@ -72,7 +72,7 @@
         {% for row in current_friends|chunk:5 %}
           <tr>
             {% for friend in row %}
-              <td><a href="#"><img src="{{ friend.pic_square }}" height="25" width="25" alt="{{ friend.name }}" /></a></td>
+              <td><a href="#" class="friend-avatar" title="{{ friend.name }}"><img src="{{ friend.pic_square }}" height="25" width="25" alt="{{ friend.name }}" /></a></td>
             {% endfor %}
           </tr>
         {% endfor %}

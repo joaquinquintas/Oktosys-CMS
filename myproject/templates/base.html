@@ -18,6 +18,10 @@
 	<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
 	<script type="text/javascript" src="{{ MEDIA_URL }}js/canvasSwap/jquery.canvasSwap.js"></script>
 	<script type="text/javascript" src="{{ MEDIA_URL }}js/canvasSwap/jquery.cacheimage.js"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/tooltip/jquery.tooltip.js"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/tooltip/jquery.bgiframe.js"></script>
+	<link rel="stylesheet" href="{{ MEDIA_URL }}js/tooltip/jquery.tooltip.css" type="text/css" media="screen, projection" />
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/tooltip/jquery.dimensions.js"></script>
 	<script type="text/javascript">
 	  $(document).ready(function(){
 	    $.fn.canvasSwap.defaults.suffix = '_hover';
@@ -48,6 +52,11 @@
 	      '{{ MEDIA_URL }}img/nav_faqs_hover.png'
 	    ])
 	});
+	</script>
+	<script type="text/javascript">
+	  $('#entourage-content .friend-avatar').tooltip({
+      // 
+	  });
 	</script>
 </head>
 <body>
