@@ -17,6 +17,7 @@ h1 {
 
 #wrapper_A {
 	margin-top:-70px;
+	margin-bottom: 100px;
 	}
 	
 #header {
@@ -160,8 +161,8 @@ h1 {
 /*-----------*/
 
 #article {
-	padding:0 15px 20px 15px;
-	margin-left: 5px;
+	padding:0 10px 20px 5px;
+	margin-left: 6px;
 }
 
 .articles-entry {
@@ -203,6 +204,8 @@ h1 {
 
 #everyone-saying {
 }
+/*-----------footer-------------------*/
+
 #footer {
       position: fixed;
       bottom: 0px;
@@ -224,20 +227,12 @@ h1 {
 	position: relative;
 	}
 
-#footer_sponsors p {
-	margin: 0;
-	}
-	
-#footer_sponsors div {
-	float: left;
-	}
-
-#title_sponsor { margin-left: 5px; }
+#footer_sponsors p { margin: 0; }
+#footer_sponsors div { float: left;}
+#title_sponsor { margin-left: 2; }
 #event_organiser { margin-left: 30px; }
 #sports_promotion { margin-left: 285px; }
 #in_support_of { margin-left: 25px; }
 #partner_in_sports { margin-left: 25px; }
 
-#flash_highlights {
-	z-index: 150;
-}
+/*-----------footer-------------------*/
