@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-#entourage {
+#entourage, #socialfeed {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 11px;
 }
@@ -8,7 +8,9 @@
 #entourage-header {
   background: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-header.png) no-repeat;
   width: 197px;
-  height: 47px;
+  height: 15px;
+  padding-left: 18px;
+  padding-top: 32px;
 }
 
 #entourage-content {
@@ -17,15 +19,38 @@
   height: 211px;
 }
 
+#registered-friends {
+	color: #454545;
+	}
+	
+#registered-friends span{
+	font-size: 12px;
+	font-weight:bold;
+	color: #000000;
+	}	
+
 #entourage-share {
   background: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-share.png) no-repeat;
   padding-left: 20px;
   padding-top: 6px;
-  color: #F00;
-  font-size: 0.8em;
   width: 197px;
   height: 26px;
 }
+
+.social_logos {
+	width: 14px;
+	height: 14px;
+	float: left;
+	margin-left: 5px;
+	}
+	
+#whats_happening, #share_this_site {
+	width: auto;
+	font-size: 11px;
+	color: #F00000;
+	float: left;
+	}
+
 
 #socialfeed-header {
   background: url(http://spectrum.webfactional.com/media/img/social/b4feed/bg-header.png);
@@ -52,3 +77,5 @@
   width: 197px;
   height: 26px;
 }
+
+
