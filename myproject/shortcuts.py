@@ -70,17 +70,13 @@ def get_friends(request, rider):
         fb.uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
         fids = fb.friends.get()
         friends = []
-        open('/home/spectrum/test', 'w').write('testing6')
         for f in fb.users.getInfo(fids, ['name', 'pic_small']):
-            open('/home/spectrum/test', 'w').write('testing7')
-            friend = Rider.objects.get(facebook=str(f))
-            open('/home/spectrum/test', 'w').write('testing8')
-            if friend:
-                open('/home/spectrum/test', 'w').write('testing9')
+            try:
+                friend = Rider.objects.get(facebook=str(f))
+            except Rider.DoesNotExist:
+                pass
+            else:
                 friends.append(friend)
-            open('/home/spectrum/test', 'w').write('testing10')
-
-        open('/home/spectrum/test', 'w').write(str(friends))
         return friends
     else:
         return []
