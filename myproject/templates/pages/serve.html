@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="page">
-    {{ page.html|safe }}
+  <div class="span-15" id="article">
+    <div class="articles-entry">
+      {{ page.html|safe }}
+    </div>
   </div>
 {% endblock %}

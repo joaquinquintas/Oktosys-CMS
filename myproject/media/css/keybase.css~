@@ -1,64 +1,63 @@
+@charset "utf-8";
+
 body {
-      background-image:url(http://spectrum.webfactional.com/media/img/key_bg.png);
-      background-repeat:repeat-x;
+      background:url(http://spectrum.webfactional.com/media/img/key_bg.png) repeat-x;
+	  font-family:Helvetica, Arial, sans-serif;
+	  font-size: 11px;
+	  font-style:normal;
+	  color: #828C95;
+	  line-height: 16px;
 }
+
 h1 {
       font-size: 1.2em;
       color: #444;
 }
-p {
-      font-size: 12px;
-      color: #666;
-}
 
-#container-B {
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-}
-#container-C {
-      position: absolute;
-      top:97px;
-      left:0px;
-}
+
+#wrapper_A {
+	margin-top:-70px;
+	}
+	
+#header {
+	height:166px;
+	background: #F52400;
+	}	
 
 #ocbcTop {
-      background-image:url(http://spectrum.webfactional.com/media/img/ocbc_cycle_top.gif);
-      background-repeat: no-repeat;
-      height: 166px;
+      background:url(http://spectrum.webfactional.com/media/img/ocbc_cycle_top.gif) no-repeat;
+      height: 166px;	
 }
 #roundTop {
-      background-image:url(http://spectrum.webfactional.com/media/img/bg-round-top.png);
-      background-repeat: no-repeat;
+      background:url(http://spectrum.webfactional.com/media/bg-round-top.png) no-repeat;
       height: 19px;
-      z-index: 150;
+	  z-index:150;
 }
 #roundBottom {
-      background-image:url(http://spectrum.webfactional.com/media/img/bg-round-bottom.png);
-      background-repeat: no-repeat;
+      background:url(http://spectrum.webfactional.com/media/bg-round-bottom.png) no-repeat;
       height: 19px;
       z-index: 160;
 }
 #leftCol {
-      background-image:url(http://spectrum.webfactional.com/media/img/bg-central.png);
-      background-repeat: repeat-y;
+	  margin-top: -10px;
 }
+
+.bg {
+	background:url(http://spectrum.webfactional.com/media/bg-central.png) repeat-y;
+}
+	
 #rightCol {
-     position: absolute;
-     top: -4px;
-     right: 0px;
-     z-index: 170;
-     padding-bottom: 100px;
+     margin: -72px 0 0 -28px;
 }
 #nav-bar {
       float: left;
       width: 150px;
 }
 #link-bar {
-      position: absolute;
-      right: 20px;
-      top: 40px;
-      color: #fff;
+	padding-top: 40px;
+	padding-left: 20px;
+	color: #fff;
+	text-align: right;
 }
 #link-bar a:link {
       color: #fff;
@@ -78,9 +77,10 @@ p {
 }
 
 #central {
-      float: left;
-      width: 580px;
+	margin-left: -12px;
+	margin-top: -10px;
 }
+
 #footer {
       position: fixed;
       bottom: 0px;
@@ -110,21 +110,24 @@ p {
       border-spacing: 0px;
 }
 #searchBox {
-      background-image: url(http://spectrum.webfactional.com/media/img/bg-searchbox.png);
-      background-repeat: no-repeat;
-      height: 113px;
-      width: 330px;
-      position: absolute;
-      top:65px;
-      right:0px;
-      padding-left:65px;
-      padding-top:5px;
+	background:url(http://spectrum.webfactional.com/media/img/bg-searchbox.png) no-repeat;
+	height: 113px;
+	width: 335px;
+	margin:-15px 0 0 65px;
+	z-index:120;
+	padding-left: 20px;
 }
+
+#search-form input{
+	margin: 10px 0 0 40px;
+	}
+
 #searchBtn {
-      position: absolute;
-      top:3px;
-      right:60px;
+	width:46px;
+	height: 36px;
+	margin: -35px 2px 2px 227px;
 }
+
 #news .date {
       font-size:0.8em;
       color:#666;
@@ -154,4 +157,55 @@ p {
       text-decoration: none;
 }
 
+/*-----------*/
 
+#article {
+	padding:0 15px 20px 15px;
+	margin-left: 5px;
+}
+
+.articles-entry {
+	padding-bottom: 20px;
+	}
+
+.article-heading {
+	font-size: 14px;
+	color: #455460;
+	}
+	
+.article-date {
+	width: 100px;
+	float: left;
+	font-size: 10px;
+	color: #F00000;
+	}
+
+.article-date .posted {
+	font-size: 9px;
+	color: #828C95;
+	}	
+	
+.article-link {
+	width: 100px;
+	float: right;
+	text-align: right;
+	font-size: 11px;
+	color: #F00000
+	}
+	
+.article-link .arrow {
+	color: #6E6E6E;
+	}
+	
+.article-link a { color:#F00000; text-decoration:none;}
+.article-link a:hover { color:#F00000; text-decoration:underline;}
+
+
+#everyone-saying {
+}
+
+
+
+
+
+	

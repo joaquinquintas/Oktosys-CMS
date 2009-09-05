@@ -29,12 +29,12 @@ h1 {
       height: 166px;	
 }
 #roundTop {
-      background:url(../media/bg-round-top.png) no-repeat;
+      background:url(http://spectrum.webfactional.com/media/img/bg-round-top.png) no-repeat;
       height: 19px;
 	  z-index:150;
 }
 #roundBottom {
-      background:url(../media/bg-round-bottom.png) no-repeat;
+      background:url(http://spectrum.webfactional.com/media/img/bg-round-bottom.png) no-repeat;
       height: 19px;
       z-index: 160;
 }
@@ -43,7 +43,7 @@ h1 {
 }
 
 .bg {
-	background:url(../media/bg-central.png) repeat-y;
+	background:url(http://spectrum.webfactional.com/media/img/bg-central.png) repeat-y;
 }
 	
 #rightCol {
