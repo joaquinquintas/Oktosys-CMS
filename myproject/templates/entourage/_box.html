@@ -48,7 +48,7 @@
       <p>Email: {{ rider.email }}</p>
     {% endif %}
     
-    {% if notequal rider.facebook None %}
+    {% ifnotequal rider.facebook None %}
       <h3>My Entourage</h3>
       <p>Friends who have registered.</p>
       
@@ -60,6 +60,6 @@
             {% endfor %}
           </tr>
         {% endfor %}
-    {% endif %}
+    {% endifnotequal %}
   {% endwith %}
 {% endif %}
