@@ -40,11 +40,8 @@ class Rider(models.Model):
     # if the user logs in through Facebook, this is his uid
     facebook = models.CharField(max_length=255, blank=True)
     
-    def save(self):
-        if not self.id:
-            self.password = hashlib.sha1(self.password).hexdigest()
-        
-        super(Rider, self).save()
+    def get_race():
+        pass
     
     def get_friends(self):
         open('/home/spectrum/test', 'w').write('testing1')
@@ -76,6 +73,13 @@ class Rider(models.Model):
             return []
     
     friends = property(get_friends)
+    
+    def save(self):
+        if not self.id:
+            self.password = hashlib.sha1(self.password).hexdigest()
+        
+        super(Rider, self).save()
+    
 
 RACE_TYPES = (
     ('I50', '50KM, INDIVIDUAL'),
