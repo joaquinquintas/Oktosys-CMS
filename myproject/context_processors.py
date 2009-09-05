@@ -1,5 +1,6 @@
 from myproject.sponsors_panel.models import Sponsor
 from myproject.ads.models import Ad
+from myproject.entourage.models import Rider
 from myproject.shortcuts import get_rider, get_friends
 
 def load_sponsors(request):
