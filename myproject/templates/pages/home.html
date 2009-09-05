@@ -2,24 +2,10 @@
 
 {% block content %}
   <p>
-    <!--[if IE]>
-      <object
-    		type="application/x-shockwave-flash"
-    		data="{{ MEDIA_URL }}swf/homeflash.swf"
-    		codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
-    		height="619"
-    		width="282">
-    <![endif]-->
-    <!--[if !IE]>-->
-    	<object
-    		type="application/x-shockwave-flash"
-    		data="{{ MEDIA_URL }}swf/homeflash.swf"
-    		height="619"
-    		width="282">
-    <!--<![endif]-->
-    		<param name="movie" calue="{{ MEDIA_URL }}swf/homeflash.swf" />
-    		<param name="wmode" value="opaque" />
-    	</object>
+    <object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf" height="619" width="282">
+  		<param name="movie" calue="{{ MEDIA_URL }}swf/homeflash.swf" />
+  		<param name="wmode" value="opaque" />
+  	</object>
   </p>
   <div class="span-15" id="article"> <!--article container to house all article entries-->
     {% for entry in news_entries %}
