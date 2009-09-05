@@ -73,7 +73,7 @@ def get_friends(request, rider):
         open('/home/spectrum/test', 'w').write('testing6')
         for f in fb.users.getInfo(fids, ['name', 'pic_small']):
             open('/home/spectrum/test', 'w').write('testing7')
-            friend = Rider.objects.get(facebook=f)
+            friend = Rider.objects.get(facebook=str(f))
             open('/home/spectrum/test', 'w').write('testing8')
             if friend:
                 open('/home/spectrum/test', 'w').write('testing9')
