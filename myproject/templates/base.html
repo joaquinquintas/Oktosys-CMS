@@ -113,7 +113,7 @@
 				  <!-- display changes according to login status -->
 				  <div id="whats_happening">See what's happening &raquo;</div>
 				</div>
-				<div id="entourage-content">
+				<div id="entourage-content" class="{% if current_user %}logged_in{% else %}visitor{% endif %}">
 				  {% include "entourage/_box.html" %}
 				</div>
 				<div id="entourage-share">
