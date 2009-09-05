@@ -5,21 +5,48 @@
 }
 
 #entourage-header {
-  background-image: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-header.png);
+  background-image: url(../img/social/b4login/bg-header.png);
   background-repeat: no-repeat;
   width: 197px;
   height: 47px;
 }
 
 #entourage-content {
-  background-image: url(http://spectrum.webfactional.com/media/img/social/b4login/bg.png);
+  background-image: url(../img/social/b4login/bg.png);
   background-repeat: no-repeat;
+  padding: 0px 3px 0px 14px;
   width: 197px;
   height: 211px;
 }
 
 #entourage-share {
-  background-image: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-share.png);
+  background-image: url(../img/social/b4login/bg-share.png);
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  padding-top: 3px;
+  color: #F00;
+  font-size: 0.8em;
+  width: 197px;
+  height: 26px;
+}
+
+#socialfeed-header {
+  background-image: url(../img/social/b4feed/bg-header.png);
+  background-repeat: no-repeat;
+  width: 197px;
+  height: 47px;
+}
+
+#socialfeed-content {
+  background-image: url(../img/social/b4feed/bg.png);
+  background-repeat: no-repeat;
+  padding: 0px 3px 0px 12px;
+  width: 197px;
+  height: 211px;
+}
+
+#socialfeed-bottom {
+  background-image: url(../img/social/b4feed/bg-bottom.png);
   background-repeat: no-repeat;
   padding-left: 20px;
   padding-top: 3px;
