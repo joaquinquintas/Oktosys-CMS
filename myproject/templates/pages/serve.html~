@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-  <div class="span-15" id="article">
-    <div class="article-entry">
-      {{ page.html|safe }}
-    </div>
-  </div>
-{% endblock %}
