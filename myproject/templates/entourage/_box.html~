@@ -1,5 +1,3 @@
-<div id="entourage_scroll" class="span-4 flexcroll"> <!--scroll-->
-<div class='fixedwidth'>
 {% load chunker %}
 {% load thumbnail %}
 
@@ -80,6 +78,3 @@
     {% endifnotequal %}
   {% endwith %}
 {% endif %}
-
-</div>
-</div> <!--scroll ends-->
