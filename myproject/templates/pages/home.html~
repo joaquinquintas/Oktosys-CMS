@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p><img src="/media/img/temp_highlights.png" width="100%" /></p>
+  <div id="news">
+    {% for entry in news_entries %}
+      <div class="entry">
+        <h1>{{ entry.headline }}</h1>
+        <p>{{ entry.excerpt }}</p>
+        <div class="date">posted on <span class="red">{{ entry.created_on|date:"j M y" }}</span></div>
+        <div class="link"><a href="/news/{{ entry.slug }}">Read full article</a> &raquo;</div>
+      </div><br /><br /><!-- need to add clearing -->
+    {% endfor %}
+  </div>
+  
+  <div id="subhighlights">
+  <table cellpadding="0" cellspacing="0" style="width: 100%;">
+      <tr>
+        {% for subhighlight in subhighlights %}
+          <td class="subhighlight" width="33%" align="center">
+            <a href="{{ subhighlight.link }}"><img src="{{ subhighlight.image.url }}" width="190" /></a>
+          </td>
+        {% endfor %}
+      </tr>
+    </table>
+  </div>
+{% endblock %}
+
+{% block social %}
+<h1>Login</h1>
+
+<p>Login through your <a href="http://facebook.com">Facebook</a> account:</p>
+
+<p><fb:login-button></fb:login-button></p>
+
+<p>Or standard login:</p>
+
+<form action="" method="post">
+  <p>
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" />
+  </p>
+  <p>
+    <label for="Password">Password:</label>
+    <input type="password" name="password" id="password" />
+  </p>
+  <p>
+    <input type="submit" value="Log in" />
+  </p>
+</form>
+{% endblock %}
