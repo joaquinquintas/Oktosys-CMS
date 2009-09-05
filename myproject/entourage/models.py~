@@ -13,37 +13,37 @@ def generate_filename(instance, old_filename):
     return 'riders/' + filename
 
 class Rider(models.Model):
-    name_first = models.CharField(max_length=150)
-    name_last = models.CharField(max_length=150)
-    
-    def name(self):
-        return "%s %s" % (self.name_first, self.name_last)
-    
-    email = models.EmailField(unique=True)
-    phone_main = models.CharField(max_length=100)
-    phone_mobile = models.CharField(max_length=100)
-    
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    
-    avatar = models.ImageField(upload_to=generate_filename)
-    
-    team = models.ForeignKey('Team', null=True)
-    
-    settings_updates_fb = models.BooleanField(default=True)
-    settings_updates_email = models.BooleanField(default=True)
-    settings_updates_sms = models.BooleanField(default=True)
-    settings_fb_post = models.BooleanField(default=True)
-    settings_profile_private = models.BooleanField(default=False)
-    
-    # if the user logs in through Facebook, this is his uid
-    facebook = models.CharField(max_length=255, blank=True)
-    
-    def save(self):
-        if not self.id:
-            self.password = hashlib.sha1(self.password).hexdigest()
-        
-        super(Rider, self).save()
+	name_first = models.CharField(max_length=150)
+	name_last = models.CharField(max_length=150)
+	
+	def name(self):
+	    return "%s %s" % (self.name_first, self.name_last)
+	
+	email = models.EmailField(unique=True)
+	phone_main = models.CharField(max_length=100)
+	phone_mobile = models.CharField(max_length=100)
+	
+	username = models.CharField(max_length=50)
+	password = models.CharField(max_length=50)
+	
+	avatar = models.ImageField(upload_to=generate_filename)
+	
+	team = models.ForeignKey('Team', null=True)
+	
+	settings_updates_fb = models.BooleanField(default=True)
+	settings_updates_email = models.BooleanField(default=True)
+	settings_updates_sms = models.BooleanField(default=True)
+	settings_fb_post = models.BooleanField(default=True)
+	settings_profile_private = models.BooleanField(default=False)
+	
+	# if the user logs in through Facebook, this is his uid
+	facebook = models.CharField(max_length=255, blank=True)
+	
+	def save(self):
+	    if not self.id:
+	        self.password = hashlib.sha1(self.password).hexdigest()
+	    
+	    super(Rider, self).save()
     
     def get_friends(self):
         if self.facebook:
@@ -63,43 +63,43 @@ class Rider(models.Model):
     
 
 RACE_TYPES = (
-    ('I50', '50KM, INDIVIDUAL'),
-    ('I40', '40KM, INDIVIDUAL'),
-    ('I20', '20KM, INDIVIDUAL'),
-    ('I5', '5KM, INDIVIDUAL'),
-    ('IC', 'CRITERIUM, INDIVIDUAL'),
-    ('ITR', 'TRICYCLE, INDIVIDUAL'),
-    ('S50', '50KM, STUDENT'),
-    ('S40', '40KM, STUDENT'),
-    ('S20', '20KM, STUDENT'),
-    ('S5', '5KM, STUDENT'),
-    ('SC', 'CRITERIUM, STUDENT'),
-    ('STR', 'TRICYCLE, STUDENT'),
-    ('TC50', '50KM, TEAM, CORPORATE'),
-    ('TC40', '40KM, TEAM, CORPORATE'),
-    ('TC20', '20KM, TEAM, CORPORATE'),
-    ('TC5', '5KM, TEAM, CORPORATE'),
-    ('TCC', 'CRITERIUM, TEAM, CORPORATE'),
-    ('TCTR', 'TRICYCLE, TEAM, CORPORATE'),
-    ('TS50', '50KM, TEAM, SCHOOL'),
-    ('TS40', '40KM, TEAM, SCHOOL'),
-    ('TS20', '20KM, TEAM, SCHOOL'),
-    ('TS5', '5KM, TEAM, SCHOOL'),
-    ('TSC', 'CRITERIUM, TEAM, SCHOOL'),
-    ('TSTR', 'TRICYCLE, TEAM, SCHOOL'),
-    ('TO50', '50KM, TEAM, OTHER'),
-    ('TO40', '40KM, TEAM, OTHER'),
-    ('TO20', '20KM, TEAM, OTHER'),
-    ('TO5', '5KM, TEAM, OTHER'),
-    ('TOC', 'CRITERIUM, TEAM, OTHER'),
-    ('TOTR', 'TRICYCLE, TEAM, OTHER'),
+	('I50', '50KM, INDIVIDUAL'),
+	('I40', '40KM, INDIVIDUAL'),
+	('I20', '20KM, INDIVIDUAL'),
+	('I5', '5KM, INDIVIDUAL'),
+	('IC', 'CRITERIUM, INDIVIDUAL'),
+	('ITR', 'TRICYCLE, INDIVIDUAL'),
+	('S50', '50KM, STUDENT'),
+	('S40', '40KM, STUDENT'),
+	('S20', '20KM, STUDENT'),
+	('S5', '5KM, STUDENT'),
+	('SC', 'CRITERIUM, STUDENT'),
+	('STR', 'TRICYCLE, STUDENT'),
+	('TC50', '50KM, TEAM, CORPORATE'),
+	('TC40', '40KM, TEAM, CORPORATE'),
+	('TC20', '20KM, TEAM, CORPORATE'),
+	('TC5', '5KM, TEAM, CORPORATE'),
+	('TCC', 'CRITERIUM, TEAM, CORPORATE'),
+	('TCTR', 'TRICYCLE, TEAM, CORPORATE'),
+	('TS50', '50KM, TEAM, SCHOOL'),
+	('TS40', '40KM, TEAM, SCHOOL'),
+	('TS20', '20KM, TEAM, SCHOOL'),
+	('TS5', '5KM, TEAM, SCHOOL'),
+	('TSC', 'CRITERIUM, TEAM, SCHOOL'),
+	('TSTR', 'TRICYCLE, TEAM, SCHOOL'),
+	('TO50', '50KM, TEAM, OTHER'),
+	('TO40', '40KM, TEAM, OTHER'),
+	('TO20', '20KM, TEAM, OTHER'),
+	('TO5', '5KM, TEAM, OTHER'),
+	('TOC', 'CRITERIUM, TEAM, OTHER'),
+	('TOTR', 'TRICYCLE, TEAM, OTHER'),
 )
 
 class Race(models.Model):
-    rider = models.ForeignKey('Rider')
-    registered = models.BooleanField()
-    race_type = models.CharField(max_length=4, choices=RACE_TYPES)
-    team_id = models.ForeignKey('Team')
+	rider = models.ForeignKey('Rider')
+	registered = models.BooleanField()
+	race_type = models.CharField(max_length=4, choices=RACE_TYPES)
+	team_id = models.ForeignKey('Team')
 
 TEAM_TYPES = (
     ('TC50', '50KM, TEAM, CORPORATE'),
@@ -123,9 +123,9 @@ TEAM_TYPES = (
 )
 
 class Team(models.Model):
-    race_type = models.CharField(max_length=4, choices=TEAM_TYPES)
-    status = models.BooleanField()
-    counter = models.IntegerField()
+	race_type = models.CharField(max_length=4, choices=TEAM_TYPES)
+	status = models.BooleanField()
+	counter = models.IntegerField()
 
 class RegistrationForm(forms.ModelForm):
     class Meta:
