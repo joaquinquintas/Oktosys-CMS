@@ -13,8 +13,8 @@
 	<link rel="stylesheet" href="{{ MEDIA_URL }}css/keybase.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="{{ MEDIA_URL }}css/entourage.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="css/entourage_scroll.css" type="text/css" media="screen, projection" />
-	<script type="text/javascript" src="{{ MEDIA_URL }}js/swfobject_modified.js"></script>
-	<script type="text/javascript" src="{{ MEDIA_URL }}js/flexcroll.js"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/swfobject/swfobject_modified.js"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/flexcroll/flexcroll.js"></script>
 	<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
 	<script type="text/javascript" src="{{ MEDIA_URL }}js/canvasSwap/jquery.canvasSwap.js"></script>
 	<script type="text/javascript" src="{{ MEDIA_URL }}js/canvasSwap/jquery.cacheimage.js"></script>
@@ -54,7 +54,7 @@
 <div class="container"><!--Main Container-->
 
 		 <div class="span-25"id="header"> <!--Top-->
-		    <div class="span-14" id="logo"><a href="/"><img src="{{ MEDIA_URL }}img/ocbc_cycle_top.gif" /></a></div>
+		    <div class="span-14" id="logo"><a href="/"><img src="{{ MEDIA_URL }}img/ocbc_cycle_top.gif" alt="Cycleworks Home" /></a></div>
 	
 		      <div class="span-8 push-1" id="link-bar"> + <a href="/e-newsletter/">eNewsletter</a> | <a href="/news-archive/">News archive</a> | <a href="/pages/volunteers/">Volunteers</a> | <a href="/pages/2009-results/">2009 results</a></div>
 

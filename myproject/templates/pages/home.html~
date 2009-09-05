@@ -28,6 +28,7 @@
   swfobject.registerObject("FlashID");
   //-->
   </script>
+<!-- end register -->
   <div class="span-15" id="article"> <!--article container to house all article entries-->
     {% for entry in news_entries %}
       <div class="articles-entry">
