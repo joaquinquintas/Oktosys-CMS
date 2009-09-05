@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p><img src="{{ MEDIA_URL }}img/temp_highlights.png" width="100%" /></p>
+  <p><img src="{{ MEDIA_URL }}img/temp_highlights.png" /></p>
   <div class="span-15" id="article"> <!--article container to house all article entries-->
     {% for entry in news_entries %}
       <div class="articles-entry">

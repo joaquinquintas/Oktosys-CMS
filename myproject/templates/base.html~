@@ -52,7 +52,7 @@
 <div class="container"><!--Main Container-->
 
 		 <div class="span-25"id="header"> <!--Top-->
-		    <div class="span-14" id="logo"><a href="#"><img src="media/ocbc_cycle_top.gif" /></a></div>
+		    <div class="span-14" id="logo"><a href="#"><img src="{{ MEDIA_URL }}img/ocbc_cycle_top.gif" /></a></div>
 	
 		      <div class="span-8 push-1" id="link-bar"> + <a href="/e-newsletter/">eNewsletter</a> | <a href="/news-archive/">News archive</a> | <a href="/pages/volunteers/">Volunteers</a> | <a href="/pages/2009-results/">2009 results</a></div>
 
