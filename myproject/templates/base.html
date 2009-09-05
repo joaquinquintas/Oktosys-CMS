@@ -6,15 +6,15 @@
   xml:lang="en" lang="en">
 <head>
 	<title>OCBC Cycleworks - Development</title>
-	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/screen.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/print.css" type="text/css" media="print" />	
-	<!--[if lt IE 8]><link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
-	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/keybase.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="http://spectrum.webfactional.com/media/css/entourage.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/print.css" type="text/css" media="print" />	
+	<!--[if lt IE 8]><link rel="stylesheet" href="{{ MEDIA_URL }}css/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/keybase.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/entourage.css" type="text/css" media="screen, projection" />
 	<script type="text/javascript" src="/media/js/flexcroll.js"></script>
 	<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
-	<script type="text/javascript" src="http://spectrum.webfactional.com/media/js/canvasSwap/jquery.canvasSwap.js"></script>
-	<script type="text/javascript" src="http://spectrum.webfactional.com/media/js/canvasSwap/jquery.cacheimage.js"></script>
+	<script type="text/javascript" src="js/canvasSwap/jquery.canvasSwap.js"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/canvasSwap/jquery.cacheimage.js"></script>
 	<script type="text/javascript">
 	  $(document).ready(function(){
 	    $.fn.canvasSwap.defaults.suffix = '_hover';
@@ -34,15 +34,15 @@
 	<script type="text/javascript">
 	  $(document).ready(function(){
 	    $.cacheImage([
-	      'http://spectrum.webfactional.com/media/img/nav_about_experience_hover.png',
-	      'http://spectrum.webfactional.com/media/img/nav_event_details_hover.png',
-	      'http://spectrum.webfactional.com/media/img/nav_pre_ride_hover.png',
-	      'http://spectrum.webfactional.com/media/img/nav_cycling_lifestyle_hover.png',
-	      'http://spectrum.webfactional.com/media/img/nav_whos_involved_hover.png',
-	      'http://spectrum.webfactional.com/media/img/nav_contests_hover.png',
-	      'http://spectrum.webfactional.com/media/img/nav_merch_promos_hover.png',
-	      'http://spectrum.webfactional.com/media/img/nav_multimedia_hover.png',
-	      'http://spectrum.webfactional.com/media/img/nav_faqs_hover.png'
+	      '{{ MEDIA_URL }}img/nav_about_experience_hover.png',
+	      '{{ MEDIA_URL }}img/nav_event_details_hover.png',
+	      '{{ MEDIA_URL }}img/nav_pre_ride_hover.png',
+	      '{{ MEDIA_URL }}img/nav_cycling_lifestyle_hover.png',
+	      '{{ MEDIA_URL }}img/nav_whos_involved_hover.png',
+	      '{{ MEDIA_URL }}img/nav_contests_hover.png',
+	      '{{ MEDIA_URL }}img/nav_merch_promos_hover.png',
+	      '{{ MEDIA_URL }}img/nav_multimedia_hover.png',
+	      '{{ MEDIA_URL }}img/nav_faqs_hover.png'
 	    ])
 	});
 	</script>
@@ -69,17 +69,17 @@
 			<div class="span-19" id="leftCol">
 			    <div id="nav-bar">
 			      <!-- Flash counter from Alex -->
-			      <p><img src="http://spectrum.webfactional.com/media/img/clock.png" alt="temp" /><br />
+			      <p><img src="{{ MEDIA_URL }}img/clock.png" alt="temp" /><br />
 			      <!-- navigation buttons -->
-				<a href="/pages/about-the-experience/"><img src="http://spectrum.webfactional.com/media/img/nav_about_experience.png" border="0" class="about_swap" alt="About the experience" /></a><br/>
-				<a href="/pages/event-details/"><img src="http://spectrum.webfactional.com/media/img/nav_event_details.png" border="0" class="event_swap" alt="Event details" /></a><br/>
-				<a href="/pages/pre-ride/"><img src="http://spectrum.webfactional.com/media/img/nav_pre_ride.png" border="0" class="preride_swap" alt="Pre-ride" /></a><br/>
-				<a href="/pages/cycling-and-lifestyle-village/"><img src="http://spectrum.webfactional.com/media/img/nav_cycling_lifestyle.png" border="0" class="cycling_swap" alt="Cycling and Lifestyle Village" /></a><br/>
-				<a href="/pages/who-is-involved/"><img src="http://spectrum.webfactional.com/media/img/nav_whos_involved.png" border="0" class="involved_swap" alt="Who's involved" /></a><br/>
-				<a href="/pages/contests/"><img src="http://spectrum.webfactional.com/media/img/nav_contests.png" border="0" class="contests_swap" alt="Contest" /></a><br/>
-				<a href="/pages/merchandise-and-promos/"><img src="http://spectrum.webfactional.com/media/img/nav_merch_promos.png" border="0" class="promos_swap" alt="Merchandise and promos" /></a><br/>
-				<a href="/multimedia/"><img src="http://spectrum.webfactional.com/media/img/nav_multimedia.png" border="0" class="multimedia_swap" alt="Multimedia" /></a><br/>
-				<a href="/pages/faqs/"><img src="http://spectrum.webfactional.com/media/img/nav_faqs.png" border="0" class="faqs_swap" alt="FAQs" /></a><br/>
+				<a href="/pages/about-the-experience/"><img src="{{ MEDIA_URL }}img/nav_about_experience.png" border="0" class="about_swap" alt="About the experience" /></a><br/>
+				<a href="/pages/event-details/"><img src="{{ MEDIA_URL }}img/nav_event_details.png" border="0" class="event_swap" alt="Event details" /></a><br/>
+				<a href="/pages/pre-ride/"><img src="{{ MEDIA_URL }}img/nav_pre_ride.png" border="0" class="preride_swap" alt="Pre-ride" /></a><br/>
+				<a href="/pages/cycling-and-lifestyle-village/"><img src="{{ MEDIA_URL }}img/nav_cycling_lifestyle.png" border="0" class="cycling_swap" alt="Cycling and Lifestyle Village" /></a><br/>
+				<a href="/pages/who-is-involved/"><img src="{{ MEDIA_URL }}img/nav_whos_involved.png" border="0" class="involved_swap" alt="Who's involved" /></a><br/>
+				<a href="/pages/contests/"><img src="{{ MEDIA_URL }}img/nav_contests.png" border="0" class="contests_swap" alt="Contest" /></a><br/>
+				<a href="/pages/merchandise-and-promos/"><img src="{{ MEDIA_URL }}img/nav_merch_promos.png" border="0" class="promos_swap" alt="Merchandise and promos" /></a><br/>
+				<a href="/multimedia/"><img src="{{ MEDIA_URL }}img/nav_multimedia.png" border="0" class="multimedia_swap" alt="Multimedia" /></a><br/>
+				<a href="/pages/faqs/"><img src="{{ MEDIA_URL }}img/nav_faqs.png" border="0" class="faqs_swap" alt="FAQs" /></a><br/>
 			      </p>
 			    </div>
 			    <div id="central">
