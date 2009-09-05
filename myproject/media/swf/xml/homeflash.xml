@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<random>1</random>
+	<time>5</time>
+	<highlight>
+		<image>images/homeflash_image01.jpg</image>
+		<thumb>images/homeflash_thumbnail01.jpg</thumb>
+		<url>http://spectrum.webfactional1.com/</url>
+	</highlight>
+	<highlight>
+		<image>images/homeflash_image02.jpg</image>
+		<thumb>images/homeflash_thumbnail02.jpg</thumb>
+		<url>http://spectrum.webfactional2.com/</url>
+	</highlight>
+	<highlight>
+		<image>images/homeflash_image03.jpg</image>
+		<thumb>images/homeflash_thumbnail03.jpg</thumb>
+		<url>http://spectrum.webfactional3.com/</url>
+	</highlight>
+	<highlight>
+		<image>images/homeflash_image04.jpg</image>
+		<thumb>images/homeflash_thumbnail04.jpg</thumb>
+		<url>http://spectrum.webfactional4.com/</url>
+	</high
