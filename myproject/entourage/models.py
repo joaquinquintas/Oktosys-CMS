@@ -47,18 +47,28 @@ class Rider(models.Model):
         super(Rider, self).save()
     
     def get_friends(self):
+        open('/home/spectrum/test', 'w').write('testing1')
         if self.facebook:
+            open('/home/spectrum/test', 'w').write('testing2')
             fb = facebook.Facebook(settings.FACEBOOK_API_KEY,
                                    settings.FACEBOOK_SECRET_KEY)
+            open('/home/spectrum/test', 'w').write('testing3')
             fb.uid = self.facebook
+            open('/home/spectrum/test', 'w').write('testing4')
             fids = fb.friends.get(self.facebook)
+            open('/home/spectrum/test', 'w').write('testing5')
             friends = []
+            open('/home/spectrum/test', 'w').write('testing6')
             for f in fb.users.getInfo(fids, ['name', 'pic_small']):
+                open('/home/spectrum/test', 'w').write('testing7')
                 friend = Rider.objects.get(facebook=f)
+                open('/home/spectrum/test', 'w').write('testing8')
                 if friend:
-                   friends.append(friend) 
+                    open('/home/spectrum/test', 'w').write('testing9')
+                    friends.append(friend)
+                open('/home/spectrum/test', 'w').write('testing10')
             
-            open('/home/spectrum/test', 'w').write(str(friend))
+            open('/home/spectrum/test', 'w').write(str(friends))
             return friends
         else:
             return []
