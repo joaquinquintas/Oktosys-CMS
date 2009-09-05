@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 
 import datetime
 
-def index(request, month=None, year=None):
+def index(request, month=0, year=0):
     try:
         month, year = int(month), int(year)
     except ValueError:
