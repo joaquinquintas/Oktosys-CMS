@@ -1,6 +1,7 @@
 django
 django-tinymce
 gdata
+django-oembed
 -e svn+http://django-filebrowser.googlecode.com/svn/trunk/#egg=django-filebrowser
 -e hg+https://sorl-thumbnail.googlecode.com/hg/#egg=sorl-thumbnail
 -e git+git://github.com/sciyoshi/pyfacebook.git#egg=pyfacebook

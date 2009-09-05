@@ -78,6 +78,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'filebrowser',
     'tinymce',
+    'oembed',
     'myproject.pages',
     'myproject.highlights',
     'myproject.news',
