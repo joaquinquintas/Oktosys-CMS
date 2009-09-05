@@ -1,9 +1,11 @@
 from django import template
 
 register = template.Library()
+from myproject.socialfeed.models import Link
 
 def socialfeed(context):
     return {
+        'links': Link.objects.all(),
         'sponsors': context['sponsors'],
         'current_user': context['current_user'],
     }

@@ -1,2 +1,4 @@
-<h1>Test</h1>
-<p>Lore ipsum dolore</p>
+{% load oembed_tags %}
+{% oembed %}
+        {% for link in links %}{{ link.href }}{% endfor %}
+{% endoembed %}

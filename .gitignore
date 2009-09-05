@@ -5,4 +5,5 @@ myproject/local_settings.py
 django-filebrowser
 sorl-thumbnail
 pyfacebook
+django-oembed
 pip-log.txt
