@@ -102,3 +102,11 @@ YOUTUBE_KEY = 'AI39si4W-F4EcvN7xZFuexl6dQBTnUvVb1rLuNkKkYtlsPMlvT9zH9HTCgdqx3WpG
 
 FACEBOOK_API_KEY = 'b1cb2c1a8482b66317dbb77f129229fe'
 FACEBOOK_SECRET_KEY = 'a8e5fdd8c395fb04a43025dbb5c1de0f'
+
+# local_settings.py can be used to override environment-specific settings
+# like database and email that differ between development and production.
+try:
+    from local_settings import *
+except ImportError:
+    pass
+
