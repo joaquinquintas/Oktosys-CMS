@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p><img src="{{ MEDIA_URL }}img/temp_highlights.png" /></p>
+  <p>
+      <!--[if !IE]>-->
+      <object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf">
+        <!--<![endif]-->
+        <param name="quality" value="high" />
+        <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+        <div>
+          alternative served via swfobject
+        </div>
+        <!--[if !IE]>-->
+      </object>
+      <!--<![endif]-->
+  </p>
   <div class="span-15" id="article"> <!--article container to house all article entries-->
     {% for entry in news_entries %}
       <div class="articles-entry">
