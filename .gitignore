@@ -2,6 +2,7 @@
 *.swp
 myproject/spectrum.db
 myproject/local_settings.py
+myproject/media/riders
 django-filebrowser
 sorl-thumbnail
 pyfacebook
