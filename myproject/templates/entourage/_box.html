@@ -54,14 +54,7 @@
       
       <table cellpadding="0" cellspacing="0">
         test {{ rider.friends }}
-        
-        {% for row in rider.friends|chunk:5 %}
-          <tr>
-            {% for friend in row %}
-              <td><a href="#"><img src="{{ friend.pic_small }}" alt="{{ friend.name }}" /></a></td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
+      </table>
     {% endifnotequal %}
   {% endwith %}
 {% endif %}
