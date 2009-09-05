@@ -3,22 +3,22 @@
 {% block content %}
   <form action="" method="get">
     <select name="month">
-      <option value="1"{% if current_month == 1 %} selected="selected"{% endif %}>January</option>
-      <option value="2"{% if current_month == 2 %} selected="selected"{% endif %}>February</option>
-      <option value="3"{% if current_month == 3 %} selected="selected"{% endif %}>March</option>
-      <option value="4"{% if current_month == 4 %} selected="selected"{% endif %}>April</option>
-      <option value="5"{% if current_month == 5 %} selected="selected"{% endif %}>May</option>
-      <option value="6"{% if current_month == 6 %} selected="selected"{% endif %}>June</option>
-      <option value="7"{% if current_month == 7 %} selected="selected"{% endif %}>July</option>
-      <option value="8"{% if current_month == 8 %} selected="selected"{% endif %}>August</option>
-      <option value="9"{% if current_month == 9 %} selected="selected"{% endif %}>September</option>
-      <option value="10"{% if current_month == 10 %} selected="selected"{% endif %}>October</option>
-      <option value="11"{% if current_month == 11 %} selected="selected"{% endif %}>November</option>
-      <option value="12"{% if current_month == 12 %} selected="selected"{% endif %}>December</option>
+      <option value="1"{% ifequal current_month 1 %} selected="selected"{% endifequal %}>January</option>
+      <option value="2"{% ifequal current_month 2 %} selected="selected"{% endifequal %}>February</option>
+      <option value="3"{% ifequal current_month 3 %} selected="selected"{% endifequal %}>March</option>
+      <option value="4"{% ifequal current_month 4 %} selected="selected"{% endifequal %}>April</option>
+      <option value="5"{% ifequal current_month 5 %} selected="selected"{% endifequal %}>May</option>
+      <option value="6"{% ifequal current_month 6 %} selected="selected"{% endifequal %}>June</option>
+      <option value="7"{% ifequal current_month 7 %} selected="selected"{% endifequal %}>July</option>
+      <option value="8"{% ifequal current_month 8 %} selected="selected"{% endifequal %}>August</option>
+      <option value="9"{% ifequal current_month 9 %} selected="selected"{% endifequal %}>September</option>
+      <option value="10"{% ifequal current_month 10 %} selected="selected"{% endifequal %}>October</option>
+      <option value="11"{% ifequal current_month 11 %} selected="selected"{% endifequal %}>November</option>
+      <option value="12"{% ifequal current_month 12 %} selected="selected"{% endifequal %}>December</option>
     </select>
     <select name="year">
       {% for year in year_range %}
-        <option value="{{ year }}"{% if current_year == year %} selected="selected"{% endif %}>{{ year }}</option>
+        <option value="{{ year }}"{% ifequal current_year year %} selected="selected"{% endifequal %}>{{ year }}</option>
       {% endfor %}
     </select>
   </form>
