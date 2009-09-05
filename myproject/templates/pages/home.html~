@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p>
-      <!--[if !IE]>-->
+  <p><!--[if !IE]>-->
       <object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf">
         <!--<![endif]-->
         <param name="quality" value="high" />
@@ -21,13 +20,13 @@
         {{ entry.excerpt|safe }}
         <div class="article-date">posted on <span class="posted">{{ entry.created_on|date:"j M y" }}</span></div>
         <div class="article-link"><a href="/news/{{ entry.slug }}">Read full article</a> &raquo;</div>
-	<div class="clearfix"></div>
+      	<div class="clearfix"></div>
       </div>
     {% endfor %}
   </div>
   
   <div id="subhighlights">
-  <table cellpadding="0" cellspacing="0" style="width: 100%;">
+    <table cellpadding="0" cellspacing="0" style="width: 100%;">
       <tr>
         {% for subhighlight in subhighlights %}
           <td class="subhighlight" width="33%" align="center">
