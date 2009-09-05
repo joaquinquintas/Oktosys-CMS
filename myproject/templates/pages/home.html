@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <p><img src="{{ MEDIA_URL }}img/temp_highlights.png" width="100%" /></p>
-  <div id="news">
+  <p><img src="{{ MEDIA_URL }}img/temp_highlights.png" /></p>
+  <div class="span-15" id="article"> <!--article container to house all article entries-->
     {% for entry in news_entries %}
-      <div class="entry">
-        <h1>{{ entry.headline }}</h1>
+      <div class="articles-entry">
+        <div class="article-heading">{{ entry.headline }}</div>
         {{ entry.excerpt|safe }}
-        <div class="date">posted on <span class="red">{{ entry.created_on|date:"j M y" }}</span></div>
-        <div class="link"><a href="/news/{{ entry.slug }}">Read full article</a> &raquo;</div>
-      </div><br /><br /><!-- need to add clearing -->
+        <div class="article-date">posted on <span class="posted">{{ entry.created_on|date:"j M y" }}</span></div>
+        <div class="article-link"><a href="/news/{{ entry.slug }}">Read full article</a> &raquo;</div>
+	<div class="clearfix"></div>
+      </div>
     {% endfor %}
   </div>
   
