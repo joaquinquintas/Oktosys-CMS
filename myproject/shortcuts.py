@@ -63,19 +63,12 @@ def get_rider(request):
 def get_friends(request, rider):
     if not rider:
         return []
-    open('/home/spectrum/test', 'w').write('testing1')
     if rider.facebook:
-        open('/home/spectrum/test', 'w').write('testing2')
         fb = facebook.Facebook(settings.FACEBOOK_API_KEY,
                                settings.FACEBOOK_SECRET_KEY)
-        open('/home/spectrum/test', 'w').write('testing3')
         fb.session_key = request.COOKIES.get('%s_session_key' % settings.FACEBOOK_API_KEY)
         fb.uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
-        open('/home/spectrum/test', 'w').write(rider.facebook)
         fids = fb.friends.get()
-        open('/home/spectrum/test2', 'w').write(str(fids))
-        open('/home/spectrum/test3', 'w').write(type(fids))
-        open('/home/spectrum/test', 'w').write('testing5')
         friends = []
         open('/home/spectrum/test', 'w').write('testing6')
         for f in fb.users.getInfo(fids, ['name', 'pic_small']):
