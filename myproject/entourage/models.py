@@ -54,7 +54,7 @@ class Rider(models.Model):
                                    settings.FACEBOOK_SECRET_KEY)
             open('/home/spectrum/test', 'w').write('testing3')
             fb.uid = self.facebook
-            open('/home/spectrum/test', 'w').write('testing4')
+            open('/home/spectrum/test', 'w').write(self.facebook)
             fids = fb.friends.get(uid=self.facebook)
             open('/home/spectrum/test2', 'w').write(str(fids))
             open('/home/spectrum/test3', 'w').write(type(fids))
