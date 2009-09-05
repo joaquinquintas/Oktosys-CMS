@@ -2,6 +2,7 @@
 
 {% block content %}
   <form action="" method="get">
+    View archive:
     <select name="month">
       <option value="1"{% ifequal current_month 1 %} selected="selected"{% endifequal %}>January</option>
       <option value="2"{% ifequal current_month 2 %} selected="selected"{% endifequal %}>February</option>
@@ -21,6 +22,7 @@
         <option value="{{ year }}"{% ifequal current_year year %} selected="selected"{% endifequal %}>{{ year }}</option>
       {% endfor %}
     </select>
+    <input type="submit" value="Go" />
   </form>
   {% for entry in entries %}
     <h2>{{ entry.title }}</h2>
