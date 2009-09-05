@@ -3,22 +3,22 @@
 	<random>1</random>
 	<time>5</time>
 	<highlight>
-		<image>images/homeflash_image01.jpg</image>
-		<thumb>images/homeflash_thumbnail01.jpg</thumb>
+		<image>http://spectrum.webfactional.com/media/img/highlights/homeflash_image01.jpg</image>
+		<thumb>http://spectrum.webfactional.com/media/img/highlights/homeflash_thumbnail01.jpg</thumb>
 		<url>http://spectrum.webfactional1.com/</url>
 	</highlight>
 	<highlight>
-		<image>images/homeflash_image02.jpg</image>
-		<thumb>images/homeflash_thumbnail02.jpg</thumb>
+		<image>http://spectrum.webfactional.com/media/img/highlights/homeflash_image02.jpg</image>
+		<thumb>http://spectrum.webfactional.com/media/img/highlights/homeflash_thumbnail02.jpg</thumb>
 		<url>http://spectrum.webfactional2.com/</url>
 	</highlight>
 	<highlight>
-		<image>images/homeflash_image03.jpg</image>
-		<thumb>images/homeflash_thumbnail03.jpg</thumb>
+		<image>http://spectrum.webfactional.com/media/img/highlights/homeflash_image03.jpg</image>
+		<thumb>http://spectrum.webfactional.com/media/img/highlights/homeflash_thumbnail03.jpg</thumb>
 		<url>http://spectrum.webfactional3.com/</url>
 	</highlight>
 	<highlight>
-		<image>images/homeflash_image04.jpg</image>
-		<thumb>images/homeflash_thumbnail04.jpg</thumb>
+		<image>http://spectrum.webfactional.com/media/img/highlights/homeflash_image04.jpg</image>
+		<thumb>http://spectrum.webfactional.com/media/img/highlights/homeflash_thumbnail04.jpg</thumb>
 		<url>http://spectrum.webfactional4.com/</url>
-	</high
+	</highlight>
