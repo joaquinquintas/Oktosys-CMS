@@ -2,28 +2,20 @@
 
 {% block content %}
   <p>
-<<<<<<< HEAD:myproject/templates/pages/home.html
-      <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="619" height="282">
-	<param name="movie" value="{{ MEDIA_URL }}swf/homeflash.swf">
-	<param name="quality" value="high">
-	<param name="wmode" value="opaque">
-	<param name="swfversion" value="9.0.45.0">
-	<!--[if !IE]>-->
-	<object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf" width="619" height="282">
-=======
+    <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="619" height="282">
+      <param name="movie" value="{{ MEDIA_URL }}swf/homeflash.swf">
+      <param name="quality" value="high">
+      <param name="wmode" value="opaque">
+      <param name="swfversion" value="9.0.45.0">
       <!--[if !IE]>-->
-      <object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf">
->>>>>>> b4e776b74514dc605fc65372a7725c56ec611fd3:myproject/templates/pages/home.html
-        <!--<![endif]-->
-	  <param name="quality" value="high" />
-	  <param name="wmode" value="opaque" />
-	  <param name="swfversion" value="9.0.45.0" />
+        <object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf" width="619" height="282">
+      <!--<![endif]-->
         <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
         <div>
           alternative served via swfobject
         </div>
-        <!--[if !IE]>-->
-      </object>
+      <!--[if !IE]>-->
+        </object>
       <!--<![endif]-->
     </object>
   </p>
