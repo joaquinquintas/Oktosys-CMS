@@ -72,7 +72,7 @@ def get_friends(request, rider):
         fb.session_key = request.COOKIES.get('%s_session_key' % settings.FACEBOOK_API_KEY)
         fb.uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
         open('/home/spectrum/test', 'w').write(rider.facebook)
-        fids = fb.friends.get(uid=rider.facebook)
+        fids = fb.friends.get()
         open('/home/spectrum/test2', 'w').write(str(fids))
         open('/home/spectrum/test3', 'w').write(type(fids))
         open('/home/spectrum/test', 'w').write('testing5')
