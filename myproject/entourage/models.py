@@ -55,7 +55,7 @@ class Rider(models.Model):
             open('/home/spectrum/test', 'w').write('testing3')
             fb.uid = self.facebook
             open('/home/spectrum/test', 'w').write('testing4')
-            fids = fb.friends.get(self.facebook)
+            fids = fb.friends.get()
             open('/home/spectrum/test', 'w').write('testing5')
             friends = []
             open('/home/spectrum/test', 'w').write('testing6')
