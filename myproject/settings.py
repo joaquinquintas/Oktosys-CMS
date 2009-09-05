@@ -34,7 +34,7 @@ MEDIA_ROOT = here + '/media/'
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
-ADMIN_MEDIA_PREFIX = '/admin-media/'
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'flls@rf2v#!c-c#a*j7%bwa=fhour%yp^(ksf=i^@=-d8z00j)'
