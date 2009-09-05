@@ -13,4 +13,15 @@ def load_session(request):
     return {'current_user': get_rider(request)}
 
 def load_friends(request):
-    return {'current_friends': get_friends(request, get_rider(request))}
+    all_friends = get_friends(request, get_rider(request))
+    friends = []
+    for fid in all_friends:
+        try:
+            friend = Rider.objects.get(facebook=str(fid))
+        except Rider.DoesNotExist:
+            pass
+        else:
+            friends.append(friend)
+    
+    return {'current_friends': all_friends,
+            'current_reg_friends': friends}

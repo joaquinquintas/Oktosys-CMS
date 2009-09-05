@@ -69,14 +69,7 @@ def get_friends(request, rider):
         fb.session_key = request.COOKIES.get('%s_session_key' % settings.FACEBOOK_API_KEY)
         fb.uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
         fids = fb.friends.get()
-        friends = []
-        for f in fb.users.getInfo(fids, ['name', 'pic_small']):
-            try:
-                friend = Rider.objects.get(facebook=str(f))
-            except Rider.DoesNotExist:
-                pass
-            else:
-                friends.append(friend)
+        friends = fb.users.getInfo(fids, ['name', 'pic_square'])
         return friends
     else:
         return []
