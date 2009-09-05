@@ -8,44 +8,37 @@ Environment Setup
 
 Prerequisites: Python, Git, Subversion and virtualenv.
 
-#. Setup virtual environment and activate it.
+#. Setup virtual environment and activate it::
 
-.. code block:: bash
     virtualenv cycle
     cd cycle; source bin/activate
 
-#. Install pip and mercurial inside the virtualenv
-
-.. code block:: python
+#. Install pip and mercurial inside the virtualenv::
+    
     easy_install pip mercurial
 
-#. Clone the github project into src:
-
-.. code block:: bash
+#. Clone the github project into src::
+    
     git clone git@github.com:kennyshen/Oktosys-CMS.git src
 
 #. Install the project requirements, this will install Django and the
-   required apps.
+   required apps::
 
-.. code block:: bash
     pip install -r src/requirements.txt
 
-#. Go to the project directory
+#. Go to the project directory::
 
-.. code block:: bash
     cd src/myproject
 
-#. Create a local settings file
+#. Create a local settings file::
 
-.. code block:: bash
     touch local_settings.py
 
 Edit it to reflect your settings, at least:
 DATABASE_ENGINE, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD
 
-#. Create database, validate and smile.
+#. Create database, validate and smile::
 
-.. code block:: bash
     ./manage.py syncdb
     ./manage.py validate
  
