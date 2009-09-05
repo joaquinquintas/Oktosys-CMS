@@ -20,7 +20,7 @@
     <!-- Header -->
     <div id="header">
         <div id="branding">
-        <img src="http://spectrum.webfactional.com/admin-media/img/admin/logo.png" />
+        <img src="{% admin_media_prefix %}img/admin/logo.png" />
         </div>
         {% if user.is_authenticated and user.is_staff %}
         <div id="user-tools">
@@ -61,7 +61,7 @@
     <!-- Content -->
     <div id="content" class="{% block coltype %}colM{% endblock %}">
         {% block pretitle %}{% endblock %}
-        {% block content_title %}<img src="http://spectrum.webfactional.com/admin-media/img/admin/speaking_for.png" />{% endblock %}
+        {% block content_title %}<img src="{% admin_media_prefix %}img/admin/speaking_for.png" />{% endblock %}
         {% block content %}
         {% block object-tools %}{% endblock %}
         {{ content }}
