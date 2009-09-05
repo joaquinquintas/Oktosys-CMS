@@ -1,6 +1,8 @@
 from django.db import models
 from django import forms
 
+from facebook import djangofb as facebook
+
 import os
 import time
 import hashlib
@@ -42,6 +44,23 @@ class Rider(models.Model):
 	        self.password = hashlib.sha1(self.password).hexdigest()
 	    
 	    super(Rider, self).save()
+    
+    def get_friends(self):
+        if self.facebook:
+            fb = facebook.Facebook(settings.FACEBOOK_API_KEY,
+                                   settings.FACEBOOK_SECRET_KEY)
+            fb.auth.getSession()
+            fids = fb.friends.get()
+            friends = []
+            for f in fb.users.getInfo(fids, ['name', 'pic_small']):
+                friend = Rider.objects.get(facebook=f)
+                if friend:
+                   friends.append(friend) 
+            
+            return friends
+        else:
+            return []
+    
 
 RACE_TYPES = (
 	('I50', '50KM, INDIVIDUAL'),

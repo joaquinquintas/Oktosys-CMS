@@ -1,3 +1,4 @@
+{% load chunker %}
 {% load thumbnail %}
 
 {% if not current_user %}
@@ -45,6 +46,20 @@
     {% endif %}
     {% if rider.email %}
       <p>Email: {{ rider.email }}</p>
+    {% endif %}
+    
+    {% if notequal rider.facebook None %}
+      <h3>My Entourage</h3>
+      <p>Friends who have registered.</p>
+      
+      <table cellpadding="0" cellspacing="0">
+        {% for row in rider.get_friends()|chunk:5 %}
+          <tr>
+            {% for friend in row %}
+              <td><a href="#"><img src="{{ friend.pic_small }}" alt="{{ friend.name }}" /></a></td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
     {% endif %}
   {% endwith %}
 {% endif %}

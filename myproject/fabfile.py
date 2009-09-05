@@ -5,5 +5,8 @@ def staging():
     env.user = 'spectrum'
 
 def deploy():
-    run('cd /home/spectrum/webapps/cycleworks/Oktosys-CMS;git fetch;git rebase origin')
+    run('cd /home/spectrum/webapps/cycleworks/Oktosys-CMS;git pull')
     run('touch /home/spectrum/webapps/cycleworks/myproject.wsgi')
+
+def testing():
+    run('')

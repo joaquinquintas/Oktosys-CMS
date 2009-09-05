@@ -40,13 +40,18 @@ def get_rider(request):
                 fb = facebook.Facebook(settings.FACEBOOK_API_KEY,
                                        settings.FACEBOOK_SECRET_KEY)
                 info = fb.users.getInfo([uid],
-                    ['first_name', 'last_name', 'pic_big'])[0]
+                    ['name', 'first_name', 'last_name', 'pic_big'])[0]
+                name_first = info.get('first_name', '')
+                name_last = info.get('last_name', '')
+                if not name_first and not name_last:
+                    name_first, name_last = info.get('name', '').rsplit(' ', 1)
                 avatar_url = info.get('pic_big')
+                
                 if avatar_url:
                     avatar_contents = urllib.urlopen(avatar_url).read()
                 rider = Rider(facebook=uid,
-                    name_first=info.get('first_name'),
-                    name_last=info.get('last_name'))
+                    name_first=name_first,
+                    name_last=name_last)
                 avatar_fname = generate_filename(rider, 'avatar.jpg')
                 open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
                 rider.avatar = avatar_fname
