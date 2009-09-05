@@ -32,4 +32,8 @@
     
     <p><a href="{{ entry.get_absolute_url }}">Read full article</a></p>
   {% endfor %}
+  
+  {% if not entries %}
+    <p>No news articles were found for this month.</p>
+  {% endif %}
 {% endblock %}
