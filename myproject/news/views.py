@@ -5,16 +5,21 @@ from django.shortcuts import get_object_or_404
 
 import datetime
 
-def index(request, month=0, year=0):
+def index(request):
+    today = datetime.datetime.today()
+    this_month = today.month
+    this_year = today.year
+    
+    month = request.GET.get('month', this_month)
+    year = request.GET.get('year', this_year)
+    
     try:
         month, year = int(month), int(year)
     except ValueError:
-        month, year = False, False
+        month, year = this_month, this_year
     
-    if month not in range(1, 13) or year not in range(9999):
-        today = datetime.datetime.today()
-        month = today.month
-        year = today.year
+    if month not in range(1, 13) or year not in range(10000):
+        month, year = this_month, this_year
     
     entries = Entry.objects.filter(created_on__year=year,
                                    created_on__month=month)
