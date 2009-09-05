@@ -1,34 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="flash_highlights">
   <p>
-    <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="619" height="282">
-      <param name="movie" value="{{ MEDIA_URL }}swf/homeflash.swf" />
-      <param name="quality" value="high" />
-      <param name="swfversion" value="9.0.45.0" />
-      <!--[if !IE]>-->
-        <object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf" width="619" height="282">
-      <!--<![endif]-->
-	<param name="quality" value="high" />
-	<param name="swfversion" value="9.0.45.0" />
-        <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
-        <div>
-          alternative served via swfobject
-        </div>
-      <!--[if !IE]>-->
-        </object>
-      <!--<![endif]-->
-    </object>
+    <object type="application/x-shockwave-flash" data="{{ MEDIA_URL }}swf/homeflash.swf" height="282" width="619">
+  		<param name="movie" value="{{ MEDIA_URL }}swf/homeflash.swf" />
+  		<param name="wmode" value="opaque" />
+  	</object>
   </p>
-</div>
-<!-- register Flash -->
-  <script type="text/javascript">
-  <!--
-  swfobject.registerObject("FlashID");
-  //-->
-  </script>
-<!-- end register -->
   <div class="span-15" id="article"> <!--article container to house all article entries-->
     {% for entry in news_entries %}
       <div class="articles-entry">
