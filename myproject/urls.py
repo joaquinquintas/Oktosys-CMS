@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     (r'^news/', include('myproject.news.urls')),
     (r'^entourage/', include('myproject.entourage.urls')),
     (r'^multimedia/', include('myproject.multimedia.urls')),
+    (r'^xml/homeflash.xml', 'django.views.generic.simple.direct_to_template', {'template': 'pages/homeflash.xml'}),
 
 )
 if settings.DEBUG:
