@@ -20,7 +20,10 @@ def index(request, month=0, year=0):
                                    created_on__month=month)
     
     return render(request, 'news/index.html',
-        {'entries': entries, 'year_range': xrange(2009, year + 1)})
+        {'entries': entries,
+         'year_range': xrange(2009, year + 1),
+         'current_year': year,
+         'current_month': month})
 
 def view(request, slug):
     entry = get_object_or_404(Entry, slug=slug)
