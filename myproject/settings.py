@@ -93,7 +93,7 @@ INSTALLED_APPS = (
     'myproject.multimedia',
 )
 
-EVENT_DATE="2010-02-09"
+EVENT_DATE="2010-03-07"
 
 TINYMCE_COMPRESSOR = True
 TINYMCE_DEFAULT_CONFIG = {'theme': 'advanced',
