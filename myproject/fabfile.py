@@ -1,4 +1,4 @@
-from fabric.api import run, env, cd
+from fabric.api import run, env, cd, local
 
 def staging():
     env.hosts = ['spectrum.webfactional.com']
@@ -18,3 +18,8 @@ def sd():
     "Shorcut for staging deploy"
     staging()
     deploy()    
+
+def psd():
+    staging()
+    local("git push", capture=False)
+    deploy()
