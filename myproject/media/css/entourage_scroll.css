@@ -30,8 +30,19 @@ height: 0;
 #entourage_scroll {
 /* Typical fixed height and fixed width example */
 width: 160px;
-height: 154px;
+height: 160px;
 margin: 40px 0 0 20px;
+overflow: auto;
+overflow-x: hidden;
+/* IE overflow fix, position must be relative or absolute*/
+position: relative;
+}
+
+#socialfeed_scroll {
+/* Typical fixed height and fixed width example */
+width: 175px;
+height: 160px;
+margin: 40px 0 0 5px;
 overflow: auto;
 overflow-x: hidden;
 /* IE overflow fix, position must be relative or absolute*/
@@ -41,7 +52,7 @@ position: relative;
 
 .fixedwidth {
 /* a wide div is used for creating horizontal scrollbars for demonstration purposes */
-width: 160px;
+width: 150px;
 height: auto;
 position: relative;
 }
