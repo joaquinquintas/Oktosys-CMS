@@ -119,19 +119,20 @@
 	    </div><!--wrapper for left col and content ends-->
 
 	    <div class="span-5 last" id="rightCol"> <!--right col-->
+	    
 			<!-- My Entourage/Social -->
-			    <div id="entourage" class="span-5 last"><!-- check -->
-				<div id="{% if current_user %}entourage-header-before-login{% else %}entourage-header-after-login{% endif %}" class="span-5 last">
-				  <!-- display changes according to login status -->
-				  <div id="whats_happening">See what's happening &raquo;</div>
-				</div>
-				<div id="entourage-content" class="{% if current_user %}logged_in{% else %}visitor{% endif %} span-5 last">
-				  {% include "entourage/_box.html" %}
-				</div>
-				<div id="entourage-share" class="span-5 last">
-				  <span>Share this site &nbsp;&nbsp;&nbsp;<img src="{{ MEDIA_URL }}img/social/icon01.png" border="0" />&nbsp;&nbsp;&nbsp;<img src="{{ MEDIA_URL }}img/social/icon02.png" border="0" />&nbsp;&nbsp;&nbsp;<img src="{{ MEDIA_URL }}img/social/icon03.png" border="0" /></span> 
-				</div>
-			    </div>
+			
+			<div id="entourage" class="span-5 last"> <!--entourage container-->
+        <div id="{% if current_user %}entourage-header-before-login{% else %}entourage-header-after-login{% endif %}" class="span-5 last"></div>
+        <div id="entourage-content" class="{% if current_user %}logged_in{% else %}visitor{% endif %} span-5 last">
+          {% include "entourage/_box.html" %}
+        </div>
+        <div id="entourage-share" class="span-5 last">
+          <span>Share this site &nbsp;&nbsp;&nbsp;<img src="http://spectrum.webfactional.com/media/img/social/icon01.png" border="0" />&nbsp;&nbsp;&nbsp;<img src="http://spectrum.webfactional.com/media/img/social/icon02.png" border="0" />&nbsp;&nbsp;&nbsp;<img src="http://spectrum.webfactional.com/media/img/social/icon03.png" border="0" /></span>
+        </div>
+      </div> <!--entourage container ends-->
+
+
 			    <div id="socialfeed" class="span-5 last">
 		  `		<!--><img src="{{ MEDIA_URL }}img/temp_socialfeed.png" /><br /><-->
 				<div id="socialfeed-header" class="span-5 last">
