@@ -15,7 +15,7 @@ def serve(request, slug):
     page = get_object_or_404(Page, slug=slug)
     
     breadcrumbs = page.breadcrumbs()
-    breadcrumbs = " &raquo; ".join(('<a href="%s">%s</a>' % x for x in breadcrumbs))
+    breadcrumbs = " &raquo; ".join(('<a href="/pages/%s">%s</a>' % x for x in breadcrumbs))
     
     return render(request, 'pages/serve.html', {'page': page,
         'breadcrumbs': breadcrumbs})
