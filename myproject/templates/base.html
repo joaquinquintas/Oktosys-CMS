@@ -128,22 +128,20 @@
 			    </div>
 			    <div id="socialfeed" class="span-5 last">
 		  `		<!--><img src="{{ MEDIA_URL }}img/temp_socialfeed.png" /><br /><-->
-				<div id="socialfeed-header"></div>
-				<div id="socialfeed-content">
+				<div id="socialfeed-header" class="span-5 last">
+				        <label for="social_filter">Sort by</label>
+						<form name="social_filter" action="" method="post"><select name="choice" size="1" onChange="jump(this.form)"><option value="">All social media</option><option value="flickr">Flickr</option><option value="youtube">Youtube</option><option value="twitter">Twitter</option><option value="blogs">Blogs</option></select></form>		
+					</div>
+				</div>
+				    <div id="socialfeed-content" class="span-5 last">
 			            {% socialfeed %}
 			        </div>
-			        <div id="socialfeed-bottom"></div>
+			        <div id="socialfeed-bottom" class="span-5 last"></div>
 			    </div>
 			  <div id="ads" class="span-5 last">
-			    <table cellpadding="0" cellspacing="0" style="width: 100%;">
-			      <tr>
 				{% for ad in ads %}
-				  <td class="ad" width="100%" align="center">
 				    <a href="{{ ad.link }}"><img src="{{ ad.image.url }}" width="190" /></a>
-				  </td>
 				{% endfor %}
-			      </tr>
-			    </table>
 			  </div>
 	</div>
  <div id="footer"> <!--footer--> 
