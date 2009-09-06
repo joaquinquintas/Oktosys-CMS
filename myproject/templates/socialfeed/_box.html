@@ -1,10 +1,8 @@
-<div id="socialfeed_scroll" class="span-4 flexcroll"> <!--scroll-->
-<div class='fixedwidth'>
+<div id="socialfeed_scroll" class="span-4 flexcroll fixedwitdth"> <!--scroll-->
 {% load oembed_tags %}
    <ul>
    {% for link in links %}
       <li>{% oembed %}{{ link.href }}{% endoembed %}<span class="link_date"> added {{ link.date|timesince }} ago.</span></li>
    {% endfor %}
    </ul>
-</div>
 </div><!--scroll ends-->

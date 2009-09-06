@@ -161,10 +161,11 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
                 # link types that don't have html elements aren't dealt with right now.
                 if resp['type'] == 'link' and 'html' not in resp:
                     resp['html'] = resp['title']
-                
+                provider = resp['provider_name'].split(" ")[0] # Hack for "Twitter Status"
                 # Depending on the embed type, grab the associated template and
                 # pass it the parsed JSON response as context.
-                replacement = render_to_string('oembed/%s.html' % resp['type'], {'response': resp, 'url': part})
+                replacement = render_to_string('oembed/%s.html' % resp['type'], 
+                        {'response': resp, 'url': part, 'provider': provider})
                 if replacement:
                     stored_embed = StoredOEmbed.objects.create(
                         match = part,

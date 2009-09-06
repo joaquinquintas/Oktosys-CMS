@@ -1,13 +1,13 @@
-<div class="{{response.provider_name|slugify}}">
+<div class="{{provider|slugify}}">
 {% autoescape off %}
-{% if response.author_name %}<a href="{{response.author_url}}" class="author">{{ response.author_name }}</a> on <a href="{{response.url}}">{{response.provider_name}}</a>{% endif %}
+{% if response.author_name %}<a href="{{response.author_url}}" class="author">{{ response.author_name }}</a> on <a href="{{response.url}}">{{provider}}</a>{% endif %}
 <p>
 {% block social_photo %}	
    <a href="{{ url }}">
 	 <img src="{% firstof response.thumbnail_url response.url %}" alt="{{ response.title }}" />
    </a>
 {% endblock %}
-<span class="title">{{ response.title }}</span>
+<span class="title">{{ response.title|urlize }}</span>
 </p>
 {% endautoescape %}
 </div>

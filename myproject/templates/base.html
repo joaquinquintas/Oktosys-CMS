@@ -130,7 +130,7 @@
 		  `		<!--><img src="{{ MEDIA_URL }}img/temp_socialfeed.png" /><br /><-->
 				<div id="socialfeed-header" class="span-5 last">
 				        <label for="social_filter">Sort by</label>
-						<form name="social_filter" action="" method="post"><select name="choice" size="1" onChange="jump(this.form)"><option value="">All social media</option><option value="flickr">Flickr</option><option value="youtube">Youtube</option><option value="twitter">Twitter</option><option value="blogs">Blogs</option></select></form>		
+						<form name="social_filter" action="" method="post"><select name="choice" size="1" onChange="filter(this.form)"><option value="" default>All social media</option><option value="flickr">Flickr</option><option value="youtube">Youtube</option><option value="twitter">Twitter</option><option value="blogs">Blogs</option></select></form>		
 					</div>
 				</div>
 				    <div id="socialfeed-content" class="span-5 last">
@@ -164,6 +164,31 @@
       FB.init("b1cb2c1a8482b66317dbb77f129229fe", "{{ MEDIA_URL }}/fbconnect/xd_receiver.htm",
         {"reloadIfSessionStateChanged": true});
     });
+  </script>
+  <script type="text/javascript">
+   function filter(menu)
+    {
+     	ref=menu.choice.options[menu.choice.selectedIndex].value;
+		var i=0;
+		for (i=1;i<=menu.choice.options.length;i++)
+		{
+		  provider=menu.choice.options[i-1].value;
+	      claz = "." + provider;
+		  if (ref === ""){
+			 try{
+		     $(claz).parent().show();
+	         }catch(e){};
+		  }else{
+			 if (ref === provider){
+			     $(claz).parent().show();
+			 }else{
+				try{
+				 $(claz).parent().hide();
+				}catch(e){};
+			}		
+		  }
+	    }
+    }
   </script>
 </body>
 </html>
