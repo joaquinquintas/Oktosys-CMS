@@ -76,12 +76,14 @@ def profile_edit(request):
         return HttpResponseRedirect('/entourage/login')
     
     if request.method == 'POST':
-        data = request.POST.copy()
-        data.update({'id': str(rider.id)})
+        # data = request.POST.copy()
+        # data.update({'id': str(rider.id)})
         open('/home/spectrum/test', 'w').write(str(data))
-        form = ProfileUpdateForm(data, request.FILES)
+        form = ProfileUpdateForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            rider_ = form.save(commit=False)
+            rider_ = rider.id
+            rider_.save()
             # rider_info = form.save(commit=False)
             # 
             # rider.name_first = rider_info.name_first
