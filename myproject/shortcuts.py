@@ -68,7 +68,10 @@ def get_friends(request, rider):
                                settings.FACEBOOK_SECRET_KEY)
         fb.session_key = request.COOKIES.get('%s_session_key' % settings.FACEBOOK_API_KEY)
         fb.uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
-        fids = fb.friends.get()
+        try:
+            fids = fb.friends.get()
+        except FacebookError:
+            return []
         friends = []
         count = 0
         for f in fb.users.getInfo(fids, ['name', 'pic_square']):
