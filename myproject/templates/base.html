@@ -121,7 +121,7 @@
 	    <div class="span-5 last" id="rightCol"> <!--right col-->
 			<!-- My Entourage/Social -->
 			    <div id="entourage" class="span-5 last">
-				<div id="entourage-header" class="span-5 last">
+				<div id="{% if current_user %}entourage-header-before-login{% else %}entourage-header-after-login{% endif %}" class="span-5 last">
 				  <!-- display changes according to login status -->
 				  <div id="whats_happening">See what's happening &raquo;</div>
 				</div>
