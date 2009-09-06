@@ -51,19 +51,18 @@ def get_rider(request):
                     name_first, name_last = info.get('name', '').rsplit(' ', 1)
                 avatar_url = info.get('pic_big')
                 open('/home/spectrum/test0', 'a').write('5')
-                if avatar_url:
-                    avatar_contents = urllib.urlopen(avatar_url).read()
-                open('/home/spectrum/test0', 'a').write('6')
                 rider = Rider(facebook=uid,
                     name_first=name_first,
                     name_last=name_last)
                 open('/home/spectrum/test0', 'a').write('7')
-                avatar_fname = generate_filename(rider, 'avatar.jpg')
-                open('/home/spectrum/test0', 'a').write('8')
-                open('/home/spectrum/test0', 'a').write('\n%s\n' % (settings.MEDIA_ROOT + avatar_fname))
-                open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
-                open('/home/spectrum/test0', 'a').write('9')
-                rider.avatar = avatar_fname
+                if avatar_url:
+                    avatar_contents = urllib.urlopen(avatar_url).read()
+                    avatar_fname = generate_filename(rider, 'avatar.jpg')
+                    open('/home/spectrum/test0', 'a').write('8')
+                    open('/home/spectrum/test0', 'a').write('\n%s\n' % (settings.MEDIA_ROOT + avatar_fname))
+                    open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
+                    open('/home/spectrum/test0', 'a').write('9')
+                    rider.avatar = avatar_fname
                 open('/home/spectrum/test0', 'a').write('10')
                 rider.save()
                 open('/home/spectrum/test0', 'a').write('11')
