@@ -27,7 +27,7 @@ height: 0;
 /* Scroll Bar Master Styling Ends Here */
 
 /*------------*/
-#entourage_scroll {
+#entourage_scroll, #socialfeed_scroll {
 /* Typical fixed height and fixed width example */
 width: 160px;
 height: 154px;
@@ -37,7 +37,6 @@ overflow-x: hidden;
 /* IE overflow fix, position must be relative or absolute*/
 position: relative;
 }
-
 
 .fixedwidth {
 /* a wide div is used for creating horizontal scrollbars for demonstration purposes */
