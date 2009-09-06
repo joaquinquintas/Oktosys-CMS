@@ -62,7 +62,7 @@ def signup(request):
             
             rider.save()
         else:
-            render(request, 'entourage/signup.html', {'form': form})
+            return render(request, 'entourage/signup.html', {'form': form})
         return HttpResponseRedirect('/entourage/login')
     else:
         form = RegistrationForm()
@@ -95,7 +95,7 @@ def profile_edit(request):
             # 
             # rider.save()
         else:
-            render(request, 'entourage/edit_profile.html', {'form': form})
+            return render(request, 'entourage/edit_profile.html', {'form': form})
         return HttpResponseRedirect('/entourage/')
     else:
         form = RegistrationForm({
