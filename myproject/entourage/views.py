@@ -96,7 +96,13 @@ def profile_edit(request):
         
         avatar = request.FILES.get('avatar')
         if avatar:
-            open('/home/spectrum/test', 'w').write(str(avatar))
+            def handle_upload(f):
+                destination = open(rider.avatar, 'wb+')
+                for chunk in f.chunks():
+                    destination.write(chunk)
+                destination.close()
+            
+            handle_upload(avatar)
         
         try:
             rider.save()
