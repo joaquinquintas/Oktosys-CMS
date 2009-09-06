@@ -5,8 +5,6 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-# Apps
-from myproject.search.views import search_site
 
 urlpatterns = patterns('',
     (r'^$', 'myproject.pages.views.home'),
@@ -14,10 +12,10 @@ urlpatterns = patterns('',
     (r'^admin/filebrowser/', include('filebrowser.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^tinymce/', include('tinymce.urls')),
-    (r'^search/', search_site),
     (r'^news/', include('myproject.news.urls')),
     (r'^entourage/', include('myproject.entourage.urls')),
     (r'^multimedia/', include('myproject.multimedia.urls')),
+    (r'^search/', include('haystack.urls')),
     (r'^xml/homeflash.xml', 'django.views.generic.simple.direct_to_template', {'template': 'pages/homeflash.xml'}),
 
 )

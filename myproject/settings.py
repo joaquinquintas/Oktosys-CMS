@@ -87,7 +87,6 @@ INSTALLED_APPS = (
     'myproject.subhighlights',
     'myproject.ads',
     'myproject.sponsors_panel',
-    'myproject.search',
     'myproject.entourage',
     'myproject.socialfeed',
     'myproject.oembed',
@@ -112,7 +111,7 @@ FACEBOOK_SECRET_KEY = 'a8e5fdd8c395fb04a43025dbb5c1de0f'
 
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
 HAYSTACK_SITECONF = 'myproject.search_sites'
-HAYSTACK_WHOOSH_PATH = here + 'search_index'
+HAYSTACK_WHOOSH_PATH = here + '/search_index'
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
