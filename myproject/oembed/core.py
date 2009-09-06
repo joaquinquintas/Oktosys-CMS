@@ -165,11 +165,31 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
                     resp['html'] = resp['title']
                 provider = resp['provider_name'].split(" ")[0] # Hack for "Twitter Status"
                 thumb_url = resp['thumbnail_url'] or resp["url"]
-                thumb_data = ContentFile(fetch(thumb_url))
                 tc = ThumbCache()
-                tc.image.save(provider,thumb_data)
-                tc.save()
-                tu = tc.thumbnail.url
+                thumb_data = fetch(thumb_url)
+                try:
+                     # the following is taken from django.newforms.fields.ImageField:
+                     #  load() is the only method that can spot a truncated JPEG,
+                     #  but it cannot be called sanely after verify()
+                     trial_image = Image.open(StringIO(thumb_data))
+                     trial_image.load()
+                     # verify() is the only method that can spot a corrupt PNG,
+                     #  but it must be called immediately after the constructor
+                     trial_image = Image.open(StringIO(thumb_data))
+                     trial_image.verify()
+                     
+                     tc.image.save(provider,ContentFile(thumb_data))
+                     tc.save()
+                 except Exception:
+                     # if a "bad" file is found we just skip it.
+                     continue
+                
+                
+                
+                if tc.thumbnail:
+                    tu = tc.thumbnail.url
+                else:
+                    tu= None
                 # Depending on the embed type, grab the associated template and
                 # pass it the parsed JSON response as context.
                 replacement = render_to_string('oembed/%s.html' % resp['type'], 

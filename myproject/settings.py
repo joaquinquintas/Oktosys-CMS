@@ -93,6 +93,8 @@ INSTALLED_APPS = (
     'myproject.multimedia',
 )
 
+EVENT_DATE="2010-02-09"
+
 TINYMCE_COMPRESSOR = True
 TINYMCE_DEFAULT_CONFIG = {'theme': 'advanced',
     'plugins': "table,paste,searchreplace",
