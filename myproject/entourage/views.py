@@ -82,7 +82,7 @@ def profile_edit(request):
         form = ProfileUpdateForm(request.POST, request.FILES)
         if form.is_valid():
             rider_ = form.save(commit=False)
-            rider_ = rider.id
+            rider_.id = rider.id
             rider_.save()
             # rider_info = form.save(commit=False)
             # 
