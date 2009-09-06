@@ -3,7 +3,7 @@ from django.contrib import admin
 
 class PageAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['title', 'html', 'parent']}),
+        (None, {'fields': ['title', 'html', 'parent', 'show_fb_stream']}),
         ('Advanced', {'fields': ['slug'], 'classes': ['collapse']}),
     ]
     

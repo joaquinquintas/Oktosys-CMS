@@ -101,9 +101,11 @@
 		<!-- Slango-generated content -->
 		{% block content %}{% endblock %}
 		
-		<div id="fb-stream">
-		  <fb:live-stream width="619" height="300"></fb:live-stream>
-		</div>
+		{% if show_fb_stream %}
+  		<div id="fb-stream">
+  		  <fb:live-stream width="619" height="300"></fb:live-stream>
+  		</div>
+		{% endif %}
 		
 		<p><span id="disclaimer">Spectrum Worldwide reserves all right to remove any content in this box that is deemed inappropriate or irrelevant to OCBC Cycle Singapore.</span></p>
 	      </div><!-- end central -->
