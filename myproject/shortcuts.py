@@ -1,4 +1,4 @@
-from __future__ import with
+from __future__ import with_statement
 
 from myproject.entourage.models import Rider, generate_filename
 
