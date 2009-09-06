@@ -91,7 +91,7 @@ def profile_edit(request):
         
         # try:
         rider.save()
-        return HttpResponseRedirect('/entourage/')
+        return HttpResponseRedirect('/entourage/saved')
         # except:
         #     return render(request, 'entourage/edit_profile.html', {
         #         'rider': rider})
