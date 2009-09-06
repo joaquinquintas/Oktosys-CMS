@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load thumbnail %}
 {% block content %}
+  <div class="breadcrumbs"><a href="/">Home</a>
+    &raquo; <a href="/entourage/">Entourage</a>
+    &raquo; <a href="/entourage/profile/{{ rider.id }}">{{ rider.name }}</a>
+  </div>
+  
   {% ifequal error 'profile_private' %}<p class="error">This profile is private.</p>{% endifequal %}
   
   <div class="rider">

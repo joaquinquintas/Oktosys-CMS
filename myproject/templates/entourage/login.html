@@ -1,30 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Login</h1>
+  <div class="breadcrumbs"><a href="/">Home</a>
+    &raquo; <a href="/entourage/login">Login</a>
+  </div>
 
-<p>Login through your <a href="http://facebook.com">Facebook</a> account:</p>
+  <h1>Login</h1>
 
-<p>
-  <a href="#" onclick="FB.Connect.requireSession(); return false;">
-    <img src="http://static.ak.fbcdn.net/images/fbconnect/login-buttons/connect_light_medium_long.gif"
-  	     alt="Connect through Facebook" />
-  </a>
-</p>
+  <p>Login through your <a href="http://facebook.com">Facebook</a> account:</p>
 
-<p>Or standard login:</p>
-
-<form action="" method="post">
   <p>
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" />
+    <a href="#" onclick="FB.Connect.requireSession(); return false;">
+      <img src="http://static.ak.fbcdn.net/images/fbconnect/login-buttons/connect_light_medium_long.gif"
+    	     alt="Connect through Facebook" />
+    </a>
   </p>
-  <p>
-    <label for="Password">Password:</label>
-    <input type="password" name="password" id="password" />
-  </p>
-  <p>
-    <input type="submit" value="Log in" />
-  </p>
-</form>
+
+  <p>Or standard login:</p>
+
+  <form action="" method="post">
+    <p>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" />
+    </p>
+    <p>
+      <label for="Password">Password:</label>
+      <input type="password" name="password" id="password" />
+    </p>
+    <p>
+      <input type="submit" value="Log in" />
+    </p>
+  </form>
 {% endblock %}
