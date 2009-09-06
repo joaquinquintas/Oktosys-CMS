@@ -14,18 +14,18 @@ def generate_filename(instance, old_filename):
     return 'riders/' + filename
 
 class Rider(models.Model):
-    name_first = models.CharField(max_length=150)
-    name_last = models.CharField(max_length=150)
+    name_first = models.CharField(max_length=150, blank=True)
+    name_last = models.CharField(max_length=150, blank=True)
     
     def name(self):
         return "%s %s" % (self.name_first, self.name_last)
     
-    email = models.EmailField(unique=True)
-    phone_main = models.CharField(max_length=100)
-    phone_mobile = models.CharField(max_length=100)
+    email = models.EmailField(blank=True)
+    phone_main = models.CharField(max_length=100, blank=True)
+    phone_mobile = models.CharField(max_length=100, blank=True)
     
-    username = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
+    username = models.CharField(max_length=50, blank=True)
+    password = models.CharField(max_length=50, blank=True)
     
     avatar = models.ImageField(upload_to=generate_filename)
     
@@ -77,6 +77,9 @@ class Rider(models.Model):
     def save(self):
         if not self.id:
             self.password = hashlib.sha1(self.password).hexdigest()
+        
+        if self.email and Rider.objects.filter(email=self.email).count() > 0:
+            return False
         
         super(Rider, self).save()
     
