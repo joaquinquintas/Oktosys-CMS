@@ -60,7 +60,8 @@ class Rider(models.Model):
             return []
     
     friends = property(get_friends)
-    
+    def unicode(self):
+        return self.name
     def save(self):
         if not self.id:
             self.password = hashlib.sha1(self.password).hexdigest()
@@ -109,6 +110,8 @@ class Race(models.Model):
     registered = models.BooleanField()
     race_type = models.CharField(max_length=4, choices=RACE_TYPES)
     team_id = models.ForeignKey('Team')
+    def __unicode__(self):
+        return "%s %s %s" % (self.rider, self.Team, self.race_type)
 
 TEAM_TYPES = (
     ('TC50', '50KM, TEAM, CORPORATE'),
@@ -135,6 +138,8 @@ class Team(models.Model):
     race_type = models.CharField(max_length=4, choices=TEAM_TYPES)
     status = models.BooleanField()
     counter = models.IntegerField()
+    def __unicode__(self):
+        return "Team %s %s %s %s" % (self.id, self.race_type,self.status, self.counter)
 
 class RegistrationForm(forms.ModelForm):
     class Meta:
