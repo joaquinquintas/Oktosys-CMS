@@ -9,16 +9,11 @@ body {
 	  line-height: 16px;
 }
 
-h1 {
-      font-size: 1.2em;
-      color: #444;
-}
-
+h1 { font-size: 1.2em; color: #455460; font-weight:bold; margin-bottom:0;}
 
 #wrapper_A {
 	margin-top:-70px;
-	margin-bottom: 100px;
-	}
+	margin-bottom: 80px;	}
 	
 #header {
 	height:166px;
@@ -48,7 +43,7 @@ h1 {
 }
 	
 #rightCol {
-     margin: -72px 0 0 -28px;
+     margin: -72px 0 80px -28px;
 }
 #nav-bar {
       float: left;
@@ -80,17 +75,9 @@ h1 {
 #central {
 	margin-left: -12px;
 	margin-top: -10px;
+	padding-bottom: 15px;
 }
-
-#footer {
-      position: fixed;
-      bottom: 0px;
-      left:0px;
-      background-color: #f52400;
-      height: 80px;
-      width: 100%;
-      z-index: 200;
-}
+	  
 #disclaimer {
       font-size:0.8em;
       color:#666;
@@ -161,8 +148,8 @@ h1 {
 /*-----------*/
 
 #article {
-	padding:0 10px 20px 5px;
-	margin-left: 6px;
+	padding:0 10px 20px 0;
+	margin-left: 10px;
 }
 
 .articles-entry {
@@ -204,8 +191,69 @@ h1 {
 
 #everyone-saying {
 }
-/*-----------footer-------------------*/
 
+#ad-box {
+	margin-left: 5px;
+	}
+	
+	
+/*-----------breadcrumbs----------------*/
+#breadcrumbs {margin: 0 0 0 10px; }
+#breadcrumbs a { color:#828C95; text-decoration:none; }
+#breadcrumbs a:hover { color:#828C95; text-decoration:underline; }
+#breadcrumbs .selected a { color:#E82022; text-decoration:none; }
+#breadcrumbs .selected a:hover { color:#E82022; text-decoration:underline; }
+/*-----------breadcrumbs----------------*/
+
+
+/*-----------Combo box [Div is under breadcrumbs]----------------*/
+#combo_box { padding: 20px 0 8px 0; margin: 0 0 0 10px; border-bottom: 1px solid #B1B1B1; }
+#combo_box div { float: left; }
+#title { }
+#category { margin-top: -5px; }
+#year {  margin-top: -5px; }
+/*------------------------Combo box------------------------------*/
+
+
+/*-----------pagination & photo gallery---------------*/
+#pagination_box { margin:10px 0 0 10px; }
+#prev_btn { }
+#next_btn { }
+#pages {}
+#pages a {color:#828C95; text-decoration:none; }
+
+ul.pages {
+	margin: 7px 0 0 35px;
+	}
+
+ul.pages li {
+	background:url(http://spectrum.webfactional.com/media/img/multimedia/page_bg.png) no-repeat;
+	list-style:none;
+	padding:10px 13px 20px 13px;
+	margin: 9px 0 2px 0;
+	display:inline;
+	}
+		
+ul.pages li.page_active { background-image:none;}
+ul.pages li.page_active a { background-image:none; color:#F00000;}
+
+#photo_gallery { margin:15px 0 0 10px; }
+
+table.gallery {
+	border-collapse: collapse;
+	}
+
+td {
+	padding: 2px;
+	}
+
+	
+
+/*-----------pagination & photo gallery---------------*/
+
+
+
+/*-----------footer-------------------*/
 #footer {
       position: fixed;
       bottom: 0px;
@@ -236,3 +284,6 @@ h1 {
 #partner_in_sports { margin-left: 25px; }
 
 /*-----------footer-------------------*/
+
+
+

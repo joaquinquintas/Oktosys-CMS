@@ -2,11 +2,11 @@
 
 .vscrollerbase {
 width: 9px;
-background: url(http://spectrum.webfactional.com/media/img/social/scroll_bg.png) 0px 0px repeat-y;
+background: url(http://spectrum.webfactional.com/media/img/scroll_bg.png) 0px 0px repeat-y;
 }
 
 .vscrollerbar {
-background: url(http://spectrum.webfactional.com/media/img/social/scroll_bg.png) -9px 0px no-repeat;
+background: url(http://spectrum.webfactional.com/media/img/scroll_bg.png) -9px 0px no-repeat;
 padding: -80px;
 margin-bottom: 0px;
 z-index: 2;
@@ -27,11 +27,11 @@ height: 0;
 /* Scroll Bar Master Styling Ends Here */
 
 /*------------*/
-#entourage_scroll, #socialfeed_scroll {
+#entourage_scroll {
 /* Typical fixed height and fixed width example */
-width: 177px;
-height: 211px;
-margin-left: 15px;
+width: 160px;
+height: 154px;
+margin: 40px 0 0 20px;
 overflow: auto;
 overflow-x: hidden;
 /* IE overflow fix, position must be relative or absolute*/
