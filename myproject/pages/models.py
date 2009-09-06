@@ -8,6 +8,7 @@ class Page(models.Model):
     parent = models.ForeignKey('self', blank=True, null=True,
                                        related_name='children')
     sort = models.CharField(max_length=255)
+    show_fb_stream = models.BooleanField(default=False)
     
     def breadcrumbs(self):
         if self.parent:
