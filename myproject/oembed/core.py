@@ -180,7 +180,7 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
                      
                     tc.image.save(provider,ContentFile(thumb_data))
                     tc.save()
-                 except Exception:
+                except Exception:
                     # if a "bad" file is found we just skip it.
                     continue
             
