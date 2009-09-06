@@ -1,3 +1,5 @@
+from __future__ import with
+
 from myproject.entourage.models import Rider, generate_filename
 
 from django.template import RequestContext
