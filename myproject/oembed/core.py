@@ -15,7 +15,7 @@ from django.utils.safestring import mark_safe
 from myproject.oembed.models import ProviderRule, StoredOEmbed, ThumbCache
 from django.template.loader import render_to_string
 from django.core.files.base import ContentFile
-
+from PIL import Image
 import logging
 logger = logging.getLogger("oembed core")
 
@@ -153,6 +153,7 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
             parts[id_to_replace] = stored[part].html
         except KeyError:
             try:
+                
                 part_safe = part.replace(":", "%3A")
                 # Build the URL based on the properties defined in the OEmbed spec.
                 url = u"%s?url=%s&maxwidth=%s&maxheight=%s&format=%s" % (
@@ -164,9 +165,14 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
                 if resp['type'] == 'link' and 'html' not in resp:
                     resp['html'] = resp['title']
                 provider = resp['provider_name'].split(" ")[0] # Hack for "Twitter Status"
-                thumb_url = resp['thumbnail_url'] or resp["url"]
+                if 'thumbnail_url' in resp:
+                    thumb_url = resp['thumbnail_url']
+                else:
+                    thumb_url = resp["url"]
+                
                 tc = ThumbCache()
                 thumb_data = fetch(thumb_url)
+#                import ipdb;ipdb.set_trace() 
                 try:
                     # the following is taken from django.newforms.fields.ImageField:
                     #  load() is the only method that can spot a truncated JPEG,
@@ -177,12 +183,12 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
                     #  but it must be called immediately after the constructor
                     trial_image = Image.open(StringIO(thumb_data))
                     trial_image.verify()
-                     
+                    
                     tc.image.save(provider,ContentFile(thumb_data))
                     tc.save()
                 except Exception:
                     # if a "bad" file is found we just skip it.
-                    continue
+                    pass
             
                 if tc.thumbnail:
                     tu = tc.thumbnail.url
