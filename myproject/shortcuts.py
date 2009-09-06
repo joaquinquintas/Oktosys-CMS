@@ -61,8 +61,8 @@ def get_rider(request):
                 else:
                     avatar_fname = generate_filename(rider, 'default.jpg')
                     rider.avatar = avatar_fname
-                    default = settings.MEDIA_ROOT + 'riders/default.jpg'
-                    with open(default) as default:
+                    defpath = settings.MEDIA_ROOT + 'riders/default.jpg'
+                    with open(defpath) as default:
                         with open(fname, 'w') as f:
                             f.write(default.read())
                 
