@@ -9,10 +9,10 @@ def home(request):
     shs = Shs.objects.all()
     return render(request, 'pages/home.html', 
                 {'news_entries': news,
-                 'shs': shs,
-                })
+                 'shs': shs})
 
 def serve(request, slug):
     page = get_object_or_404(Page, slug=slug)
     
-    return render(request, 'pages/serve.html', {'page': page})
+    return render(request, 'pages/serve.html', {'page': page,
+        'breadcrumbs': page.breadcrumbs()})

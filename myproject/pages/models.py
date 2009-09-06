@@ -9,6 +9,11 @@ class Page(models.Model):
                                        related_name='children')
     sort = models.CharField(max_length=255)
     
+    def breadcrumbs(self):
+        if self.parent:
+            return self.parent.breadcrumbs() + [self.title]
+        return [self.title]
+    
     def __unicode__(self):
         if self.parent:
             return '%s/%s' % (self.parent.__unicode__(), self.title)
