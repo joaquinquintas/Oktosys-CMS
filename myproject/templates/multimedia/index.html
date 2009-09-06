@@ -8,11 +8,11 @@
   <div class="breadcrumbs" class="span-15 last"><a href="/">Home</a>
     &raquo; <a href="/multimedia/">Multimedia gallery</a>  <span class="selected"><a href="#">Photos </a></span>
   </div><!--end breadcrumbs -->
-<div class="span-15 last" id="combo_box"> <!--combo box to house title, category and year dropdown box-->
+  <div class="span-15 last" id="combo_box"> <!--combo box to house title, category and year dropdown box-->
         	<div class="span-7" id="title"><img src="http://spectrum.webfactional.com/media/img/multimedia/photos_header.png" /></div>
-            <div id="category"><img src="media/combo_box_category.jpg"/></div>
-            <div id="year"><img src="media/combo_box_year.jpg" /></div>
-        </div> <!--combo box ends-->
+		<div id="category"><img src="{{ MEDIA_URL }}img/combo_box_category.jpg"/></div>
+		<div id="year"><img src="{{ MEDIA_URL }}img/combo_box_year.jpg" /></div>
+  </div> <!--combo box ends-->
 
   <div class="pagination" class="span-15 last">
     {% if photos.has_previous %}
@@ -53,5 +53,5 @@
       </tr>
     {% endfor %}
   </table>
-  
+</div>
 {% endblock %}
