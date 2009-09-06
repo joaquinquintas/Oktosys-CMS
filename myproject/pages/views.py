@@ -5,6 +5,11 @@ from myproject.shortcuts import render
 from django.shortcuts import get_object_or_404
 
 def home(request):
+    if request.session.get('first_fb_login'):
+        request.session['first_fb_login'] = False
+        del request.session['first_fb_login']
+        return HttpResponseRedirect('/entourage/edit_profile')
+    
     news = Entry.objects.order_by('-created_on')[:3]
     shs = Shs.objects.all()
     return render(request, 'pages/home.html', 
