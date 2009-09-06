@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="breadcrumbs"><a href="/">Home</a> &raquo; {{ breadcrumbs|safe }}</div>
+  <div class="breadcrumbs"><a href="/">Home</a>
+    {% for b in breadcrumbs %}<a href="/pages/{{ b[0] }}">&raquo; {{ b[1] }}</a>{% endfor %}</div>
   <div class="span-15" id="article">
     <div class="articles-entry">
       {{ page.html|safe }}
