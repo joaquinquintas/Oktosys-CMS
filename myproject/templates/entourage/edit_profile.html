@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="breadcrumbs"><a href="/">Home</a>
+    &raquo; <a href="/entourage/edit_profile">Edit profile</a>
+  </div>
+  
+  <h2>Edit profile</h2>
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {{ form.as_p }}
+    
+    <p><input type="submit" value="Save" /></p>
+  </form>
+{% endblock %}

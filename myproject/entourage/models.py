@@ -165,6 +165,34 @@ class RegistrationForm(forms.ModelForm):
     settings_updates_sms = forms.BooleanField(label=u'Receive updates via SMS', widget=forms.CheckboxInput, initial=True, required=False)
     settings_fb_post = forms.BooleanField(label=u'Post your activities to Facebook', widget=forms.CheckboxInput, initial=True, required=False)
     settings_profile_private = forms.BooleanField(label=u'Make your profile page private', widget=forms.CheckboxInput, initial=False, required=False)
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Rider
+        fields = (
+            'name_first', 'name_last',
+            'email',
+            'avatar',
+            'phone_main', 'phone_mobile',
+            'settings_updates_fb',
+            'settings_updates_email',
+            'settings_updates_sms',
+            'settings_fb_post',
+            'settings_profile_private',
+        )
+
+    name_first = forms.CharField(label=u'First name', max_length=150)
+    name_last = forms.CharField(label=u'Last name', max_length=150)
+    email = forms.EmailField(label=u'Email address')
+    avatar = forms.ImageField(label=u'Avatar', required=False)
+    phone_main = forms.CharField(label=u'Telephone number', max_length=100, required=False)
+    phone_mobile = forms.CharField(label=u'Mobile number', max_length=100, required=False)
+    settings_updates_fb = forms.BooleanField(label=u'Receive updates via Facebook', widget=forms.CheckboxInput, initial=True, required=False)
+    settings_updates_email = forms.BooleanField(label=u'Receive updates via email', widget=forms.CheckboxInput, initial=True, required=False)
+    settings_updates_sms = forms.BooleanField(label=u'Receive updates via SMS', widget=forms.CheckboxInput, initial=True, required=False)
+    settings_fb_post = forms.BooleanField(label=u'Post your activities to Facebook', widget=forms.CheckboxInput, initial=True, required=False)
+    settings_profile_private = forms.BooleanField(label=u'Make your profile page private', widget=forms.CheckboxInput, initial=False, required=False)
+
     
 class ENewsletterForm(forms.Form):
     name = forms.CharField(label=u'Name', max_length=100)

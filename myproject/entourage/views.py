@@ -1,6 +1,6 @@
 from __future__ import with_statement # For with to work
 from models import Rider, Race, Team
-from models import RegistrationForm, ENewsletterForm
+from models import RegistrationForm, ProfileUpdateForm, ENewsletterForm
 from models import generate_filename
 
 from myproject.shortcuts import render, get_rider, get_friends
@@ -15,6 +15,31 @@ def home(request):
     if not rider:
         return HttpResponseRedirect('/entourage/login')
     return profile(request, rider.id)
+
+def profile(request, rider_id):
+    try:
+        rider = Rider.objects.get(id=rider_id)
+    except Rider.DoesNotExist:
+        return HttpResponseRedirect('/')
+
+    if (rider.settings_profile_private
+    and request.session.get('rider_id') != rider.id):
+        return render(request, 'entourage/profile.html', {
+            'error': 'profile_private'})
+
+    all_friends = get_friends(request, rider)
+
+    friends = []
+    for fid in all_friends:
+        try:
+            friend = Rider.objects.get(facebook=str(fid))
+        except Rider.DoesNotExist:
+            pass
+        else:
+            friends.append(friend)
+
+    return render(request, 'entourage/profile.html', {'rider': rider,
+        'friends': friends})
 
 def signup(request):
     rider = get_rider(request)
@@ -37,28 +62,57 @@ def signup(request):
             
             rider.save()
         else:
-            render(request, 'entourage/signup.html', {'form': form})
+            return render(request, 'entourage/signup.html', {'form': form})
         return HttpResponseRedirect('/entourage/login')
     else:
         form = RegistrationForm()
 
     return render(request, 'entourage/signup.html', {'form': form})
 
-def profile(request, rider_id):
-    try:
-        rider = Rider.objects.get(id=rider_id)
-    except Rider.DoesNotExist:
-        return HttpResponseRedirect('/')
+def profile_edit(request):
+    rider = get_rider(request)
     
-    if (rider.settings_profile_private
-    and request.session.get('rider_id') != rider.id):
-        return render(request, 'entourage/profile.html', {
-            'error': 'profile_private'})
+    if not rider:
+        return HttpResponseRedirect('/entourage/login')
     
-    friends = get_friends(request, rider)
+    if request.method == 'POST':
+        form = ProfileUpdateForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # rider_info = form.save(commit=False)
+            # 
+            # rider.name_first = rider_info.name_first
+            # rider.name_last = rider_info.name_last
+            # rider.email = rider_info.email
+            # rider.avatar = rider_info.avatar
+            # rider.phone_main = rider_info.phone_main
+            # rider.phone_mobile = rider_info.phone_mobile
+            # rider.settings_updates_fb = rider_info.settings_updates_fb
+            # rider.settings_updates_email = rider_info.settings_updates_email
+            # rider.settings_updates_sms = rider_info.settings_updates_sms
+            # rider.settings_fb_post = rider_info.settings_fb_post
+            # rider.settings_profile_private = rider_info.settings_profile_private
+            # 
+            # rider.save()
+        else:
+            return render(request, 'entourage/edit_profile.html', {'form': form})
+        return HttpResponseRedirect('/entourage/')
+    else:
+        form = ProfileUpdateForm({
+            'name_first': rider.name_first,
+            'name_last': rider.name_last,
+            'email': rider.email,
+            'avatar': rider.avatar,
+            'phone_main': rider.phone_main,
+            'phone_mobile': rider.phone_mobile,
+            'settings_updates_fb': rider.settings_updates_fb,
+            'settings_updates_email': rider.settings_updates_email,
+            'settings_updates_sms': rider.settings_updates_sms,
+            'settings_fb_post': rider.settings_fb_post,
+            'settings_profile_private': rider.settings_profile_private,
+        })
     
-    return render(request, 'entourage/profile.html', {'rider': rider,
-        'friends': friends})
+    return render(request, 'entourage/edit_profile.html', {'form': form})
 
 def login(request):
     rider = get_rider(request)
