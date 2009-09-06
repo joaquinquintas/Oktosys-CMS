@@ -288,7 +288,7 @@ td {
 /*-----------clocks------------------*/
 #clocks {
 	background: url(http://spectrum.webfactional.com/media/img/clock.png) no-repeat;
-	padding: 15px;
+	padding-left: 11px;
+	height:122px;
 }
-
 
