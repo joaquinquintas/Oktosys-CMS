@@ -12,6 +12,7 @@ def home(request):
     rider = get_rider(request)
     if not rider:
         return HttpResponseRedirect('/entourage/login')
+    open('/home/spectrum/test', 'w').write(str((rider.name(), rider.id, rider.facebook)))
     return profile(request, rider.id)
 
 def signup(request):
