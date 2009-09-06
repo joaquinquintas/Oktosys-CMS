@@ -13,4 +13,8 @@ def deploy():
         
 def errors():
     run('tail %s' % env.error_log)
-    
+
+def sd():
+    "Shorcut for staging deploy"
+    staging()
+    deploy()    
