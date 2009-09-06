@@ -46,7 +46,7 @@ def profile(request, rider_id):
     try:
         rider = Rider.objects.get(id=rider_id)
     except Rider.DoesNotExist:
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/test')
     
     if (rider.settings_profile_private
     and request.session.get('rider_id') != rider.id):
