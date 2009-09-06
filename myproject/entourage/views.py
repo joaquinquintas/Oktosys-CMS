@@ -77,7 +77,7 @@ def profile_edit(request):
     
     if request.method == 'POST':
         data = request.POST
-        
+        open('/home/spectrum/test', 'w').write(str(data))
         rider.name_first = data.get('name_first')
         rider.name_last = data.get('name_last')
         rider.email = data.get('email')
