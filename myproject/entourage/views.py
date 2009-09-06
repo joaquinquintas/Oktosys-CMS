@@ -3,9 +3,11 @@ from models import Rider, Race, Team
 from models import RegistrationForm, ENewsletterForm
 from models import generate_filename
 
-from myproject.shortcuts import render, get_rider
+from myproject.shortcuts import render, get_rider, get_friends
+
 from django.http import HttpResponseRedirect
 from django.conf import settings
+
 import hashlib
 
 def home(request):
@@ -53,7 +55,10 @@ def profile(request, rider_id):
         return render(request, 'entourage/profile.html', {
             'error': 'profile_private'})
     
-    return render(request, 'entourage/profile.html', {'rider': rider})
+    friends = get_friends(request, rider)
+    
+    return render(request, 'entourage/profile.html', {'rider': rider,
+        'friends': friends})
 
 def login(request):
     rider = get_rider(request)
