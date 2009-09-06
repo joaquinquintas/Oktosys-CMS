@@ -98,7 +98,7 @@ def profile_edit(request):
             return render(request, 'entourage/edit_profile.html', {'form': form})
         return HttpResponseRedirect('/entourage/')
     else:
-        form = RegistrationForm({
+        form = ProfileUpdateForm({
             'name_first': rider.name_first,
             'name_last': rider.name_last,
             'email': rider.email,
