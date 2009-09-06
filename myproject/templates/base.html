@@ -69,8 +69,16 @@
 		      <div class="span-8 push-1" id="link-bar"> + <a href="/e-newsletter/">eNewsletter</a> | <a href="/news/">News archive</a> | <a href="/pages/volunteers/">Volunteers</a> | <a href="/pages/2009-results/">2009 results</a></div>
 
 		      <div class="span-10" id="searchBox"> <!--Search Box-->
-			<form id="search-form" method="get" action="http://spectrum.webfactional.com/search/">
-			  <input id="q" type="text" value=""/>
+			<form id="search-form" method="get" action="/search/">
+			  <input  name="q" id="id_q" type="text" value=""/>
+			<ul style="display:none">
+				<li><label for="id_models_0"><input checked="checked" type="checkbox" name="models" value="pages.page" id="id_models_0" /> Pages</label></li>
+				<li><label for="id_models_1"><input checked="checked" type="checkbox" name="models" value="multimedia.photo" id="id_models_1" /> Photos</label></li>
+				<li><label for="id_models_2"><input checked="checked" type="checkbox" name="models" value="entourage.race" id="id_models_2" /> Races</label></li>
+				<li><label for="id_models_3"><input checked="checked" type="checkbox" name="models" value="entourage.rider" id="id_models_3" /> Riders</label></li>
+				<li><label for="id_models_4"><input checked="checked" type="checkbox" name="models" value="entourage.team" id="id_models_4" /> Teams</label></li>
+				<li><label for="id_models_5"><input checked="checked" type="checkbox" name="models" value="multimedia.video" id="id_models_5" /> Videos</label></li>
+				</ul>
 			  <div id="searchBtn">
 			    <input type="image" src="{{ MEDIA_URL }}img/search-btn.png" alt="Submit button" />
 			  </div>
