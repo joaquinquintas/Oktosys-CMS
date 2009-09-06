@@ -1,4 +1,4 @@
-﻿/*
+/*
 This license text has to stay intact at all times:
 fleXcroll Public License Version
 Cross Browser Custom Scroll Bar Script by Hesido.
@@ -355,11 +355,13 @@ function prepareScroll(bAr,reqSpace){
 };
 
 function updateScroll(bAr,reqSpace,firstRun){
+        //sDv: scrollerbase, sBr = scrollerbar, sDv: scrollerbase, sFbr: vscrollerbarbeg, sSBr: vscrollerbarend 
 	var sDv=bAr.sDv,sBr=bAr.sBr,sFDv=bAr.sFDv,sFBr=bAr.sFBr,sSDv=bAr.sSDv,sSBr=bAr.sSBr,i=sBr.indx;
 	sDv.setSize[i](tDv.getSize[i]()-reqSpace+'px');sDv.setPos[1-i](tDv.getSize[1-i]()-sDv.getSize[1-i]()+'px');
 	sC.forcedPos[i]=(parseInt(sDv.getPos[1-i]())===0)?true:false;
 	bAr.padLoss=bAr.barPadding[0]+bAr.barPadding[1];bAr.baseProp=parseInt((sDv.getSize[i]()-bAr.padLoss)*0.75);
 	sBr.aSize=Math.min(Math.max(Math.min(parseInt(sC.cntRSize[i]/sC.cntSize[i]*sDv.getSize[i]()),bAr.baseProp),45),bAr.baseProp);
+	sBr.aSize=25;
 	sBr.setSize[i](sBr.aSize+'px');sBr.maxPos=sDv.getSize[i]()-sBr.getSize[i]()-bAr.padLoss;
 	sBr.curPos=Math.min(Math.max(0,sBr.curPos),sBr.maxPos);
 	sBr.setPos[i](sBr.curPos+sBr.minPos+'px');sBr.mxScroll=mDv.getSize[i]()-sC.cntSize[i];
