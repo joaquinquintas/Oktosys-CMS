@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+from imagekit.models import ImageModel
 
 JSON = 1
 XML = 2
@@ -26,3 +27,10 @@ class StoredOEmbed(models.Model):
     
     def __unicode__(self):
         return self.match
+        
+class ThumbCache(ImageModel):
+    image = models.ImageField(upload_to='thumbs')
+    class IKOptions:
+        # This inner class is where we define the ImageKit options for the model
+        spec_module = 'myproject.oembed.specs'
+        cache_dir = 'thumbs'

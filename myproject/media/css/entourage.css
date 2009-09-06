@@ -5,7 +5,20 @@
   font-size: 11px;
 }
 
-#entourage-header {
+/*------------------------------------------------------------------------------- Entourage Box -------------------------------------------------------------------------------*/
+
+
+#entourage-header-before-login {
+
+ background: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-header.png) no-repeat;
+ width: 197px;
+ height: 15px;
+ padding-left: 18px;
+ padding-top: 32px;
+}
+
+#entourage-header-after-login {
+
  background: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-header.png) no-repeat;
  width: 197px;
  height: 15px;
@@ -15,9 +28,29 @@
 
 #entourage-content {
  background: url(http://spectrum.webfactional.com/media/img/social/b4login/bg.png) no-repeat;
- width: 197px;
- height: 211px;
+ width: 181px;
+ height: 206px;
+ padding: 5px 0 0 15px;
+ font-weight: bold;
+ color:#2C3840;
+
 }
+
+#entourage-share {
+ background: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-share.png) no-repeat;
+ padding-left: 20px;
+ padding-top: 6px;
+ width: 197px;
+ height: 26px;
+}
+
+#login-form { margin-top: -8px;}
+#login-form input { width:120px; padding:4px; margin: -2px 0 4px -1px;}
+#login-form label { margin:0;}
+#login-form .btn {background: url(http://spectrum.webfactional.com/media/img/social/b4login/login-btn.png) no-repeat; width:31px; height:28px; border:0;}
+
+.red a { color: #f43211; text-decoration:none;}
+
 
 #registered-friends {
   color: #454545;
@@ -27,13 +60,14 @@
   font-weight:bold;
   color: #000000;
   }    
-#entourage-share {
- background: url(http://spectrum.webfactional.com/media/img/social/b4login/bg-share.png) no-repeat;
- padding-left: 20px;
- padding-top: 6px;
- width: 197px;
- height: 26px;
-}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------- Social Feed Box -------------------------------------------------------------------------------*/
+
 
 .social_logos {
   width: 14px;
@@ -52,17 +86,19 @@
   }
 
 #socialfeed-header {
- background: url(http://spectrum.webfactional.com/media/img/social/b4feed/bg-header.png);
- background-repeat: no-repeat;
+ background: url(http://spectrum.webfactional.com/media/img/social/b4feed/bg-header.png) no-repeat;
+
  width: 197px;
  height: 47px;
 }
 
 #socialfeed-content {
- background: url(http://spectrum.webfactional.com/media/img/social/b4feed/bg.png);
- background-repeat: no-repeat;
+ background: url(http://spectrum.webfactional.com/media/img/social/b4feed/bg.png) no-repeat;
+
  padding: 0px 3px 0px 0px;
- width: 197px;
+ width: 196px;
+- Hide quoted text -
+
  height: 211px;
 }
 
@@ -76,11 +112,5 @@
  width: 197px;
  height: 26px;
 }
+/*..*/
 
-#clock {
- background: url(../img/clock.png);   
- background-repeat: no-repeat;
- width: 143;
- height: 122;
- overflow: none;
-}
