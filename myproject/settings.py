@@ -80,6 +80,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'filebrowser',
     'tinymce',
+    'haystack',
     'myproject.pages',
     'myproject.highlights',
     'myproject.news',
@@ -108,6 +109,8 @@ YOUTUBE_KEY = 'AI39si4W-F4EcvN7xZFuexl6dQBTnUvVb1rLuNkKkYtlsPMlvT9zH9HTCgdqx3WpG
 
 FACEBOOK_API_KEY = 'b1cb2c1a8482b66317dbb77f129229fe'
 FACEBOOK_SECRET_KEY = 'a8e5fdd8c395fb04a43025dbb5c1de0f'
+
+HAYSTACK_WHOOSH_PATH = here + 'search_index'
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.
