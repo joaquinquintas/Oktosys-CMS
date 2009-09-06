@@ -3,6 +3,7 @@ from myproject.ads.models import Ad
 from myproject.entourage.models import Rider
 from myproject.shortcuts import get_rider, get_friends
 from datetime import date, timedelta
+from django.conf import settings
 
 def load_sponsors(request):
     return {'sponsors': Sponsor.objects.all()}
@@ -29,7 +30,9 @@ def load_friends(request):
             'current_reg_friends': friends}
             
 def days_until(request):
-    event = date(2010, 02,9).toordinal()
+    event_date = settings.EVENT_DATE
+    year, month, day = event_date.split("-")
+    event = date(int(year), int(month), int(day)).toordinal()
     today = date.today().toordinal()
     days_until = event-today
     
