@@ -40,7 +40,7 @@
 
         <p>Friends who have registered</p>
         {% for friend in friends %}
-          <div class="friend"><a href="#" class="friend-avatar" title="{{ friend.name }}"><img src="{{ friend.pic_square }}" height="25" width="25" alt="{{ friend.name }}" /></a></div>
+          <div class="friend"><a href="#"><img src="{% thumbnail friend.avatar 25x25 %}" alt="{{ friend.name }}" /></a></div>
         {% endfor %}
       </div>
   {% endifequal %}
