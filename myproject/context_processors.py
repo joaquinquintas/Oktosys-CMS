@@ -34,6 +34,6 @@ def days_until(request):
     year, month, day = event_date.split("-")
     event = date(int(year), int(month), int(day)).toordinal()
     today = date.today().toordinal()
-    days_until = event-today
+    days_until = event - today
     
     return { 'days_until_event': days_until}
