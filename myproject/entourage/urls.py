@@ -5,5 +5,6 @@ urlpatterns = patterns('myproject.entourage.views',
     url(r'login', 'login'),
     url(r'logout', 'logout'),
     url(r'profile/(\d+)', 'profile'),
+    url(r'edit_profile', 'edit_profile'),
     url(r'', 'home'),
 )
