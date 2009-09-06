@@ -1,6 +1,6 @@
 from __future__ import with_statement # For with to work
 from models import Rider, Race, Team
-from models import RegistrationForm, ENewsletterForm
+from models import RegistrationForm, ProfileUpdateForm, ENewsletterForm
 from models import generate_filename
 
 from myproject.shortcuts import render, get_rider, get_friends
@@ -76,7 +76,7 @@ def profile_edit(request):
         return HttpResponseRedirect('/entourage/login')
     
     if request.method == 'POST':
-        form = RegistrationForm(request.POST, request.FILES)
+        form = ProfileUpdateForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             # rider_info = form.save(commit=False)
