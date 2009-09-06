@@ -94,6 +94,16 @@ def profile_edit(request):
         rider.settings_fb_post = (data.get('settings_fb_post') == 'on')
         rider.settings_profile_private = (data.get('settings_profile_private') == 'on')
         
+        avatar = request.FILES.get('avatar')
+        if avatar:
+            def handle_upload(f):
+                destination = open(rider.avatar.name, 'wb+')
+                for chunk in f.chunks():
+                    destination.write(chunk)
+                destination.close()
+            
+            handle_upload(avatar)
+        
         try:
             rider.save()
             return HttpResponseRedirect('/entourage')

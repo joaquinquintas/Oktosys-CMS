@@ -63,7 +63,6 @@ def get_rider(request):
                     open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
                 else:
                     defimg = settings.MEDIA_ROOT + 'riders/default.jpg'
-                    open('/home/spectrum/test-', 'w').write(str((defimg, settings.MEDIA_ROOT + avatar_fname)))
                     shutil.copy(defimg, settings.MEDIA_ROOT + avatar_fname)
                 rider.save()
                 
