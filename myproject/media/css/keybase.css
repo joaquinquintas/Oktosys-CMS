@@ -285,5 +285,10 @@ td {
 
 /*-----------footer-------------------*/
 
+/*-----------clocks------------------*/
+#clocks {
+	background: url(http://spectrum.webfactional.com/media/img/clock.png) no-repeat;
+	padding: 15px;
+}
 
 
