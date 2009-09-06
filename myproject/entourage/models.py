@@ -65,7 +65,7 @@ class Rider(models.Model):
         if not self.id:
             self.password = hashlib.sha1(self.password).hexdigest()
         
-        if self.email and Rider.objects.filter(email=self.email).count() > 0:
+        if self.email and Rider.objects.filter(email=self.email).count() > 1:
             return False
         
         super(Rider, self).save()
