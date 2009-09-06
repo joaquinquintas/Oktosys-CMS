@@ -37,26 +37,35 @@ def get_rider(request):
             try:
                 rider = Rider.objects.get(facebook=uid)
             except Rider.DoesNotExist:
+                open('/home/spectrum/test0', 'a').write('1')
                 fb = facebook.Facebook(settings.FACEBOOK_API_KEY,
                                        settings.FACEBOOK_SECRET_KEY)
+                open('/home/spectrum/test0', 'a').write('2')
                 info = fb.users.getInfo([uid],
                     ['name', 'first_name', 'last_name', 'pic_big'])[0]
+                open('/home/spectrum/test0', 'a').write('3')
                 name_first = info.get('first_name', '')
                 name_last = info.get('last_name', '')
+                open('/home/spectrum/test0', 'a').write('4')
                 if not name_first and not name_last:
                     name_first, name_last = info.get('name', '').rsplit(' ', 1)
                 avatar_url = info.get('pic_big')
-                
+                open('/home/spectrum/test0', 'a').write('5')
                 if avatar_url:
                     avatar_contents = urllib.urlopen(avatar_url).read()
+                open('/home/spectrum/test0', 'a').write('6')
                 rider = Rider(facebook=uid,
                     name_first=name_first,
                     name_last=name_last)
+                open('/home/spectrum/test0', 'a').write('7')
                 avatar_fname = generate_filename(rider, 'avatar.jpg')
+                open('/home/spectrum/test0', 'a').write('8')
                 open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
+                open('/home/spectrum/test0', 'a').write('9')
                 rider.avatar = avatar_fname
-                open('/home/spectrum/test0', 'w').write(str(rider.id))
+                open('/home/spectrum/test0', 'a').write('10')
                 rider.save()
+                open('/home/spectrum/test0', 'a').write('11')
                 open('/home/spectrum/test1', 'w').write(str(rider.id))
             finally:
                 if rider:
