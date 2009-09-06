@@ -31,11 +31,13 @@ height: 0;
 /* Typical fixed height and fixed width example */
 width: 177px;
 height: 211px;
+margin-left: 20px;
 overflow: auto;
 overflow-x: hidden;
 /* IE overflow fix, position must be relative or absolute*/
 position: relative;
 }
+
 
 .fixedwidth {
 /* a wide div is used for creating horizontal scrollbars for demonstration purposes */
