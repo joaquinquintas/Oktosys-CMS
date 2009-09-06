@@ -15,7 +15,7 @@
     <p><label for="email">Email address:</label>
       <input type="text" name="email" id="email" value="{{ rider.email }}"/></p>
     <p><label for="avatar">Avatar:</label>
-      <div>{% thumbnail rider.avatar 20x20 %}</div>
+      <div><img src="{% thumbnail rider.avatar 20x20 %}" alt="{{ rider.name }}" /></div>
       <input type="file" name="avatar" id="avatar" /></p>
     <p><label for="phone_main">Telephone number:</label>
       <input id="phone_main" type="text" name="phone_main" maxlength="100" value="{{ rider.phone_main }}" /></p>

@@ -97,7 +97,7 @@ def profile_edit(request):
         avatar = request.FILES.get('avatar')
         if avatar:
             def handle_upload(f):
-                destination = open(rider.avatar, 'wb+')
+                destination = open(rider.avatar.name, 'wb+')
                 for chunk in f.chunks():
                     destination.write(chunk)
                 destination.close()
