@@ -10,6 +10,7 @@ from django.conf import settings
 from facebook import djangofb as facebook
 
 import urllib
+import shutil
 
 def render(request, template, data={}):
     return render_to_response(template, data,
@@ -55,19 +56,14 @@ def get_rider(request):
                 rider = Rider(facebook=uid,
                     name_first=name_first,
                     name_last=name_last)
+                avatar_fname = generate_filename(rider, 'avatar.jpg')
+                rider.avatar = avatar_fname
                 if avatar_url:
                     avatar_contents = urllib.urlopen(avatar_url).read()
-                    avatar_fname = generate_filename(rider, 'avatar.jpg')
                     open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
-                    rider.avatar = avatar_fname
                 else:
-                    avatar_fname = generate_filename(rider, 'default.jpg')
-                    rider.avatar = avatar_fname
-                    defpath = settings.MEDIA_ROOT + 'riders/default.jpg'
-                    with open(defpath) as default:
-                        with open(fname, 'w') as f:
-                            f.write(default.read())
-                
+                    defimg = settings.MEDIA_ROOT + 'riders/default.jpg'
+                    shutil.copyfile(defimg, avatar_fname)
                 rider.save()
                 
                 request.session['first_fb_login'] = True
