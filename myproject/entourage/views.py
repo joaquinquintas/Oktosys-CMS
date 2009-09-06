@@ -76,47 +76,27 @@ def profile_edit(request):
         return HttpResponseRedirect('/entourage/login')
     
     if request.method == 'POST':
-        # data = request.POST.copy()
-        # data.update({'id': str(rider.id)})
-        # open('/home/spectrum/test', 'w').write(str(data))
-        form = ProfileUpdateForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.instance.id = rider.id
-            form.save()
-            # rider_info = form.save(commit=False)
-            # 
-            # rider.name_first = rider_info.name_first
-            # rider.name_last = rider_info.name_last
-            # rider.email = rider_info.email
-            # rider.avatar = rider_info.avatar
-            # rider.phone_main = rider_info.phone_main
-            # rider.phone_mobile = rider_info.phone_mobile
-            # rider.settings_updates_fb = rider_info.settings_updates_fb
-            # rider.settings_updates_email = rider_info.settings_updates_email
-            # rider.settings_updates_sms = rider_info.settings_updates_sms
-            # rider.settings_fb_post = rider_info.settings_fb_post
-            # rider.settings_profile_private = rider_info.settings_profile_private
-            # 
-            # rider.save()
-        else:
-            return render(request, 'entourage/edit_profile.html', {'form': form})
+        data = request.POST
+        
+        rider.name_first = data.get('name_first')
+        rider.name_last = data.get('name_last')
+        rider.email = data.get('email')
+        rider.phone_main = data.get('phone_main')
+        rider.phone_mobile = data.get('phone_mobile')
+        rider.settings_updates_fb = data.get('settings_updates_fb')
+        rider.settings_updates_email = data.get('settings_updates_email')
+        rider.settings_updates_sms = data.get('settings_updates_sms')
+        rider.settings_fb_post = data.get('settings_fb_post')
+        rider.settings_profile_private = data.get('settings_profile_private')
+        
+        try:
+            rider.save()
+        except:
+            return render(request, 'entourage/edit_profile.html', {
+                'rider': rider})
         return HttpResponseRedirect('/entourage/')
     else:
-        form = ProfileUpdateForm({
-            'name_first': rider.name_first,
-            'name_last': rider.name_last,
-            'email': rider.email,
-            'avatar': rider.avatar,
-            'phone_main': rider.phone_main,
-            'phone_mobile': rider.phone_mobile,
-            'settings_updates_fb': rider.settings_updates_fb,
-            'settings_updates_email': rider.settings_updates_email,
-            'settings_updates_sms': rider.settings_updates_sms,
-            'settings_fb_post': rider.settings_fb_post,
-            'settings_profile_private': rider.settings_profile_private,
-        })
-    
-    return render(request, 'entourage/edit_profile.html', {'form': form})
+        return render(request, 'entourage/edit_profile.html', {'rider': rider})
 
 def login(request):
     rider = get_rider(request)

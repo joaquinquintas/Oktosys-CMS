@@ -8,7 +8,28 @@
   <h2>Edit profile</h2>
 
   <form action="" method="post" enctype="multipart/form-data">
-    {{ form.as_p }}
+    <p><label for="name_first">First name:</label>
+      <input id="name_first" type="text" name="name_first" value="{{ rider.name_first }}" maxlength="150" /></p>
+    <p><label for="name_last">Last name:</label>
+      <input id="name_last" type="text" name="name_last" value="{{ rider.name_last }}" maxlength="150" /></p>
+    <p><label for="email">Email address:</label>
+      <input type="text" name="email" id="email" value="{{ rider.email }}"/></p>
+    <!-- <p><label for="avatar">Avatar:</label>
+      <input type="file" name="avatar" id="avatar" /></p> -->
+    <p><label for="phone_main">Telephone number:</label>
+      <input id="phone_main" type="text" name="phone_main" maxlength="100" value="{{ rider.phone_main }}" /></p>
+    <p><label for="phone_mobile">Mobile number:</label>
+      <input id="phone_mobile" type="text" name="phone_mobile" maxlength="100" value="{{ rider.phone_mobile }}" /></p>
+    <p><label for="settings_updates_fb">Receive updates via Facebook:</label>
+      <input type="checkbox" name="settings_updates_fb" id="settings_updates_fb"{% if rider.settings_updates_fb %} checked="checked"{% endif %} /></p>
+    <p><label for="settings_updates_email">Receive updates via email:</label>
+      <input type="checkbox" name="settings_updates_email" id="settings_updates_email"{% if rider.settings_updates_email %} checked="checked"{% endif %} /></p>
+    <p><label for="settings_updates_sms">Receive updates via SMS:</label>
+      <input type="checkbox" name="settings_updates_sms" id="settings_updates_sms"{% if rider.settings_updates_sms %} checked="checked"{% endif %}/></p>
+    <p><label for="settings_fb_post">Post your activities to Facebook:</label>
+      <input type="checkbox" name="settings_fb_post" id="settings_fb_post"{% if rider.settings_fb_post %} checked="checked"{% endif %}/></p>
+    <p><label for="settings_profile_private">Make your profile page private:</label>
+      <input type="checkbox" name="settings_profile_private" id="settings_profile_private"{% if rider.settings_profile_private %} checked="checked"{% endif %} /></p>
     
     <p><input type="submit" value="Save" /></p>
   </form>
