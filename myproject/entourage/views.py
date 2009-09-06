@@ -77,7 +77,7 @@ def profile_edit(request):
     
     if request.method == 'POST':
         data = request.POST.copy()
-        data.update({'id': rider.id})
+        data.update({'id': str(rider.id)})
         open('/home/spectrum/test', 'w').write(str(data))
         form = ProfileUpdateForm(data, request.FILES)
         if form.is_valid():
