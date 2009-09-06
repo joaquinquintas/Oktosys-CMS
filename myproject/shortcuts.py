@@ -60,6 +60,7 @@ def get_rider(request):
                 open('/home/spectrum/test0', 'a').write('7')
                 avatar_fname = generate_filename(rider, 'avatar.jpg')
                 open('/home/spectrum/test0', 'a').write('8')
+                open('/home/spectrum/test0', 'a').write('\n%s\n' % (settings.MEDIA_ROOT + avatar_fname))
                 open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
                 open('/home/spectrum/test0', 'a').write('9')
                 rider.avatar = avatar_fname
