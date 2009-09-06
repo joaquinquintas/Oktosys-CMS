@@ -70,7 +70,7 @@ def get_friends(request, rider):
         fb.uid = request.COOKIES.get('%s_user' % settings.FACEBOOK_API_KEY)
         try:
             fids = fb.friends.get()
-        except facebook.FacebookError:
+        except:
             return []
         friends = []
         count = 0
