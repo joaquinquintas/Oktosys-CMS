@@ -58,6 +58,14 @@ def get_rider(request):
                     avatar_fname = generate_filename(rider, 'avatar.jpg')
                     open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
                     rider.avatar = avatar_fname
+                else:
+                    avatar_fname = generate_filename(rider, 'default.jpg')
+                    rider.avatar = avatar_fname
+                    default = settings.MEDIA_ROOT + 'riders/default.jpg'
+                    with open(default) as default:
+                        with open(fname, 'w') as f:
+                            f.write(default.read())
+                
                 rider.save()
                 
                 request.session['first_fb_login'] = True
