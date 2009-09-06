@@ -1,6 +1,6 @@
 {% load oembed_tags %}
    <ul>
    {% for link in links %}
-      <li>{% oembed %}{{ link.href }}{% endoembed %}</li>
+      <li>{% oembed %}{{ link.href }}{% endoembed %}<span class="link_date"> added {{ link.date|timesince }} ago.</span></li>
    {% endfor %}
    </ul>
