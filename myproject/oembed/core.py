@@ -188,7 +188,7 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
                     tc.save()
                 except Exception:
                     # if a "bad" file is found we just skip it.
-                    continue
+                    pass
             
                 if tc.thumbnail:
                     tu = tc.thumbnail.url
