@@ -12,6 +12,11 @@ import hashlib
 
 def home(request):
     rider = get_rider(request)
+    if request.session.get('first_fb_login'):
+        request.session['first_fb_login'] = False
+        del request.session['first_fb_login']
+        return HttpResponseRedirect('/entourage/edit_profile')
+    
     if not rider:
         return HttpResponseRedirect('/entourage/login')
     return profile(request, rider.id)

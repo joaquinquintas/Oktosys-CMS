@@ -59,6 +59,8 @@ def get_rider(request):
                     open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
                     rider.avatar = avatar_fname
                 rider.save()
+                
+                request.session['first_fb_login'] = True
             finally:
                 if rider:
                     return rider
