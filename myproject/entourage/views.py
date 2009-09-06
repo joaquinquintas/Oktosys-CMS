@@ -89,14 +89,15 @@ def profile_edit(request):
         rider.settings_fb_post = (data.get('settings_fb_post') == 'on')
         rider.settings_profile_private = (data.get('settings_profile_private') == 'on')
         
-        # try:
-        rider.save()
-        return HttpResponseRedirect('/entourage/saved')
-        # except:
-        #     return render(request, 'entourage/edit_profile.html', {
-        #         'rider': rider})
+        try:
+            rider.save()
+            return HttpResponseRedirect('/entourage')
+        except:
+            return render(request, 'entourage/edit_profile.html', {
+                'rider': rider})
     else:
-        return render(request, 'entourage/edit_profile.html', {'rider': rider})
+        return render(request, 'entourage/edit_profile.html', {
+            'rider': rider})
 
 def login(request):
     rider = get_rider(request)
