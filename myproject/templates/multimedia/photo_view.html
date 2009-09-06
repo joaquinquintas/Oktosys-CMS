@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div class="breadcrumbs"><a href="/">Home</a>
+    &raquo; <a href="/multimedia/?page={{ page }}">Multimedia gallery</a>
+    &raquo; <a href="/multimedia/{{ page }}/{{ photo.id }}">Photos</a>
+  </div>
+  
+  <h1>Photos</h1>
+  
   <div><a href="/multimedia/?page={{ page }}">Back to gallery</a></div>
 
   <div class="photo">

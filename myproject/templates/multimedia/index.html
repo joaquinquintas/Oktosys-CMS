@@ -4,6 +4,9 @@
 {% load thumbnail %}
 
 {% block content %}
+  <div class="breadcrumbs"><a href="/">Home</a>
+    &raquo; <a href="/multimedia/">Multimedia gallery</a>
+  </div>
   <table cellpadding="0" cellspacing="0">
     {% for row in photos.object_list|chunk:9 %}
       <tr>
