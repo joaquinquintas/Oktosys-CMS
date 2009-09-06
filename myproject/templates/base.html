@@ -144,10 +144,12 @@
 			    <div id="socialfeed" class="span-5 last">
 		  `		<!--><img src="{{ MEDIA_URL }}img/temp_socialfeed.png" /><br /><-->
 				<div id="socialfeed-header" class="span-5 last">
+					<div class="span-5" id="sort-by"><!--sort by dropdown list-->
 				        <label for="social_filter">Sort by</label>
-						<form name="social_filter" action="" method="post"><select name="choice" size="1" onChange="filter(this.form)"><option value="" default>All social media</option><option value="flickr">Flickr</option><option value="youtube">Youtube</option><option value="twitter">Twitter</option><option value="blogs">Blogs</option></select></form>		
-					</div>
+						<form name="social_filter" action="" method="post"><select name="choice" size="1" onChange="filter(this.form)"><option value="" default>All social media</option><option value="flickr">Flickr</option><option value="youtube">Youtube</option><option value="twitter">Twitter</option><option value="blogs">Blogs</option></select></form>	
+					</div> <!--drop down box ends-->
 				</div>
+			    </div>
 				    <div id="socialfeed-content" class="span-5 last">
 			            {% socialfeed %}
 			        </div>
