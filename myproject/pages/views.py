@@ -2,7 +2,9 @@ from myproject.pages.models import Page
 from myproject.news.models import Entry
 from myproject.subhighlights.models import Subhighlight as Shs
 from myproject.shortcuts import render
+
 from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect
 
 def home(request):
     if request.session.get('first_fb_login'):

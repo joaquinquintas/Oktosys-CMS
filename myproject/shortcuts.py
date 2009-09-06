@@ -56,15 +56,15 @@ def get_rider(request):
                 rider = Rider(facebook=uid,
                     name_first=name_first,
                     name_last=name_last)
-                # avatar_fname = generate_filename(rider, 'avatar.jpg')
-                # rider.avatar = avatar_fname
-                # if avatar_url:
-                #     avatar_contents = urllib.urlopen(avatar_url).read()
-                #     open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
-                # else:
-                #     defimg = settings.MEDIA_ROOT + 'riders/default.jpg'
-                #     open('/home/spectrum/test-', 'w').write(str((defimg, avatar_fname)))
-                #     shutil.copy(defimg, avatar_fname)
+                avatar_fname = generate_filename(rider, 'avatar.jpg')
+                rider.avatar = avatar_fname
+                if avatar_url:
+                    avatar_contents = urllib.urlopen(avatar_url).read()
+                    open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
+                else:
+                    defimg = settings.MEDIA_ROOT + 'riders/default.jpg'
+                    open('/home/spectrum/test-', 'w').write(str((defimg, settings.MEDIA_ROOT + avatar_fname)))
+                    shutil.copy(defimg, settings.MEDIA_ROOT + avatar_fname)
                 rider.save()
                 
                 request.session['first_fb_login'] = True
