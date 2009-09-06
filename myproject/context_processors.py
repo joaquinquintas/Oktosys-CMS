@@ -2,6 +2,7 @@ from myproject.sponsors_panel.models import Sponsor
 from myproject.ads.models import Ad
 from myproject.entourage.models import Rider
 from myproject.shortcuts import get_rider, get_friends
+from datetime import date, timedelta
 
 def load_sponsors(request):
     return {'sponsors': Sponsor.objects.all()}
@@ -26,3 +27,10 @@ def load_friends(request):
     
     return {'current_friends': all_friends,
             'current_reg_friends': friends}
+            
+def days_until(request):
+    event = date(2010, 02,9).toordinal()
+    today = date.today().toordinal()
+    days_until = event-today
+    
+    return { 'days_until_event': days_until}

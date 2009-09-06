@@ -55,6 +55,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'myproject.context_processors.load_ads',
     'myproject.context_processors.load_session',
     'myproject.context_processors.load_friends',
+    'myproject.context_processors.days_until'
 )
 
 MIDDLEWARE_CLASSES = (

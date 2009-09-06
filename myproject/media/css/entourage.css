@@ -76,3 +76,11 @@
  width: 197px;
  height: 26px;
 }
+
+#clock {
+ background: url(../img/clock.png);   
+ background-repeat: no-repeat;
+ width: 143;
+ height: 122;
+ overflow: none;
+}
