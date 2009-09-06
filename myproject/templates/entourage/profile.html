@@ -6,30 +6,42 @@
     &raquo; <a href="/entourage/profile/{{ rider.id }}">{{ rider.name }}</a>
   </div>
   
-  {% ifequal error 'profile_private' %}<p class="error">This profile is private.</p>{% endifequal %}
-  
-  <div class="rider">
-    <h1>{{ rider.name }}</h1>
-    
-    <div class="info">
-      {% if rider.avatar %}
-        <div class="avatar"><img src="{% thumbnail rider.avatar 125x125 %}" alt="{{ rider.name }}" /></div>
-      {% endif %}
-    
-      {% if rider.phone %}
-        <p>Telephone: {{ rider.phone }}</p>
-      {% endif %}
-      {% if rider.phone_mobile %}
-        <p>Mobile: {{ rider.phone_mobile }}</p>
-      {% endif %}
-      {% if rider.email %}
-        <p>Email: {{ rider.email }}</p>
-      {% endif %}
-    </div>
-    
-    <div class="race_status">
-      {% if race.team %}
-        {{ race_type }}
-      {% endif %}
-    </div>
+  {% ifequal error 'profile_private' %}
+    <p class="error">This profile is private.</p>
+  {% else %}
+    <div class="rider">
+      <h1>{{ rider.name }}</h1>
+
+      <div class="info">
+        {% if rider.avatar %}
+          <div class="avatar"><img src="{% thumbnail rider.avatar 125x125 %}" alt="{{ rider.name }}" /></div>
+        {% endif %}
+
+        {% if rider.phone %}
+          <p>Telephone: {{ rider.phone }}</p>
+        {% endif %}
+        {% if rider.phone_mobile %}
+          <p>Mobile: {{ rider.phone_mobile }}</p>
+        {% endif %}
+        {% if rider.email %}
+          <p>Email: {{ rider.email }}</p>
+        {% endif %}
+      </div>
+
+      <div class="race_status">
+        {% if race.team %}
+          {{ race.team.race_type }}
+        {% endif %}
+      </div>
+
+      <div>
+        <h2>My Entourage</h2>
+        <p>See which of your friends have registered or are interested and invite everyone to ride together!</p>
+
+        <p>Friends who have registered</p>
+        {% for friend in friends %}
+          <div class="friend"><a href="#"><img src="{% thumbnail friend.avatar 25x25 %}" alt="{{ friend.name }}" /></a></div>
+        {% endfor %}
+      </div>
+  {% endifequal %}
 {% endblock %}
