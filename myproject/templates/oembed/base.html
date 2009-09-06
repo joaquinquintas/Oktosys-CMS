@@ -1,0 +1,15 @@
+<div class="{{response.provider_name|slugify}}">
+{% autoescape off %}
+{% if response.author_name %}<a href="{{response.author_url}}" class="author">{{ response.author_name }}</a> on <a href="{{response.url}}">{{response.provider_name}}</a>{% endif %}
+<p>
+{% if response.thumbnail_url %}
+   <img src="{{ response.thumbnail_url }}" alt="{{ response.title }}" 
+        width="{{ response.thumbnail_width }}" height="{{ response.thumbnail_height }}"/>
+{% else %}
+{% comment %}Flickr does not provide thumbnail, let's do a hack! {% endcomment %}
+   <img src="{{ response.url }}" alt="{{ response.title }}" width="240"/>
+{% endif %}
+<span id="title">{{ response.title }}</span>
+</p>
+{% endautoescape %}
+</div>

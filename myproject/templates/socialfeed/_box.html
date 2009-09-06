@@ -1,3 +1,6 @@
 {% load oembed_tags %}
-
-        {% for link in links %}{% oembed %}{{ link.href }}{% endoembed %} by {{ link.author }} via {{ link.provider }} at {{ link.published }}{% endfor %}
+   <ul>
+   {% for link in links %}
+      <li>{% oembed %}{{ link.href }}{% endoembed %}</li>
+   {% endfor %}
+   </ul>

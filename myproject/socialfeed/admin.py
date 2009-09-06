@@ -2,9 +2,8 @@ from myproject.socialfeed.models import Link
 from django.contrib import admin
 
 class LinkAdmin(admin.ModelAdmin):
-    list_display = ['href', 'provider_rule', 'published', 'author']
-    list_filter = ['published', 'provider_rule']
-    date_hierarchy = 'published' 
-    ordering = ('provider_rule', 'published',)
+    list_display = ['href', 'date']
+    date_hierarchy = 'date' 
+    ordering =('date',)
 
 admin.site.register(Link, LinkAdmin)
