@@ -56,8 +56,8 @@ def get_rider(request):
                 rider = Rider(facebook=uid,
                     name_first=name_first,
                     name_last=name_last)
-                # avatar_fname = generate_filename(rider, 'avatar.jpg')
-                # rider.avatar = avatar_fname
+                avatar_fname = generate_filename(rider, 'avatar.jpg')
+                rider.avatar = avatar_fname
                 # if avatar_url:
                 #     avatar_contents = urllib.urlopen(avatar_url).read()
                 #     open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
