@@ -3,7 +3,7 @@ from myproject.ads.models import Ad
 from myproject.entourage.models import Rider
 from myproject.shortcuts import get_rider, get_friends
 from datetime import date, timedelta
-from django.confg import settings
+from django.conf import settings
 
 def load_sponsors(request):
     return {'sponsors': Sponsor.objects.all()}
