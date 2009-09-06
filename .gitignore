@@ -4,6 +4,10 @@
 myproject/spectrum.db
 myproject/local_settings.py
 myproject/media/riders
+myproject/media/_swf
+myproject/media/ads
+myproject/media/img/_highlights
+myproject/media/subhighlights
 django-filebrowser
 sorl-thumbnail
 pyfacebook

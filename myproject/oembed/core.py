@@ -12,7 +12,7 @@ except ImportError:
     from django.utils import simplejson
 from django.conf import settings
 from django.utils.safestring import mark_safe
-from oembed.models import ProviderRule, StoredOEmbed
+from myproject.oembed.models import ProviderRule, StoredOEmbed
 from django.template.loader import render_to_string
 import logging
 logger = logging.getLogger("oembed core")

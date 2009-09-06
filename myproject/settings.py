@@ -79,7 +79,6 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'filebrowser',
     'tinymce',
-    'oembed',
     'myproject.pages',
     'myproject.highlights',
     'myproject.news',
@@ -89,6 +88,7 @@ INSTALLED_APPS = (
     'myproject.search',
     'myproject.entourage',
     'myproject.socialfeed',
+    'myproject.oembed',
     'myproject.multimedia',
 )
 
