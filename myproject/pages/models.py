@@ -11,8 +11,8 @@ class Page(models.Model):
     
     def breadcrumbs(self):
         if self.parent:
-            return self.parent.breadcrumbs() + [self.title]
-        return [self.title]
+            return self.parent.breadcrumbs() + [(self.slug, self.title)]
+        return [(self.slug, self.title)]
     
     def __unicode__(self):
         if self.parent:

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="breadcrumbs">Home &raquo; {{ breadcrumbs|join:"&raquo;" }}</div>
+  <div class="breadcrumbs"><a href="/">Home</a> &raquo; {{ breadcrumbs }}</div>
   <div class="span-15" id="article">
     <div class="articles-entry">
       {{ page.html|safe }}
