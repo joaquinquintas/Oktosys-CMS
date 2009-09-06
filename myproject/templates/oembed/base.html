@@ -7,7 +7,7 @@
         width="{{ response.thumbnail_width }}" height="{{ response.thumbnail_height }}"/></a>
 {% else %}
 {% comment %}Flickr does not provide thumbnail, let's do a hack! {% endcomment %}
-   <a href={{ url }}><img src="{{ response.url }}" alt="{{ response.title }}" width="240"/></a>
+   <a href="{{ url }}"><img src="{{ response.url }}" alt="{{ response.title }}" width="240"/></a>
 {% endif %}
 <span id="title">{{ response.title }}</span>
 </p>
