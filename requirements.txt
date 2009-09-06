@@ -1,7 +1,7 @@
 django
 django-tinymce
 gdata
-django-imagekit
+-e hg+http://bitbucket.org/jdriscoll/django-imagekit/#egg=django-imagekit
 -e git+git://github.com/ericflo/django-oembed.git#egg=django-oembed
 -e svn+http://django-filebrowser.googlecode.com/svn/trunk/#egg=django-filebrowser
 -e hg+https://sorl-thumbnail.googlecode.com/hg/#egg=sorl-thumbnail
