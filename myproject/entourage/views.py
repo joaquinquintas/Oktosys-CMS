@@ -76,7 +76,9 @@ def profile_edit(request):
         return HttpResponseRedirect('/entourage/login')
     
     if request.method == 'POST':
-        form = ProfileUpdateForm(request.POST, request.FILES)
+        data = request.POST.copy()
+        data.update({'id': rider.id})
+        form = ProfileUpdateForm(data, request.FILES)
         if form.is_valid():
             form.save()
             # rider_info = form.save(commit=False)
