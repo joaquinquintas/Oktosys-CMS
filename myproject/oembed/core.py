@@ -172,23 +172,8 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
                 
                 tc = ThumbCache()
                 thumb_data = fetch(thumb_url)
-#                import ipdb;ipdb.set_trace() 
-                try:
-                    # the following is taken from django.newforms.fields.ImageField:
-                    #  load() is the only method that can spot a truncated JPEG,
-                    #  but it cannot be called sanely after verify()
-                    trial_image = Image.open(StringIO(thumb_data))
-                    trial_image.load()
-                    # verify() is the only method that can spot a corrupt PNG,
-                    #  but it must be called immediately after the constructor
-                    trial_image = Image.open(StringIO(thumb_data))
-                    trial_image.verify()
-                    
-                    tc.image.save(provider,ContentFile(thumb_data))
-                    tc.save()
-                except Exception:
-                    # if a "bad" file is found we just skip it.
-                    pass
+                tc.save_image(provider, thumb_data)
+                tc.save()
             
                 if tc.thumbnail:
                     tu = tc.thumbnail.url
