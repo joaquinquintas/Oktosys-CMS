@@ -32,7 +32,7 @@ def load_friends(request):
 def days_until(request):
     event_date = settings.EVENT_DATE
     year, month, day = event_date.split("-")
-    event = date(year, month, day).toordinal()
+    event = date(int(year), int(month), int(day)).toordinal()
     today = date.today().toordinal()
     days_until = event-today
     
