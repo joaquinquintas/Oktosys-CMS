@@ -4,7 +4,7 @@
 <p>
 {% block social_photo %}	
    <a href="{{ url }}">
-	 <img src="{% firstof response.thumbnail_url response.url %}" alt="{{ response.title }}" />
+	 <img src="{{ thumbnail }}" alt="{{ response.title }}" />
    </a>
 {% endblock %}
 <span class="title">{{ response.title|urlize }}</span>
