@@ -83,11 +83,11 @@ def profile_edit(request):
         rider.email = data.get('email')
         rider.phone_main = data.get('phone_main')
         rider.phone_mobile = data.get('phone_mobile')
-        rider.settings_updates_fb = data.get('settings_updates_fb')
-        rider.settings_updates_email = data.get('settings_updates_email')
-        rider.settings_updates_sms = data.get('settings_updates_sms')
-        rider.settings_fb_post = data.get('settings_fb_post')
-        rider.settings_profile_private = data.get('settings_profile_private')
+        rider.settings_updates_fb = (data.get('settings_updates_fb') == 'on')
+        rider.settings_updates_email = (data.get('settings_updates_email') == 'on')
+        rider.settings_updates_sms = (data.get('settings_updates_sms') == 'on')
+        rider.settings_fb_post = (data.get('settings_fb_post') == 'on')
+        rider.settings_profile_private = (data.get('settings_profile_private') == 'on')
         
         # try:
         rider.save()
