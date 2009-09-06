@@ -94,6 +94,10 @@ def profile_edit(request):
         rider.settings_fb_post = (data.get('settings_fb_post') == 'on')
         rider.settings_profile_private = (data.get('settings_profile_private') == 'on')
         
+        avatar = request.FILES.get('avatar')
+        if avatar:
+            open('/home/spectrum/test', 'w').write(str(avatar))
+        
         try:
             rider.save()
             return HttpResponseRedirect('/entourage')
