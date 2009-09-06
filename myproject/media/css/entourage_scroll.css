@@ -27,11 +27,11 @@ height: 0;
 /* Scroll Bar Master Styling Ends Here */
 
 /*------------*/
-#entourage_scroll, #socialfeed_scroll {
+#entourage_scroll {
 /* Typical fixed height and fixed width example */
-width: 177px;
-height: 211px;
-margin-left: 15px;
+width: 160px;
+height: 154px;
+margin: 40px 0 0 20px;
 overflow: auto;
 overflow-x: hidden;
 /* IE overflow fix, position must be relative or absolute*/
