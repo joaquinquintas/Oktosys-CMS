@@ -55,7 +55,16 @@ def profile(request, rider_id):
         return render(request, 'entourage/profile.html', {
             'error': 'profile_private'})
     
-    friends = get_friends(request, rider)
+    all_friends = get_friends(request, rider)
+    
+    friends = []
+    for fid in all_friends:
+        try:
+            friend = Rider.objects.get(facebook=str(fid))
+        except Rider.DoesNotExist:
+            pass
+        else:
+            friends.append(friend)
     
     return render(request, 'entourage/profile.html', {'rider': rider,
         'friends': friends})
