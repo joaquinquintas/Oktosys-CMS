@@ -128,7 +128,10 @@
 			    </div>
 			    <div id="socialfeed">
 		  `		<!--><img src="{{ MEDIA_URL }}img/temp_socialfeed.png" /><br /><-->
-				<div id="socialfeed-header"></div>
+				<div id="socialfeed-header">
+					<label for="social_filter">Sort by</label>
+					<form name="social_filter" action="" method="post"><select name="choice" size="1" onChange="jump(this.form)"><option value="">All social media</option><option value="flickr">Flickr</option><option value="youtube">Youtube</option><option value="twitter">Twitter</option><option value="blogs">Blogs</option></select></form>		
+				</div>
 				<div id="socialfeed-content">
 			            {% socialfeed %}
 			        </div>
