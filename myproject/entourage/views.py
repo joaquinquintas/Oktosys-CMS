@@ -83,6 +83,18 @@ def profile_edit(request):
         if form.is_valid():
             rider_ = form.save(commit=False)
             rider_.id = rider.id
+            rider_.name_first = rider.name_first
+            rider_.name_last = rider.name_last
+            rider_.email = rider.email
+            rider_.avatar = rider.avatar
+            rider_.phone_main = rider.phone_main
+            rider_.phone_mobile = rider.phone_mobile
+            rider_.settings_updates_fb = rider.settings_updates_fb
+            rider_.settings_updates_email = rider.settings_updates_email
+            rider_.settings_updates_sms = rider.settings_updates_sms
+            rider_.settings_fb_post = rider.settings_fb_post
+            rider_.settings_profile_private = rider.settings_profile_private
+            
             rider_.save()
             # rider_info = form.save(commit=False)
             # 
