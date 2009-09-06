@@ -12,8 +12,10 @@ except ImportError:
     from django.utils import simplejson
 from django.conf import settings
 from django.utils.safestring import mark_safe
-from myproject.oembed.models import ProviderRule, StoredOEmbed
+from myproject.oembed.models import ProviderRule, StoredOEmbed, ThumbCache
 from django.template.loader import render_to_string
+from django.core.files.base import ContentFile
+
 import logging
 logger = logging.getLogger("oembed core")
 
@@ -162,10 +164,16 @@ def replace(text, max_width=MAX_WIDTH, max_height=MAX_HEIGHT):
                 if resp['type'] == 'link' and 'html' not in resp:
                     resp['html'] = resp['title']
                 provider = resp['provider_name'].split(" ")[0] # Hack for "Twitter Status"
+                thumb_url = resp['thumbnail_url'] or resp["url"]
+                thumb_data = ContentFile(fetch(thumb_url))
+                tc = ThumbCache()
+                tc.image.save(provider,thumb_data)
+                tc.save()
+                tu = tc.thumbnail.url
                 # Depending on the embed type, grab the associated template and
                 # pass it the parsed JSON response as context.
                 replacement = render_to_string('oembed/%s.html' % resp['type'], 
-                        {'response': resp, 'url': part, 'provider': provider})
+                        {'response': resp, 'url': part, 'provider': provider, 'thumbnail': tu})
                 if replacement:
                     stored_embed = StoredOEmbed.objects.create(
                         match = part,
