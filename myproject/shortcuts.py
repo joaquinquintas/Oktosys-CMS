@@ -58,9 +58,9 @@ def get_rider(request):
                     name_last=name_last)
                 avatar_fname = generate_filename(rider, 'avatar.jpg')
                 rider.avatar = avatar_fname
-                # if avatar_url:
-                #     avatar_contents = urllib.urlopen(avatar_url).read()
-                #     open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
+                if avatar_url:
+                    avatar_contents = urllib.urlopen(avatar_url).read()
+                    open(settings.MEDIA_ROOT + avatar_fname, 'w').write(avatar_contents)
                 # else:
                 #     defimg = settings.MEDIA_ROOT + 'riders/default.jpg'
                 #     open('/home/spectrum/test-', 'w').write(str((defimg, avatar_fname)))
