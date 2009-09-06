@@ -31,7 +31,7 @@ height: 0;
 /* Typical fixed height and fixed width example */
 width: 160px;
 height: 160px;
-margin: 40px 0 0 20px;
+margin: 5px 0 0 20px;
 overflow: auto;
 overflow-x: hidden;
 /* IE overflow fix, position must be relative or absolute*/
