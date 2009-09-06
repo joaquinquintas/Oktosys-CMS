@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div class="breadcrumbs"><a href="/">Home</a>
+    &raquo; <a href="/news/">News</a>
+    &raquo; <a href="/news/{{ entry.slug }}">{{ entry.headline }}</a>
+  </div>
   <div class="span-15" id="article">
       <h1>{{ entry.headline }}</h1>
       <div class="articles-entry">
