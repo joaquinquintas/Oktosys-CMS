@@ -6,6 +6,7 @@ myproject/local_settings.py
 myproject/media/riders
 myproject/media/_swf
 myproject/media/ads
+myproject/media/thumbs
 myproject/media/multimedia
 myproject/media/img/_highlights
 myproject/media/subhighlights
