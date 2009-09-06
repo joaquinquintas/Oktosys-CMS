@@ -12,7 +12,6 @@ def home(request):
     rider = get_rider(request)
     if not rider:
         return HttpResponseRedirect('/entourage/login')
-    open('/home/spectrum/test', 'w').write(str((rider.name(), rider.id, rider.facebook)))
     return profile(request, rider.id)
 
 def signup(request):
@@ -47,7 +46,7 @@ def profile(request, rider_id):
     try:
         rider = Rider.objects.get(id=rider_id)
     except Rider.DoesNotExist:
-        return HttpResponseRedirect('/test')
+        return HttpResponseRedirect('/')
     
     if (rider.settings_profile_private
     and request.session.get('rider_id') != rider.id):
