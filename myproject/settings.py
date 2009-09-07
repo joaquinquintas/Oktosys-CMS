@@ -91,6 +91,7 @@ INSTALLED_APPS = (
     'myproject.socialfeed',
     'myproject.oembed',
     'myproject.multimedia',
+    'myproject.enewsletter',
 )
 
 EVENT_DATE="2010-03-07"
