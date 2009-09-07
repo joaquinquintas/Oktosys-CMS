@@ -99,7 +99,7 @@
 
 .link_date { text-align: center;}
 
-#socialfeed-content ul {
+#socialfeed-content ul, #socialfedd-content li, #socialfeed-content {
     list-style-type: none;
 }
 
