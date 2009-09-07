@@ -33,7 +33,7 @@
     <h2>{{ entry.title }}</h2>
     <p>Published on {{ entry.pub_date|date:"F j, Y" }}</p>
     
-    {{ entry.excerpt|safe }}
+    {{ entry.excerpt|truncatewords_html:35 }}
     
     <p><a href="/news/{{ entry.slug }}">Read full article</a></p>
   {% endfor %}
