@@ -10,6 +10,10 @@ myproject/media/thumbs
 myproject/media/multimedia
 myproject/media/img/_highlights
 myproject/media/subhighlights
+django-haystack
+django-imagekit
+fabric
+whoosh
 django-filebrowser
 sorl-thumbnail
 pyfacebook

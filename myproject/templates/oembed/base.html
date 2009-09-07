@@ -1,9 +1,9 @@
 <div class="{{provider|slugify}}">
 {% autoescape off %}
-{% if response.author_name %}<a href="{{response.author_url}}" class="author">{{ response.author_name }}</a> on <a href="{{response.url}}">{{provider}}</a>:{% endif %}
+{% if response.author_name %}<a href="{{response.author_url}}" target="_blank" class="author">{{ response.author_name }}</a> on <a href="{{url}}" target="_blank">{{provider}}</a>:{% endif %}
 <p>
 {% block social_photo %}	
-   <a href="{{ url }}">
+   <a href="{{ url }}" target="_blank">
 	 <img src="{{ thumbnail }}" alt="{{ response.title }}" />
    </a>
 {% endblock %}
