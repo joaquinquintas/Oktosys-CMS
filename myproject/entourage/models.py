@@ -199,6 +199,3 @@ class ProfileUpdateForm(forms.ModelForm):
     settings_profile_private = forms.BooleanField(label=u'Make your profile page private', widget=forms.CheckboxInput, initial=False, required=False)
 
     
-class ENewsletterForm(forms.Form):
-    name = forms.CharField(label=u'Name', max_length=100)
-    email = forms.EmailField(label=u'Email address')
