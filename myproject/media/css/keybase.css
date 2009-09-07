@@ -198,7 +198,7 @@ h1 { font-size: 1.2em; color: #455460; font-weight:bold; margin-bottom:0;}
 	
 	
 /*-----------breadcrumbs----------------*/
-#breadcrumbs {margin: 0 0 0 15px; }
+#breadcrumbs {margin: 0 0 0 10px; }
 #breadcrumbs a { color:#828C95; text-decoration:none; }
 #breadcrumbs a:hover { color:#828C95; text-decoration:underline; }
 #breadcrumbs .selected a { color:#E82022; text-decoration:none; }
