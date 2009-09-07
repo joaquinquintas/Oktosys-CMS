@@ -26,15 +26,13 @@
     {% if rider.avatar %}
       <img src="{% thumbnail rider.avatar 32x32 %}" alt="{{ rider.name }}" />
     {% endif %}
-    <b>Welcome</b>{{ rider.name }}<a href="/entourage/logout" onclick="FB.Connect.logoutAndRedirect('/entourage/logout'); return false;">Log out</a>
+    <b style="font-size:200%">Welcome</b><br/>{{ rider.name }}<a href="/entourage/logout" onclick="FB.Connect.logoutAndRedirect('/entourage/logout'); return false;">Log out</a>
       
     </div>
      <div id="entourage_scroll" class="flexcroll"> <!--scroll-->
     {% ifnotequal rider.facebook None %}
       <b>My Entourage</b>
-      {% if current_reg_friends %}
-        <p>Friends who have registered.</p>
-      {% endif %}
+      {% if current_reg_friends %}<p>Friends who have registered.</p>
       <table cellpadding="0" cellspacing="0">
         {% for row in current_reg_friends|chunk:5 %}
           <tr>
@@ -44,7 +42,7 @@
           </tr>
         {% endfor %}
       </table>
-      
+      {% endif %}
       {% if current_friends %}
         <p>All friends</p>
       {% endif %}
