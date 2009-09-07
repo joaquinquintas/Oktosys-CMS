@@ -39,6 +39,7 @@
   padding-top: 6px;
   width: 197px;
   height: 26px;
+  z-index:250;
 }
 
 #login-form { margin-top: -8px;}
