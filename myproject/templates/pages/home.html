@@ -11,7 +11,7 @@
     {% for entry in news_entries %}
       <div class="articles-entry">
         <div class="article-heading">{{ entry.headline }}</div>
-        {{ entry.excerpt|truncatewords_html:50 }}
+        {{ entry.excerpt|truncatewords_html:18 }}
         <div class="article-date">posted on <span class="posted">{{ entry.created_on|date:"j M y" }}</span></div>
         <div class="article-link"><a href="/news/{{ entry.slug }}">Read full article</a> &raquo;</div>
 	<div class="clearfix"></div>
