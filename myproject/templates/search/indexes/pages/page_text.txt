@@ -1,0 +1,3 @@
+<a href="/pages/{{object.slug}}"><strong>{{ object.title }}</strong>: {{ object.html|truncatewords_html:20 }}</a>
+
+

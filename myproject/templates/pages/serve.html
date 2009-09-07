@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="breadcrumbs"><a href="/">Home</a>
+  <div id="breadcrumbs"><a href="/">Home</a>
     {% for b in breadcrumbs %}
       &raquo; <a href="/pages/{{ b.0 }}">{{ b.1 }}</a>
-    {% endfor %}</div>
+    {% endfor %}</div><br />
   <div class="span-15" id="article">
     <div class="articles-entry">
       {{ page.html|safe }}

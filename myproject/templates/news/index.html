@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="breadcrumbs"><a href="/">Home</a>
+  <div id="breadcrumbs"><a href="/">Home</a>
     &raquo; <a href="/news/">News</a>
   </div>
-  
+  <br />
+<div class="span-15" id="article">
   <form action="" method="get">
     View archive:
     <select name="month">
@@ -32,12 +33,13 @@
     <h2>{{ entry.title }}</h2>
     <p>Published on {{ entry.pub_date|date:"F j, Y" }}</p>
     
-    {{ entry.excerpt|safe }}
+    {{ entry.excerpt|truncatewords_html:35 }}
     
-    <p><a href="{{ entry.get_absolute_url }}">Read full article</a></p>
+    <div class="article-link"><a href="/news/{{ entry.slug }}">Read full article</a></div>
   {% endfor %}
   
   {% if not entries %}
     <p>No news articles were found for this month.</p>
   {% endif %}
+</div>
 {% endblock %}
