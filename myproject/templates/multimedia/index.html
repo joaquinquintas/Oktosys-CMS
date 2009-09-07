@@ -4,7 +4,6 @@
 {% load thumbnail %}
 
 {% block content %}
-<!-- nondyuna -->
   <div class="breadcrumbs" class="span-15 last"><a href="/">Home</a>
     &raquo; <a href="/multimedia/">Multimedia gallery</a>  <span class="selected"><a href="#">Photos </a></span>
   </div><!--end breadcrumbs -->
@@ -13,9 +12,8 @@
 		<div id="category"><img src="{{ MEDIA_URL }}img/combo_box_category.jpg"/></div>
 		<div id="year"><img src="{{ MEDIA_URL }}img/combo_box_year.jpg" /></div>
   </div> <!--combo box ends-->
-  
+  <br /><br />
   <div class="pagination" class="span-15 last">
-     <br /><br />
     {% if photos.has_previous %}
     <div class="span-3" id="prev_btn">
         <a href="?page={{ pages.previous_page_number }}"><img src="http://spectrum.webfactional.com/media/img/multimedia/prev_btn.png" border="0" /></a>
