@@ -42,7 +42,7 @@ position: relative;
 /* Typical fixed height and fixed width example */
 width: 180px;
 height: 200px;
-margin: 40px 0 0 5px;
+margin: 0px 0 0 5px;
 overflow: auto;
 overflow-x: hidden;
 /* IE overflow fix, position must be relative or absolute*/
