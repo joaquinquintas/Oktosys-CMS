@@ -35,7 +35,7 @@
     
     {{ entry.excerpt|safe }}
     
-    <p><a href="{{ entry.get_absolute_url }}">Read full article</a></p>
+    <p><a href="/news/{{ entry.slug }}">Read full article</a></p>
   {% endfor %}
   
   {% if not entries %}
