@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     (r'^multimedia/', include('myproject.multimedia.urls')),
     url(r'^search/', SearchView(), name="haystack_search"),
     (r'^xml/homeflash.xml', 'django.views.generic.simple.direct_to_template', {'template': 'pages/homeflash.xml'}),
-    (r'^enewsletter/', include('myproject.enewsletter.urls'),
+    (r'^enewsletter/', include('myproject.enewsletter.urls')),
 )
 if settings.DEBUG:
     urlpatterns += patterns('',
