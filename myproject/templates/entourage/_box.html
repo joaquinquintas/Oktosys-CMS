@@ -22,13 +22,13 @@
     New User? <span class="red"><a href="">Create profile</a></span> to<br />access all site features!</p>
 {% else %}
   {% with current_user as rider %}
-    <div id="entourage_scroll" class="flexcroll"> <!--scroll-->
+   
     {% if rider.avatar %}
       <div class="avatar"><img src="{% thumbnail rider.avatar 32x32 %}" alt="{{ rider.name }}" /></div>
     {% endif %}
-    
-    <h2>Welcome</h2>
-    <h3>{{ rider.name }}</h3>
+    <div id="entourage_profile">
+      <h2>Welcome</h2>
+      <h3>{{ rider.name }}</h3>
     
     <div><a href="/entourage/logout" onclick="FB.Connect.logoutAndRedirect('/entourage/logout'); return false;">Log out</a></div>
     
@@ -41,7 +41,8 @@
     {% if rider.email %}
       <p>Email: {{ rider.email }}</p>
     {% endif %}
-    
+    </div>
+     <div id="entourage_scroll" class="flexcroll"> <!--scroll-->
     {% ifnotequal rider.facebook None %}
       <h3>My Entourage</h3>
       {% if current_reg_friends %}
