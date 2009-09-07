@@ -1,4 +1,4 @@
-<div id="entourage_scroll" class="flexcroll"> <!--scroll-->
+
 {% load chunker %}
 {% load thumbnail %}
 
@@ -22,7 +22,7 @@
     New User? <span class="red"><a href="">Create profile</a></span> to<br />access all site features!</p>
 {% else %}
   {% with current_user as rider %}
-    
+    <div id="entourage_scroll" class="flexcroll"> <!--scroll-->
     {% if rider.avatar %}
       <div class="avatar"><img src="{% thumbnail rider.avatar 32x32 %}" alt="{{ rider.name }}" /></div>
     {% endif %}
@@ -70,7 +70,8 @@
         {% endfor %}
       </table>
     {% endifnotequal %}
+  </div> <!--scroll ends-->
   {% endwith %}
 {% endif %}
 
-</div> <!--scroll ends-->
+
