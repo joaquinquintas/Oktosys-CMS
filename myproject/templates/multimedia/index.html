@@ -13,8 +13,9 @@
 		<div id="category"><img src="{{ MEDIA_URL }}img/combo_box_category.jpg"/></div>
 		<div id="year"><img src="{{ MEDIA_URL }}img/combo_box_year.jpg" /></div>
   </div> <!--combo box ends-->
-  <br />
+  
   <div class="pagination" class="span-15 last">
+     <br /><br />
     {% if photos.has_previous %}
     <div class="span-3" id="prev_btn">
         <a href="?page={{ pages.previous_page_number }}"><img src="http://spectrum.webfactional.com/media/img/multimedia/prev_btn.png" border="0" /></a>
@@ -27,9 +28,6 @@
                     <li><a href="">3</a></li>
                     <li><a href="">4</a></li>
                     <li><a href="">5</a></li>
-                    <li class="page_active">...</li>
-                    <li><a href="">7</a></li>
-     <li><a href="">8</a></li>
     </ul>
     </div>
     {% if photos.has_next %}
