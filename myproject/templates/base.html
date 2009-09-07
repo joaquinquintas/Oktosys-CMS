@@ -34,6 +34,12 @@
 	    $('img.promos_swap').canvasSwap();
 	    $('img.multimedia_swap').canvasSwap();
 	    $('img.faqs_swap').canvasSwap();
+        var current_page="{% block current_page %}null{% endblock %}";
+        try{
+	       console.log(current_page);
+        }catch(e){
+	 
+        }
 	  });
 	</script>
 	<!-- lazy image cache -->
@@ -101,15 +107,15 @@
 			    <div id="reg_btn"><a href="http://regonline.activeeurope.com/Checkin.asp?EventId=754619" target="_blank"><img src="{{ MEDIA_URL }}img/reg_btn.png" border="0" /></a></div>
 		      </div>
 		      <!-- navigation buttons -->
-		      <a href="/pages/about-the-experience/"><img src="{{ MEDIA_URL }}img/nav_about_experience.png" border="0" class="about_swap" alt="About the experience" /></a><br/>
-		      <a href="/pages/event-details/"><img src="{{ MEDIA_URL }}img/nav_event_details.png" border="0" class="event_swap" alt="Event details" /></a><br/>
-		      <a href="/pages/pre-ride/"><img src="{{ MEDIA_URL }}img/nav_pre_ride.png" border="0" class="preride_swap" alt="Pre-ride" /></a><br/>
-		      <a href="/pages/cycling-and-lifestyle-village/"><img src="{{ MEDIA_URL }}img/nav_cycling_lifestyle.png" border="0" class="cycling_swap" alt="Cycling and Lifestyle Village" /></a><br/>
-		      <a href="/pages/who-is-involved/"><img src="{{ MEDIA_URL }}img/nav_whos_involved.png" border="0" class="involved_swap" alt="Who's involved" /></a><br/>
-		      <a href="/pages/contests/"><img src="{{ MEDIA_URL }}img/nav_contests.png" border="0" class="contests_swap" alt="Contest" /></a><br/>
-		      <a href="/pages/merchandise-and-promos/"><img src="{{ MEDIA_URL }}img/nav_merch_promos.png" border="0" class="promos_swap" alt="Merchandise and promos" /></a><br/>
+		      <a href="{% url page "about-the-experience" %}"><img src="{{ MEDIA_URL }}img/nav_about_experience.png" border="0" class="about_swap" alt="About the experience" /></a><br/>
+		      <a href="{% url page "even-details" %}"><img src="{{ MEDIA_URL }}img/nav_event_details.png" border="0" class="event_swap" alt="Event details" /></a><br/>
+		      <a href="{% url page "pre-ride" %}"><img src="{{ MEDIA_URL }}img/nav_pre_ride.png" border="0" class="preride_swap" alt="Pre-ride" /></a><br/>
+		      <a href="{% url page "cycling-and-lifestyle-village" %}"><img src="{{ MEDIA_URL }}img/nav_cycling_lifestyle.png" border="0" class="cycling_swap" alt="Cycling and Lifestyle Village" /></a><br/>
+		      <a href="{% url page "who-is-involved" %}"><img src="{{ MEDIA_URL }}img/nav_whos_involved.png" border="0" class="involved_swap" alt="Who's involved" /></a><br/>
+		      <a href="{% url page "contests"%}/"><img src="{{ MEDIA_URL }}img/nav_contests.png" border="0" class="contests_swap" alt="Contest" /></a><br/>
+		      <a href="{% url page "merchandise-and-promos" %}"><img src="{{ MEDIA_URL }}img/nav_merch_promos.png" border="0" class="promos_swap" alt="Merchandise and promos" /></a><br/>
 		      <a href="/multimedia/"><img src="{{ MEDIA_URL }}img/nav_multimedia.png" border="0" class="multimedia_swap" alt="Multimedia" /></a><br/>
-		      <a href="/pages/faqs/"><img src="{{ MEDIA_URL }}img/nav_faqs.png" border="0" class="faqs_swap" alt="FAQs" /></a><br/>
+		      <a href="{% url page "multimedia" %}"><img src="{{ MEDIA_URL }}img/nav_faqs.png" border="0" class="faqs_swap" alt="FAQs" /></a><br/>
 		  </div> <!-- navigation buttons ends-->
 	      </div> <!--left col ends-->
 	      <div class="span-16 last" id="central">
@@ -131,7 +137,7 @@
           {% include "entourage/_box.html" %}
         </div>
         <div id="entourage-share" class="span-5 last">
-          <span>Share this site &nbsp;&nbsp;&nbsp;<img src="http://spectrum.webfactional.com/media/img/social/icon01.png" border="0" />&nbsp;&nbsp;&nbsp;<img src="http://spectrum.webfactional.com/media/img/social/icon02.png" border="0" />&nbsp;&nbsp;&nbsp;<img src="http://spectrum.webfactional.com/media/img/social/icon03.png" border="0" /></span>
+          <span>Share this site &nbsp;&nbsp;&nbsp;<img src="{{ MEDIA_URL }}img/social/icon01.png" border="0" />&nbsp;&nbsp;&nbsp;<img src="{{ MEDIA_URL }}img/social/icon02.png" border="0" />&nbsp;&nbsp;&nbsp;<img src="{{ MEDIA_URL }}img/social/icon03.png" border="0" /></span>
         </div>
       </div> <!--entourage container ends-->
 

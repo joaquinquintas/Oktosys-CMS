@@ -21,7 +21,6 @@ def home(request):
 
 def serve(request, slug):
     page = get_object_or_404(Page, slug=slug)
-    
     return render(request, 'pages/serve.html', {'page': page,
         'breadcrumbs': page.breadcrumbs(),
         'show_fb_stream': page.show_fb_stream})
