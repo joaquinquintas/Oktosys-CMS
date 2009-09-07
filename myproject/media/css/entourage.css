@@ -93,7 +93,17 @@
 
 
 #socialfeed-content { color:#2C3840}
-#socialfeed-content a { color: #f43211; font-weight:bold; text-decoration:none; } 
+#socialfeed-content a { color: #2C3840; font-weight:bold; text-decoration:none; } 
+
+.author {color: #f43211; font-weight:bold; text-decoration:none;}
+
+.link_date { text-align: center;}
+
+#socialfeed-content li {
+    text-decoration: none;
+}
+
+
 
 #socialfeed-bottom {
   background: url(http://spectrum.webfactional.com/media/img/social/b4feed/bg-bottom.png);
