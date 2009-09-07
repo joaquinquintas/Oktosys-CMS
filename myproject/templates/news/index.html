@@ -35,7 +35,7 @@
     
     {{ entry.excerpt|truncatewords_html:35 }}
     
-    <p><a href="/news/{{ entry.slug }}">Read full article</a></p>
+    <div class="article-link"><a href="/news/{{ entry.slug }}">Read full article</a></div>
   {% endfor %}
   
   {% if not entries %}
