@@ -10,6 +10,7 @@ myproject/media/thumbs
 myproject/media/multimedia
 myproject/media/img/_highlights
 myproject/media/subhighlights
+myproject/medua/uploads
 django-haystack
 django-imagekit
 fabric
