@@ -2,8 +2,7 @@
 list-style-type: none;
 margin: 0;
 padding: 0;
-width: 185px; /*WIDTH OF MAIN MENU ITEMS*/
-border: 1px solid black;
+width: 135px; /*WIDTH OF MAIN MENU ITEMS*/
 }
 
 .glossymenu li{
@@ -11,7 +10,7 @@ position: relative;
 }
 
 .glossymenu li a{
-background: red url(../img/glossyback.gif) no-repeat top left;
+background: red;
 font: bold 12px Verdana, Helvetica, sans-serif;
 color: white;
 display: block;
@@ -23,7 +22,7 @@ text-decoration: none;
 
 .glossymenu li ul{ /*SUB MENU STYLE*/
 position: absolute;
-width: 190px; /*WIDTH OF SUB MENU ITEMS*/
+width: 140px; /*WIDTH OF SUB MENU ITEMS*/
 left: 0;
 top: 0;
 display: none;
@@ -34,7 +33,7 @@ float: left;
 }
 
 .glossymenu li ul a{
-width: 180px; /*WIDTH OF SUB MENU ITEMS - 10px padding-left for A elements */
+width: 140px; /*WIDTH OF SUB MENU ITEMS - 10px padding-left for A elements */
 }
 
 .glossymenu .arrowdiv{
@@ -48,7 +47,7 @@ color: white;
 }
 
 .glossymenu li a:hover{
-    background: white url(../img/glossyback2.gif) no-repeat top left;
+    background: white;
     color: red;    
 }
 

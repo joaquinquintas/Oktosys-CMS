@@ -1,6 +1,7 @@
 from myproject.sponsors_panel.models import Sponsor
 from myproject.ads.models import Ad
 from myproject.entourage.models import Rider
+from myproject.pages.models import Page
 from myproject.shortcuts import get_rider, get_friends
 from datetime import date, timedelta
 from django.conf import settings
@@ -37,3 +38,7 @@ def days_until(request):
     days_until = event - today
     
     return { 'days_until_event': days_until}
+
+def load_pages(request):
+    return {'pages': Page.objects.navigation().order_by("tree_id")}
+    

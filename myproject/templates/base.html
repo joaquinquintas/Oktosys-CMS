@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 {% load socialfeed_tags %}
+{% load pages_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html
   xmlns="http://www.w3.org/1999/xhtml"
@@ -21,7 +22,11 @@
 	<script type="text/javascript" src="{{ MEDIA_URL }}js/canvasSwap/jquery.cacheimage.js"></script>
 	<script type="text/javascript" src="{{ MEDIA_URL }}js/tooltip/jquery.tooltip.js"></script>
 	<script type="text/javascript" src="{{ MEDIA_URL }}js/tooltip/jquery.bgiframe.js"></script>
+	
 	<link rel="stylesheet" href="{{ MEDIA_URL }}js/tooltip/jquery.tooltip.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/cssverticalmenu.css" type="text/css" media="screen, projection" />
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/cssverticalmenu.js"></script>
+	
 	<script type="text/javascript" src="{{ MEDIA_URL }}js/tooltip/jquery.dimensions.js"></script>
 	<script type="text/javascript">
 	  $(document).ready(function(){
@@ -110,6 +115,11 @@
 			    <div id="reg_btn"><a href="http://regonline.activeeurope.com/Checkin.asp?EventId=754619" target="_blank"><img src="{{ MEDIA_URL }}img/reg_btn.png" border="0" /></a></div>
 		      </div>
 		      <!-- navigation buttons -->
+		<div id="verticalmenu" class="glossymenu"/>
+		     {% for page in pages %}
+		        {% pages_menu page %}
+		    {% endfor %}
+		</div>
 		      <a href="/pages/about-the-experience"><img src="{{ MEDIA_URL }}img/nav_about_experience.png" border="0" class="about_swap" alt="About the experience" /></a><br/>
 		      <a href="/pages/even-details"><img src="{{ MEDIA_URL }}img/nav_event_details.png" border="0" class="event_swap" alt="Event details" /></a><br/>
 		      <a href="/pages/pre-ride"><img src="{{ MEDIA_URL }}img/nav_pre_ride.png" border="0" class="preride_swap" alt="Pre-ride" /></a><br/>

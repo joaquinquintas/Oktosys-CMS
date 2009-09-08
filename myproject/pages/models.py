@@ -1,6 +1,8 @@
 from django.db import models
 from tinymce import models as tinymce_models
 import mptt
+from django.utils.safestring import mark_safe 
+from django.core.urlresolvers import reverse
 
 def get_slug_and_relative_path(path):
     """Return the page's slug and relative path."""
@@ -47,7 +49,7 @@ class PageManager(models.Manager):
     def expired(self):
         return None
 
-    def from_path(self, complete_path, lang, exclude_drafts=True):
+    def from_path(self, complete_path, exclude_drafts=True):
         """Get a page according to the page's path."""
         slug, path  = get_slug_and_relative_path(complete_path)
         pages_list = self.on_site().filter(slug=slug)
@@ -69,6 +71,7 @@ class Page(models.Model):
                                        related_name='children')
     sort = models.CharField(max_length=255)
     show_fb_stream = models.BooleanField(default=False)
+    objects = PageManager()
     
     def breadcrumbs(self):
         if self.parent:
@@ -76,9 +79,7 @@ class Page(models.Model):
         return [(self.slug, self.title)]
     
     def __unicode__(self):
-        if self.parent:
-            return '%s/%s' % (self.parent.__unicode__(), self.title)
-        return self.title
+        return "%s" % self.with_level().replace(" ", "|", 1).replace(" ", "-")
     
     def save(self):
         self.sort = self.__unicode__()
@@ -103,11 +104,11 @@ class Page(models.Model):
 #            url = u'%s' % self.slug
         url = u'%s' % self.slug # Remove this line when enabling cache
         for ancestor in self.get_ancestors(ascending=True):
-            url = ancestor.slug + u'/' + url
+            url = ancestor.slug + u'/' + url 
 
 #        cache.set('page_key_%s' % self.id, url)
 
-        return url
+        return "/pages/%s" % url
     def with_level(self):
         """Display the slug of the page prepended with insecable
         spaces equal to the level of page in the hierarchy."""
@@ -115,7 +116,11 @@ class Page(models.Model):
         if self.level:
             for n in range(0, self.level):
                 level += '   '
-        return mark_safe(level + self.slug())
+        return mark_safe(level + self.slug)
+
+    def get_children_for_frontend(self):
+        """Return a :class:`QuerySet` of published children page"""
+        return self.get_children()
 
     def margin_level(self):
         return self.level * 2    

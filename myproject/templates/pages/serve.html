@@ -1,15 +1,17 @@
 {% extends "base.html" %}
+{% load pages_tags %}
 
 {% block content %}
   <div id="breadcrumbs"><a href="/">Home</a>
-    {% for b in breadcrumbs %}
-      &raquo; <a href="/pages/{{ b.0 }}">{{ b.1 }}</a>
-    {% endfor %}</div><br />
-  <div class="span-15" id="article">
+   &raquo;{% pages_breadcrumb current_page %}
+  </div> 
+  <div id="submenu">{% pages_sub_menu current_page %}</div>
+ <div class="span-15" id="article">
     <div class="articles-entry">
-      {{ page.html|safe }}
+      {{ current_page.html|safe }}
     </div>
   </div>
+ 
 {% endblock %}
 
-{% block current_page %}{{page.slug}}{% endblock %}
+{% block current_page %}{{currrent_page.slug}}{% endblock %}
