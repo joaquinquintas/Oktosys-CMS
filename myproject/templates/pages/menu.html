@@ -1,7 +1,5 @@
 {% load pages_tags cache %}
-<!-- Menu item, the selected one has the class "selected", all have the class "page" and a class corresponding to the slug -->
 <li class="page {{page.slug}} {% ifequal page current_page %}selected{% endifequal %} {% ifequal page current_page.parent %}selected{% endifequal %}"><a href="{{page.get_url}}">{{page.title}}</a>
-	<!-- Here is the submenu, we can show it or hide it with css or js -->
 	{% if children %}<ul>
 		 {% for child in children %}{% pages_menu child %}{% endfor %}
      </ul>{% endif %}
