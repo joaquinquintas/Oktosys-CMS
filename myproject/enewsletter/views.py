@@ -10,7 +10,7 @@ def subscribe(request):
 			form.save()
 			return HttpResponseRedirect('/subscribed/')
 		else: 
-			return HttpReponseRedirect('/enewsletter/')
+			return HttpResponseRedirect('/enewsletter/')
 	else:
 		form = EnewsForm()
 
