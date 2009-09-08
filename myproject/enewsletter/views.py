@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response
 def subscribe(request):
 	if request.method == 'POST':
 		form = EnewsForm(request.POST)
-		if form.is_valid:
+		if form.is_valid():
 			form.save()
 			return HttpResponseRedirect('/subscribed/')
 		else: 
