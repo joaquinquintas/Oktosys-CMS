@@ -8,7 +8,7 @@ def subscribe(request):
 		form = EnewsForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/subscribed/')
+			return HttpResponseRedirect('/enewsletter/subscribed/')
 		else: 
 			return HttpResponseRedirect('/enewsletter/')
 	else:
@@ -18,3 +18,5 @@ def subscribe(request):
 		  { 'form': form, })
 
 
+def subscribed(request):
+	return render_to_response('enewsletter/subscribed.html')
