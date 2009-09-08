@@ -1,6 +1,6 @@
 # Create your views here.
 from myproject.enewsletter.models import EnewsForm
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 
 def subscribe(request):
 	if request.method == 'POST':
