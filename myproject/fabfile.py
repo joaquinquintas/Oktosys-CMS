@@ -9,10 +9,19 @@ def staging():
 def deploy():
     with cd(env.base_dir):
         run('git pull')
-        run('touch ../myproject.wsgi')
+        run('touch myproject.wsgi')
         
 def errors():
     run('tail %s' % env.error_log)
+
+def install_reqs():
+    with cd(env.base_dir):
+        run('pip install -r requirements.txt')
+
+def syncdb():
+    install_reqs()
+    with cd(env.base_dir):
+        run('./manage.py syncdb')
 
 def sd():
     "Shorcut for staging deploy"
