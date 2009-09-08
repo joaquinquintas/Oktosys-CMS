@@ -1,7 +1,6 @@
 # Create your views here.
 from myproject.enewsletter.models import EnewsForm
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
 
 def subscribe(request):
 	if request.method == 'POST':
@@ -11,9 +10,7 @@ def subscribe(request):
 			return HttpResponseRedirect('/subscribed/')
 		else:
 			form = EnewsForm()
-	return render_to_response('enewsletter/subscribe.html', {
-        'form': form,
-    })
+
 
 
 
