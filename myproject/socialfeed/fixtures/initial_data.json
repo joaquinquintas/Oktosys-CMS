@@ -1,0 +1,220 @@
+[
+    {
+        "pk": 1, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://(?:www\\.)?flickr\\.com/photos/\\S+?/(?:sets/)?\\d+/?", 
+            "endpoint": "http://www.flickr.com/services/oembed/", 
+            "name": "Flickr", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://\\S*?viddler.com/\\S*", 
+            "endpoint": "http://lab.viddler.com/services/oembed/", 
+            "name": "Viddler", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://qik.com/\\S*", 
+            "endpoint": "http://qik.com/api/oembed.json", 
+            "name": "Qik", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://\\S*?revision3.com/\\S*", 
+            "endpoint": "http://revision3.com/api/oembed/", 
+            "name": "Revision3", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://\\S*.amazon.(com|co.uk|de|ca|jp)/\\S*/(gp/product|o/ASIN|obidos/ASIN|dp)/\\S*", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "Amazon Product Image (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://\\S*.collegehumor.com/video:\\S*", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "CollegeHumor Video (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://\\S*.funnyordie.com/videos/\\S*", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "Funny or Die Video (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://video.google.com/videoplay?\\S*", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "Google Video (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://www.hulu.com/watch/\\S*", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "Hulu (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://\\S*.metacafe.com/watch/\\S*", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "Metacafe (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://(?:www\\.)?twitter\\.com/(?:\\w{1,20})/statuses/\\d+/?", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "Twitter Status (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://\\S*.wikipedia.org/wiki/\\S*", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "Wikipedia (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://(?:www\\.)?youtube\\.com/watch\\?v=[A-Za-z0-9\\-=_]{11}", 
+            "endpoint": "http://oohembed.com/oohembed/", 
+            "name": "YouTube (OohEmbed)", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "oembed.providerrule", 
+        "fields": {
+            "regex": "http://(?:www\\.)?vimeo\\.com/\\d+", 
+            "endpoint": "http://vimeo.com/api/oembed.json", 
+            "name": "Vimeo", 
+            "format": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "oembed.storedoembed", 
+        "fields": {
+            "max_height": 240, 
+            "date_added": "2009-09-07 09:04:27", 
+            "html": "<div class=\"flickr\">\n\n<a href=\"http://www.flickr.com/photos/mikejctoh/\" class=\"author\">BurgundyMT (on/off)</a> on <a href=\"http://farm4.static.flickr.com/3435/3308018795_68a97a425c_m.jpg\">Flickr</a>\n<p>\n\t\n   <a href=\"http://www.flickr.com/photos/mikejctoh/3308018795/\">\n\t <img src=\"/media/thumbs/thumbs/Flickr___________thumbnail.\" alt=\"OCBC Cycle Singapore - Determination\" />\n   </a>\n\n<span class=\"title\">OCBC Cycle Singapore - Determination</span>\n</p>\n\n</div>", 
+            "max_width": 320, 
+            "match": "http://www.flickr.com/photos/mikejctoh/3308018795/"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "oembed.storedoembed", 
+        "fields": {
+            "max_height": 240, 
+            "date_added": "2009-09-07 09:04:27", 
+            "html": "<div class=\"twitter\">\n\n<a href=\"http://asia.siamdailynews.com/\" class=\"author\">Asia News Magazine</a> on <a href=\"\">Twitter</a>\n<p>\n\n\n<span class=\"title\">News Update: OCBC to grow business in Malaysia as economy rebounds <a href=\"http://bit.ly/Cb9K6\" rel=\"nofollow\">http://bit.ly/Cb9K6</a></span>\n</p>\n\n</div>", 
+            "max_width": 320, 
+            "match": "http://twitter.com/asnmagazine/statuses/3733364755"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "oembed.storedoembed", 
+        "fields": {
+            "max_height": 240, 
+            "date_added": "2009-09-07 09:04:27", 
+            "html": "<div class=\"youtube\">\n\n<a href=\"http://www.youtube.com/user/sanihamid\" class=\"author\">sanihamid</a> on <a href=\"\">Youtube</a>\n<p>\n\t\n   <a href=\"http://www.youtube.com/watch?v=_Bjk2QOMJe8\">\n\t <img src=\"/media/thumbs/thumbs/Youtube___thumbnail.\" alt=\"OCBC Cycle Singapore\" />\n   </a>\n\n<span class=\"title\">OCBC Cycle Singapore</span>\n</p>\n\n</div>", 
+            "max_width": 320, 
+            "match": "http://www.youtube.com/watch?v=_Bjk2QOMJe8"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "oembed.thumbcache", 
+        "fields": {
+            "image": "thumbs/Flickr__________"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "oembed.thumbcache", 
+        "fields": {
+            "image": "thumbs/Twitter____"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "oembed.thumbcache", 
+        "fields": {
+            "image": "thumbs/Youtube__"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "socialfeed.link", 
+        "fields": {
+            "date": "2009-09-07 09:04:20", 
+            "href": "http://www.flickr.com/photos/mikejctoh/3308018795/"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "socialfeed.link", 
+        "fields": {
+            "date": "2009-09-07 09:04:13", 
+            "href": "http://twitter.com/asnmagazine/statuses/3733364755"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "socialfeed.link", 
+        "fields": {
+            "date": "2009-09-07 09:04:05", 
+            "href": "http://www.youtube.com/watch?v=_Bjk2QOMJe8"
+        }
+    }
+]

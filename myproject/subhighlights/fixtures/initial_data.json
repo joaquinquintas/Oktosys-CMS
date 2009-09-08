@@ -1,0 +1,32 @@
+[
+    {
+        "pk": 7, 
+        "model": "subhighlights.subhighlight", 
+        "fields": {
+            "slot": 3, 
+            "created_on": "2009-09-06 04:37:44", 
+            "page": 1, 
+            "image": "subhighlights/about-the-experience__.jpg"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "subhighlights.subhighlight", 
+        "fields": {
+            "slot": 2, 
+            "created_on": "2009-09-06 04:37:28", 
+            "page": 1, 
+            "image": "subhighlights/about-the-experience_.jpg"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "subhighlights.subhighlight", 
+        "fields": {
+            "slot": 1, 
+            "created_on": "2009-09-06 04:36:19", 
+            "page": 1, 
+            "image": "subhighlights/about-the-experience.jpg"
+        }
+    }
+]
