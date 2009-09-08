@@ -40,7 +40,7 @@
 	  $(document).ready(function(){
 	    $.cacheImage([
 		{% for page in pages %}
-		    '{{ MEDIA_URL}}img/{{ page.slug}}.png',
+		    '{{ MEDIA_URL}}img/{{ page.slug}}',
 		{% endfor %}
 	      '{{ MEDIA_URL }}img/nav-multimedia_hover.png'
 	    ])
