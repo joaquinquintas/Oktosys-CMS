@@ -51,6 +51,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
+    'django.core.context_processors.request',
     'myproject.context_processors.load_sponsors',
     'myproject.context_processors.load_ads',
     'myproject.context_processors.load_session',
@@ -63,6 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'pagination.middleware.PaginationMiddleware',
     'facebook.djangofb.FacebookMiddleware',
 )
 
@@ -83,6 +85,8 @@ INSTALLED_APPS = (
     'tinymce',
     'haystack',
     'mptt',
+    'tagging',
+    'pagination',
     'django_extensions',
     'myproject.pages',
     'myproject.highlights',

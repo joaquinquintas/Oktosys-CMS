@@ -2,6 +2,8 @@ django
 django-tinymce
 gdata
 django-extensions
+django-tagging
+django-pagination
 -e svn+http://django-mptt.googlecode.com/svn/trunk/#egg=django-mptt
 -e hg+http://bitbucket.org/jdriscoll/django-imagekit/#egg=django-imagekit
 -e git+git://github.com/ericflo/django-oembed.git#egg=django-oembed

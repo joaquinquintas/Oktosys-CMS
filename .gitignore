@@ -13,6 +13,7 @@ myproject/media/subhighlights
 myproject/media/uploads
 django-haystack
 django-imagekit
+django-mptt
 fabric
 whoosh
 myproject/search_index
