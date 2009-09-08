@@ -6,7 +6,9 @@
 	{{ page.title}}
 	{% endif %}
 	</a>
+	<div class="submenu {% ifequal page current_page.parent %}selected{% endifequal %}">
 	{% if children %}<ul>
 		 {% for child in children %}{% pages_menu child %}{% endfor %}
      </ul>{% endif %}
+    </div>
 </li>

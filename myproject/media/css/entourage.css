@@ -108,6 +108,15 @@
     list-style-type: none;
 }
 
+.submenu {
+    list-style-type: none;
+    display: none;
+}
+
+.submenu .selected {
+    display: inline;
+}
+
 #socialfeed-bottom {
   background: url(http://spectrum.webfactional.com/media/img/social/b4feed/bg-bottom.png);
   background-repeat: no-repeat;
