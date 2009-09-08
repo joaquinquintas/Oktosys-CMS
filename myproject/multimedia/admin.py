@@ -1,8 +1,8 @@
-from models import Photo, Video
+from myproject.multimedia.models import Photo, Video
 from django.contrib import admin
 
 class PhotoAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title', 'title_slug', 'caption','date_added','member','tags',)    
 
 class VideoAdmin(admin.ModelAdmin):
     fields = ('url',)

@@ -1,31 +1,205 @@
-from models import Photo
+from myproject.models import Photo
 
-from myproject.shortcuts import render, redirect
-from django.shortcuts import get_object_or_404
-from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
-def index(request):
-    photos = Photo.objects.all()
-    paginator = Paginator(photos, 45)
-    
-    try:
-        page = int(request.GET.get('page', 1))
-    except ValueError:
-        page = 1
-    
-    try:
-        photos = paginator.page(page)
-    except (EmptyPage, InvalidPage):
-        photos = paginator.page(paginator.num_pages)
-    
-    return render(request, 'multimedia/index.html', {'photos': photos})
+from django.shortcuts import render_to_response, get_object_or_404
+from django.http import HttpResponseRedirect, get_host
+from django.template import RequestContext
+from django.db.models import Q
+from django.http import Http404
+from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
-def photo_view(request, page, id):
-    try:
-        page = int(page)
-    except ValueError:
-        redirect('/multimedia')
-    
+from myproject.multimedia.forms import PhotoUploadForm, PhotoEditForm
+
+def upload(request, form_class=PhotoUploadForm,
+        template_name="photos/upload.html"):
+    """
+    upload form for photos
+    """
+    photo_form = form_class()
+    if request.method == 'POST':
+        if request.POST.get("action") == "upload":
+            photo_form = form_class(request.user, request.POST, request.FILES)
+            if photo_form.is_valid():
+                photo = photo_form.save(commit=False)
+                photo.member = request.user
+                photo.save()
+                request.user.message_set.create(message=_("Successfully uploaded photo '%s'") % photo.title)
+                return HttpResponseRedirect(reverse('photo_details', args=(photo.id,)))
+
+    return render_to_response(template_name, {
+        "photo_form": photo_form,
+    }, context_instance=RequestContext(request))
+upload = login_required(upload)
+
+def yourphotos(request, template_name="photos/yourphotos.html"):
+    """
+    photos for the currently authenticated user
+    """
+    photos = Photo.objects.filter(member=request.user).order_by("-date_added")
+    return render_to_response(template_name, {
+        "photos": photos,
+    }, context_instance=RequestContext(request))
+yourphotos = login_required(yourphotos)
+
+def photos(request, template_name="photos/latest.html"):
+    """
+    latest photos
+    """
+    photos = Photo.objects.filter(
+        Q(is_public=True) |
+        Q(is_public=False, member=request.user)
+    ).order_by("-date_added")
+    return render_to_response(template_name, {
+        "photos": photos,
+    }, context_instance=RequestContext(request))
+photos = login_required(photos)
+
+def details(request, id, template_name="photos/details.html"):
+    """
+    show the photo details
+    """
     photo = get_object_or_404(Photo, id=id)
-    return render(request, 'multimedia/photo_view.html',
-        {'page': page, 'photo': photo})
+
+    photo_url = photo.display.url
+
+    title = photo.title
+    host = "http://%s" % get_host(request)
+    if photo.member == request.user:
+        is_me = True
+    else:
+        is_me = False
+    # TODO: check for authorized user and catch errors
+    if is_me:
+        if request.method == "POST" and request.POST["action"] == "add_to_project":
+            projectid = request.POST["project"]
+            myproject = Project.objects.get(pk=projectid)
+            if not myproject.photos.filter(photo=photo).count():
+                myproject.photos.create(photo=photo)
+                request.user.message_set.create(message=_("Successfully add photo '%s' to project") % title)
+            else:
+                # TODO: this applies to pinax in general. dont use ugettext_lazy here. its usage is fragile.
+                request.user.message_set.create(message=_("Did not add photo '%s' to project because it already exists.") % title)
+
+            return HttpResponseRedirect(reverse('photo_details', args=(photo.id,)))
+        
+        if request.method == "POST":
+            if request.POST["action"] == "addtotribe":
+                tribeid = request.POST["tribe"]
+                mytribe = Tribe.objects.get(pk=tribeid)
+                if not mytribe.photos.filter(photo=photo).count():
+                    mytribe.photos.create(photo=photo)
+                    request.user.message_set.create(message=_("Successfully add photo '%s' to tribe") % title)
+                else:
+                    # TODO: this applies to pinax in general. dont use ugettext_lazy here. its usage is fragile.
+                    request.user.message_set.create(message=_("Did not add photo '%s' to tribe because it already exists.") % title)
+
+                return HttpResponseRedirect(reverse('photo_details', args=(photo.id,)))
+
+            if request.POST["action"] == "removefromtribe":
+                tribeid = request.POST["tribe"]
+                mytribe = Tribe.objects.get(pk=tribeid)
+                if mytribe.photos.filter(photo=photo).count():
+                    mytribe.photos.filter(photo=photo).delete()
+                    request.user.message_set.create(message=_("Successfully removed photo '%s' from tribe") % title)
+                else:
+                    # TODO: this applies to pinax in general. dont use ugettext_lazy here. its usage is fragile.
+                    request.user.message_set.create(message=_("Did not remove photo '%s' from tribe.") % title)
+
+                return HttpResponseRedirect(reverse('photo_details', args=(photo.id,)))
+
+            if request.POST["action"] == "addtoproject":
+                projectid = request.POST["project"]
+                myproject = Project.objects.get(pk=projectid)
+                if not myproject.photos.filter(photo=photo).count():
+                    myproject.photos.create(photo=photo)
+                    request.user.message_set.create(message=_("Successfully add photo '%s' to project") % title)
+                else:
+                    # TODO: this applies to pinax in general. dont use ugettext_lazy here. its usage is fragile.
+                    request.user.message_set.create(message=_("Did not add photo '%s' to project because it already exists.") % title)
+
+                return HttpResponseRedirect(reverse('photo_details', args=(photo.id,)))
+
+            if request.POST["action"] == "removefromproject":
+                projectid = request.POST["project"]
+                myproject = Project.objects.get(pk=projectid)
+                if myproject.photos.filter(photo=photo).count():
+                    myproject.photos.filter(photo=photo).delete()
+                    request.user.message_set.create(message=_("Successfully removed photo '%s' from project") % title)
+                else:
+                    # TODO: this applies to pinax in general. dont use ugettext_lazy here. its usage is fragile.
+                    request.user.message_set.create(message=_("Did not remove photo '%s' from project.") % title)
+
+                return HttpResponseRedirect(reverse('photo_details', args=(photo.id,)))
+
+    return render_to_response(template_name, {
+        "host": host, 
+        "photo": photo,
+        "photo_url": photo_url,
+        "is_me": is_me,
+        "projects": projects,
+        "tribes": tribes,
+    }, context_instance=RequestContext(request))
+details = login_required(details)
+
+def memberphotos(request, username, template_name="photos/memberphotos.html"):
+    """
+    Get the members photos and display them
+    """
+    user = get_object_or_404(User, username=username)
+    photos = Photo.objects.filter(member__username=username, is_public=True).order_by("-date_added")
+    return render_to_response(template_name, {
+        "photos": photos,
+    }, context_instance=RequestContext(request))
+memberphotos = login_required(memberphotos)
+
+def edit(request, id, form_class=PhotoEditForm,
+        template_name="photos/edit.html"):
+    photo = get_object_or_404(Photo, id=id)
+    photo_url = photo.display.url
+
+    if request.method == "POST":
+        if photo.member != request.user:
+            request.user.message_set.create(message="You can't edit photos that aren't yours")
+            return HttpResponseRedirect(reverse('photo_details', args=(photo.id,)))
+        if request.POST["action"] == "update":
+            photo_form = form_class(request.user, request.POST, instance=photo)
+            if photo_form.is_valid():
+                photoobj = photo_form.save(commit=False)
+                photoobj.save()
+                request.user.message_set.create(message=_("Successfully updated photo '%s'") % photo.title)
+                                
+                return HttpResponseRedirect(reverse('photo_details', args=(photo.id,)))
+        else:
+            photo_form = form_class(instance=photo)
+
+    else:
+        photo_form = form_class(instance=photo)
+
+    return render_to_response(template_name, {
+        "photo_form": photo_form,
+        "photo": photo,
+        "photo_url": photo_url,
+    }, context_instance=RequestContext(request))
+edit = login_required(edit)
+
+def destroy(request, id):
+    photo = Photo.objects.get(pk=id)
+    title = photo.title
+    if photo.member != request.user:
+        request.user.message_set.create(message="You can't delete photos that aren't yours")
+        return HttpResponseRedirect(reverse("photos_yours"))
+
+    if request.method == "POST" and request.POST["action"] == "delete":
+        photo.delete()
+        request.user.message_set.create(message=_("Successfully deleted photo '%s'") % title)
+    return HttpResponseRedirect(reverse("photos_yours"))
+destroy = login_required(destroy)
+
+
+#What's left of the other multimedia app
+#    return render(request, 'multimedia/index.html', {'photos': photos})
+#    return render(request, 'multimedia/photo_view.html',
+#        {'page': page, 'photo': photo})

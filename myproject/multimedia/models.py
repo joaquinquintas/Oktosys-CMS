@@ -4,6 +4,12 @@ from django import forms
 import gdata.youtube
 import gdata.youtube.service
 yt = gdata.youtube.service.YouTubeService()
+from django.contrib.auth.models import User
+from imagekit.models import ImageModel
+from datetime import datetime
+
+from tagging.fields import TagField
+
 
 from django.conf import settings
 yt.developer_key = settings.YOUTUBE_KEY
@@ -19,17 +25,54 @@ def generate_filename(instance, old_filename):
     filename = str(time.time()) + extension
     return 'multimedia/' + filename
 
-class Photo(models.Model):
-    title = models.CharField(max_length=255)
-    added_on = models.DateTimeField(auto_now_add=True)
+class Photo(ImageModel):
+    crop_horz_choices = (
+       (0, 'left'),
+       (1, 'center'),
+       (2, 'right'),
+     )
+    crop_vert_choices = (
+      (0, 'top'),
+      (1, 'center'),
+      (2, 'bottom'),
+    )
+    category_choices = (
+      (0, 'The Super Challenge - 50Km'),
+      (1, 'The Challenge - 40Km'),
+      (2, 'The Community Ride - 20Km'),
+      (3, 'Mighty Savers Kids Ride - 5Km'),
+      (4, 'Criterium Events'),
+      )
+    year_choices = ((0,'2007'), (1,'2008'), (2,'2009'), (3,'2010'),)
     image = models.ImageField(upload_to=generate_filename)
+    view_count = models.IntegerField(default=0)
+    crop_horz = models.PositiveIntegerField('crop horizontal',
+                              choices=crop_horz_choices,default=1)
+    crop_vert = models.PositiveIntegerField('crop vertical',
+                             choices=crop_vert_choices, default=1)
+    title = models.CharField(max_length=255)
+    title_slug = models.SlugField('slug')
+    caption = models.TextField('caption', blank=True)
+    date_added = models.DateTimeField('date added', default=datetime.now, editable=False)
+    member = models.ForeignKey(User, related_name="added_photos", blank=True, null=True)
+    category = models.CharField(max_length=255, choices=category_choices, default=1)
+    year = models.CharField(max_length=255, choices=year_choices, default=2)
+ #   added_on = models.DateTimeField(auto_now_add=True)
+    tags = TagField()
     
+    class IKOptions:
+        spec_module = 'myproject.multimedia.specs'
+        save_count_as = 'view_count'
+        cache_dir = 'photos'
+        
     def __unicode__(self):
         return self.title
+    def get_absolute_url(self):
+        return ("photo_details", [self.pk])
+    get_absolute_url = models.permalink(get_absolute_url)
     
-class Video(models.Model):
+class Video(Photo):
     url = models.URLField()
-    title = models.CharField(max_length=255)
     embed_url = models.CharField(max_length=255)
     embed_type = models.CharField(max_length=255)
     
