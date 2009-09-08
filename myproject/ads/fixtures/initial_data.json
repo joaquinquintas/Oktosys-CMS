@@ -1,0 +1,13 @@
+[
+    {
+        "pk": 2, 
+        "model": "ads.ad", 
+        "fields": {
+            "priority": 3, 
+            "is_active": 1, 
+            "created_on": "2009-09-06 04:16:37", 
+            "link": "http://www.ocbc.com.sg/", 
+            "image": "ads/1252181797.54.png"
+        }
+    }
+]
