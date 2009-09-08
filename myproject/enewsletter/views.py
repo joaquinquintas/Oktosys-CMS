@@ -9,6 +9,8 @@ def subscribe(request):
 		if form.is_valid:
 			form.save()
 			return HttpResponseRedirect('/subscribed/')
+		else: 
+			pass
 	else:
 		form = EnewsForm()
 
