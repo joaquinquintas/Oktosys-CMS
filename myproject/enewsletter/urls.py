@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
-from myproject.enewsletter.views import subscribe 
+from myproject.enewsletter.views import subscribe, subscribed
 
 urlpatterns = patterns('myproject.enewsletter.views',
-    url(r'', 'subscribe'),
     url(r'^/subscribed/', 'subscribed')
+    url(r'', 'subscribe'),
 )
