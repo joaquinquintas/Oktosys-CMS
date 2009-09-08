@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Pages page_tags template tags"""
+from django.conf import settings
 from django import template
 register = template.Library()
 
@@ -13,6 +14,7 @@ def pages_menu(context, page, url='/'):
     path = context.get('path', None)
     site_id = None
     children = page.get_children_for_frontend()
+    MEDIA_URL = settings.MEDIA_URL
     if 'current_page' in context:
         current_page = context['current_page']
     return locals()

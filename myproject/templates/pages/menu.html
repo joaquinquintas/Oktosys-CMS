@@ -1,5 +1,11 @@
 {% load pages_tags cache %}
-<li class="page {{page.slug}} {% ifequal page current_page %}selected{% endifequal %} {% ifequal page current_page.parent %}selected{% endifequal %}"><a href="{{page.get_url}}">{{page.title}}</a>
+<li class="page {{page.slug}} {% ifequal page current_page %}selected{% endifequal %} {% ifequal page current_page.parent %}selected{% endifequal %}"><a href="{{page.get_url}}">
+	{% if not page.parent %}
+	<img class="{{page.slug}}" src="{{ MEDIA_URL }}img/nav-{{page.slug}}.png" alt="{{ page.title }}"/>
+	{% else %}
+	{{ page.title}}
+	{% endif %}
+	</a>
 	{% if children %}<ul>
 		 {% for child in children %}{% pages_menu child %}{% endfor %}
      </ul>{% endif %}

@@ -104,7 +104,9 @@
     list-style-type: none;
 }
 
-
+#main-nav {
+    list-style-type: none;
+}
 
 #socialfeed-bottom {
   background: url(http://spectrum.webfactional.com/media/img/social/b4feed/bg-bottom.png);
