@@ -116,9 +116,7 @@
 		      </div>
 		      <!-- navigation buttons -->
 		<div id="verticalmenu" class="glossymenu"/>
-		     {% for page in pages %}
-		        {% pages_menu page %}
-		    {% endfor %}
+		     {% for page in pages %}{% pages_menu page %}{% endfor %}
 		</div>
 		      <a href="/pages/about-the-experience"><img src="{{ MEDIA_URL }}img/nav_about_experience.png" border="0" class="about_swap" alt="About the experience" /></a><br/>
 		      <a href="/pages/even-details"><img src="{{ MEDIA_URL }}img/nav_event_details.png" border="0" class="event_swap" alt="Event details" /></a><br/>

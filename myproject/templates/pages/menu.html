@@ -1,2 +1,8 @@
 {% load pages_tags cache %}
-<li class="page {{page.slug}} {% ifequal page current_page %}selected{% endifequal %}"><a href="{{page.get_url}}">{{page.title}}</a>{% if children %}<ul>{% for child in children %}{% pages_menu child %}{% endfor %}</ul>{% endif %}</li>
+{% spaceless %}
+<li class="page {{page.slug}} {% ifequal page current_page %}selected{% endifequal %}"><a href="{{page.get_url}}">{{page.title}}</a>
+	{% if children %}<ul>
+		 {% for child in children %}{% pages_menu child %}{% endfor %}
+     </ul>{% endif %}
+</li>
+{% endspaceless %}
