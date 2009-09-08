@@ -9,11 +9,10 @@ def subscribe(request):
 		if form.is_valid:
 			form.save()
 			return HttpResponseRedirect('/subscribed/')
-		else:
-			form = EnewsForm()
+	else:
+		form = EnewsForm()
 
-	return render_to_response('enewsletter/subscribe.html', {
-        'form': form,
-    })
+	return render_to_response('enewsletter/subscribe.html', 
+		  { 'form': form, })
 
 
