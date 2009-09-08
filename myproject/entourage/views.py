@@ -1,6 +1,6 @@
 from __future__ import with_statement # For with to work
 from models import Rider, Race, Team
-from models import RegistrationForm, ProfileUpdateForm, ENewsletterForm
+from models import RegistrationForm, ProfileUpdateForm
 from models import generate_filename
 
 from myproject.shortcuts import render, get_rider, get_friends
