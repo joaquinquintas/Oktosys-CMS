@@ -81,6 +81,8 @@ INSTALLED_APPS = (
     'filebrowser',
     'tinymce',
     'haystack',
+    'mptt',
+    'django_extensions',
     'myproject.pages',
     'myproject.highlights',
     'myproject.news',
