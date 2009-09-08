@@ -1,3 +1,2 @@
 {% load pages_tags cache %}
-<li {% ifequal page current_page %}class="selected"{% endifequal %}>
-<a href="{{ page.get_url }}">{{ page.title }}</a>{% if children %}<ul>{% for child in children %}{% pages_dynamic_tree_menu child url %}{% endfor %}</ul>{% endif %}</li>
+<li {% ifequal page current_page %}class="selected"{% endifequal %}><a href="{{ page.get_url }}">{{ page.title }}</a>{% if children %}<ul>{% for child in children %}{% pages_dynamic_tree_menu child url %}{% endfor %}</ul>{% endif %}</li>
