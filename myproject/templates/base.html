@@ -30,7 +30,7 @@
 	    $.fn.canvasSwap.defaults.suffix = '_hover';
 	    $.fn.canvasSwap.defaults.ie6_support = true;
 	    {% for page in pages %}
-	        'img.{{ page.slug}}.png').canvasSwap();
+	        $('img.{{ page.slug}}.png').canvasSwap();
     	{% endfor %}
 	    $('img.multimedia_swap').canvasSwap();
 	  });
